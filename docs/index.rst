@@ -5,7 +5,7 @@
 
 Welcome to the Digital Health Platform Documentation
 ====================================================
-.. image:: nhss.jpg
+.. image:: \img\nhss.jpg
 
 Contents:
 
