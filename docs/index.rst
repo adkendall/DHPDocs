@@ -12,10 +12,11 @@ Welcome to the Digital Health Platform Documentation
    :widths: auto
 
    ========================== ============================= ==========================
-     A                        not A
+     A                        not A                         qwert
    ========================== ============================= ==========================
    .. image:: ../img/nhss.jpg .. image:: ../img/ehealth.png .. image:: ../img/sgov.jpg
    ========================== ============================= ===========================
+   
 Contents:
 
 .. toctree::
