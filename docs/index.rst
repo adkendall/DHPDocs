@@ -5,7 +5,7 @@
 
 Welcome to the Digital Health Platform Documentation
 ====================================================
-.. image:: ../img/logos.jpg
+.. image:: ../img/logos.png
 
 Contents:
 
