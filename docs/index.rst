@@ -10,7 +10,6 @@ Welcome to the Digital Health Platform Documentation
 .. image:: ../img/sgov.jpg
 .. table:: Truth table for "not"
    :widths: auto
-
    ========================== ============================= ==========================
      A                        not A                         qwert
    ========================== ============================= ==========================
