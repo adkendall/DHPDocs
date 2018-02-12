@@ -8,7 +8,15 @@ Welcome to the Digital Health Platform Documentation
 .. image:: ../img/nhss.jpg
 .. image:: ../img/ehealth.png
 .. image:: ../img/sgov.jpg
+.. table:: Truth table for "not"
+   :widths: auto
 
+   ========================== =====
+     A                        not A
+   ========================== =====
+   .. image:: ../img/nhss.jpg True
+   True                       False
+   ========================== =====
 Contents:
 
 .. toctree::
