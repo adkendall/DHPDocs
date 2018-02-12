@@ -8,13 +8,7 @@ Welcome to the Digital Health Platform Documentation
 .. image:: ../img/nhss.jpg
 .. image:: ../img/ehealth.png
 .. image:: ../img/sgov.jpg
-.. table:: Truth table for "not"
-   :widths: auto
-   ==========================  =============================  ==========================
-     A                        not A                           qwert
-   ==========================  =============================  ==========================
-   .. image:: ../img/nhss.jpg .. image:: ../img/ehealth.png   .. image:: ../img/sgov.jpg
-   ==========================  =============================  ===========================
+
    |pic1| any text |pic2|
 
 .. |pic1| image:: ../img/nhss.jpg
