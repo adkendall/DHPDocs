@@ -48,6 +48,10 @@ application by the DHP platform operator. *
 connection during the running of your application. This permission may
 need to be renewed from time to time, and can also be revoked. *
 
+.. figure:: fig1.png
+   :scale: 100 %
+   :alt: Digital Front Door
+
 Figure 1: Digital Front Door
 
 At the technical level the platform uses a set of technologies and
