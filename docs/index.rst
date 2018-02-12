@@ -15,7 +15,13 @@ Welcome to the Digital Health Platform Documentation
    ==========================  =============================  ==========================
    .. image:: ../img/nhss.jpg .. image:: ../img/ehealth.png   .. image:: ../img/sgov.jpg
    ==========================  =============================  ===========================
-   
+   |pic1| any text |pic2|
+
+.. |pic1| image:: ../img/nhss.jpg
+   :width: 45%
+
+.. |pic2| image:: ../img/ehealth.png
+   :width: 45%
 Contents:
 
 .. toctree::
