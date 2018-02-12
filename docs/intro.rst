@@ -49,7 +49,7 @@ connection during the running of your application. This permission may
 need to be renewed from time to time, and can also be revoked. *
 
 .. figure:: ../img/fig1.png
-   :scale: 100 %
+   :scale: 75 %
    :alt: Digital Front Door
 
 Figure 1: Digital Front Door
@@ -74,6 +74,9 @@ It is likely that the integration will make use of an integration engine
 to translate between the native API of your core system and the API
 standards used by the DHP, see Figure 2 below.
 
+.. figure:: ../img/fig2.png
+   :scale: 75 %
+   :alt: Outline platform architecture
 Figure 2: Outline platform architecture
 
 In the language of the platform your core system is referred to as a
