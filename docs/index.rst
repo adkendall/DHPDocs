@@ -6,6 +6,8 @@
 Welcome to the Digital Health Platform Documentation
 ====================================================
 .. image:: ../img/nhss.jpg
+.. image:: ../img/ehealth.png
+.. image:: ../img/sgov.jpg
 
 Contents:
 
