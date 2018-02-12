@@ -1,3 +1,6 @@
+=============
+Introduction
+=============
 This document contains an introductory overview of the Digital Health
 Platform (DHP) in Scotland.
 
