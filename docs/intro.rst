@@ -16,10 +16,6 @@ platform:
    citizen facing service. TPPs may be independent or commissioned by
    public sector agencies.
 
-Contact for enquiries and suggested changes: <email of the platform
-technical lead and/or platform service desk – must be able to fulfil any
-enquiries, if need be via delegation>
-
 (Please note that important platform principles are shown in italics in
 the following text.)
 
@@ -42,11 +38,11 @@ specifications whilst the complexity and detail of public sector systems
 is taken care of behind the scenes.
 
 *In order to connect, there will be an accreditation assessment of the
-application by the DHP platform operator. *
+application by the DHP platform operator.*
 
 *In addition, a service user will need to give explicit permission for a
 connection during the running of your application. This permission may
-need to be renewed from time to time, and can also be revoked. *
+need to be renewed from time to time, and can also be revoked.*
 
 .. figure:: ../img/fig1.png
    :scale: 75 %
@@ -84,12 +80,12 @@ In the language of the platform your core system is referred to as a
 would then also be seen as Consuming Application.
 
 *In order to connect, it is important that you are able to support the
-online channel from a business operation point of view. *
+online channel from a business operation point of view.*
 
 *As a core system owner, your system will generally be trusted by the
 platform. In line with good security practice, access will be limited to
 what is required for a given service and access can be revoked to
-contain any security incidents. *
+contain any security incidents.*
 
 At the technical level you will use a set of technologies and patterns
 that are common on the modern internet to provide access to digital
@@ -120,7 +116,7 @@ appointments.
 
 *By using a given service as CSO or as TPP you enter into a set of
 important commitments (the 'service contract') which is described in the
-service specification. *
+service specification.*
 
 In general, this requires the implementations to be consistent with the
 meanings defined by the service and for the implementations to be backed
