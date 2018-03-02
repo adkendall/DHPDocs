@@ -1,7 +1,7 @@
 =============================
 Appointments Business Service
 =============================
-This document contains the specification for the **Appointments
+This chapter contains the specification for the **Appointments
 Service** on the Digital Health Platform (DHP) in Scotland.
 
 What you can do with this service:
@@ -30,8 +30,6 @@ Content of this document
 |                                   | successful use. Contains          |
 |                                   | important concepts and            |
 |                                   | definitions.                      |
-+===================================+===================================+
-|                                   |                                   |
 +-----------------------------------+-----------------------------------+
 | Technical level specification     | Overview that explains how the    |
 |                                   | service was implemented           |
@@ -63,7 +61,7 @@ core system where appropriate action can be taken.
 
 **By using this service as CSO (Core System Owner) or as TPP (Third
 Party Provider) you enter into a set of important commitments (the
-'service contract'). **
+'service contract').**
 
 **In general, this requires the implementations to be consistent with
 the meanings defined here and for the implementations to be backed by
@@ -71,7 +69,7 @@ safe and effective real-life service fulfilment.**
 
 **CSOs and TPPs must ensure that they post complete and timely
 information that is consistent with the definitions here. Both parties
-are responsible for mapping data if necessary. **
+are responsible for mapping data if necessary.**
 
 **TPPs must ensure that they display and otherwise use information in a
 manner that is consistent with the definitions here (eg only offer
@@ -83,7 +81,7 @@ soon as practical.**
 the service user in a response record.**
 
 **CSOs must ensure that they collect responses and act on service user
-requests in a timely way. A turnaround of less than 24h is preferred. **
+requests in a timely way. A turnaround of less than 24h is preferred.**
 
 **The appointment state reflects a shared record between the core system
 and the service user. Both CSO and TPP are responsible for maintaining
