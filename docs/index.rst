@@ -11,7 +11,7 @@ Welcome to the Digital Health Platform Documentation
 Contents:
 
 .. toctree::
-   :maxdepth: 2
+   :maxdepth: 3
    :glob:
 
    *
