@@ -20,10 +20,6 @@ What you can do with this service:
 Please note that this is not an appointment booking service. Core
 systems perform booking and send appointment notifications.
 
-Contact for enquiries and suggested changes: <email of the platform
-technical lead and/or platform service desk – must be able to fulfil any
-enquiries, if need be via delegation>
-
 Content of this document 
 -------------------------
 
