@@ -1,3 +1,6 @@
+===============================
+Correpsondence Business Service
+===============================
 This document contains the specification for the **Correspondence
 Service** on the Digital Health Platform (DHP) in Scotland.
 
