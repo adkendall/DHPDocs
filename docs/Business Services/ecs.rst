@@ -1,3 +1,6 @@
+=======================================
+Emergency Care Summary Business Service
+=======================================
 This document contains the specification for the **Emergency Care
 Summary Service** on the Digital Health Platform (DHP) in Scotland.
 
