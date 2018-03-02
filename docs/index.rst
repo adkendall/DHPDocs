@@ -11,10 +11,13 @@ Welcome to the Digital Health Platform Documentation
 Contents:
 
 .. toctree::
-   :maxdepth: 3
+   :maxdepth: 2
    
    intro.rst
-   Business Services/appointments.rst
+   Appointments Business Service <Business Services/appointments.rst>
+   Correspondence Business Service <Business Services/correspondence.rst>
+   Forms Business Service <Business Services/forms.rst>
+   ECS Business Service <Business Services/ecs.rst>
 
 
 
