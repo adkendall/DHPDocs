@@ -20,8 +20,8 @@ What you can do with this service:
 Please note that this is not an appointment booking service. Core
 systems perform booking and send appointment notifications.
 
-Content of this document 
--------------------------
+Content of this chapter 
+-----------------------
 
 +-----------------------------------+-----------------------------------+
 | Business level specification      | Read first in order to learn what |
