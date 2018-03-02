@@ -14,10 +14,10 @@ Contents:
    :maxdepth: 2
    
    intro.rst
-   Appointments Business Service <Business Services/appointments.rst>
-   Correspondence Business Service <Business Services/correspondence.rst>
-   Forms Business Service <Business Services/forms.rst>
-   ECS Business Service <Business Services/ecs.rst>
+   Business Services/appointments.rst
+   Business Services/correspondence.rst
+   Business Services/forms.rst
+   Business Services/ecs.rst
 
 
 
