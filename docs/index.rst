@@ -12,9 +12,9 @@ Contents:
 
 .. toctree::
    :maxdepth: 3
-   :glob:
-
-   *
+   
+   intro.rst
+   Business Services/appointments.rst
 
 
 
