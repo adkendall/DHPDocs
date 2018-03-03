@@ -1,6 +1,6 @@
-===============================
+*******************************
 Correspondence Business Service
-===============================
+*******************************
 This chapter contains the specification for the **Correspondence
 Service** on the Digital Health Platform (DHP) in Scotland.
 
@@ -21,7 +21,6 @@ Please note that this is not a general file storage service or document
 management service. Core systems hold the original documents.
 
 Content of this chapter 
--------------------------
 
 +-----------------------------------+-----------------------------------+
 | Business level specification      | Read first in order to learn what |
