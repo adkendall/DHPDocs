@@ -296,20 +296,20 @@ In order to record the status of an appointment correctly, there are two
 fields on the profile that work in combination. The following describes
 how the business states are mapped to FHIR.
 
-+-----------------------+-----------------------+-----------------------+
-| **Business State**    | **Appointment.status* | **Appointment.partici |
-|                       | *                     | pant.status**         |
-+=======================+=======================+=======================+
-| Unacknowledged        | Pending               | Needs-action          |
-+-----------------------+-----------------------+-----------------------+
-| Accepted              | Booked                | Accepted              |
-+-----------------------+-----------------------+-----------------------+
-| Declined              | Pending               | Declined              |
-+-----------------------+-----------------------+-----------------------+
-| RescheduleRequested   | Pending               | Tentative             |
-+-----------------------+-----------------------+-----------------------+
-| Cancelled             | Cancelled             | (any value)           |
-+-----------------------+-----------------------+-----------------------+
++-----------------------+------------------------+------------------------------------+
+| **Business State**    | **Appointment.status** | **Appointment.participant.status** |
+|                       |                        |                                    |
++=======================+========================+====================================+
+| Unacknowledged        | Pending                | Needs-action                       |
++-----------------------+------------------------+------------------------------------+
+| Accepted              | Booked                 | Accepted                           |
++-----------------------+------------------------+------------------------------------+
+| Declined              | Pending                | Declined                           |
++-----------------------+------------------------+------------------------------------+
+| RescheduleRequested   | Pending                | Tentative                          |
++-----------------------+------------------------+------------------------------------+
+| Cancelled             | Cancelled              | (any value)                        |
++-----------------------+------------------------+------------------------------------+
 
 Collecting new service user responses
 -------------------------------------
