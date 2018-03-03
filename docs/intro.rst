@@ -7,11 +7,11 @@ Platform (DHP) in Scotland.
 It is aimed at two types of parties who may want to connect to the
 platform:
 
--  NHS, Local Authority and Government core system owners (CSO) who want
+-  NHS, Local Authority and Government **core system owners (CSO)** who want
    to connect to the platform as a means to reach citizens via online
    channels at the cost of a single integration.
 
--  Third party providers (TPP) who want to connect their own
+-  **Third party providers (TPP)** who want to connect their own
    applications to the platform as a component part of providing a
    citizen facing service. TPPs may be independent or commissioned by
    public sector agencies.
@@ -73,6 +73,7 @@ standards used by the DHP, see Figure 2 below.
 .. figure:: ../img/fig2.png
    :scale: 75 %
    :alt: Outline platform architecture
+   
 Figure 2: Outline platform architecture
 
 In the language of the platform your core system is referred to as a
@@ -104,10 +105,7 @@ Business service specifications
 -------------------------------
 
 The platform supports a set of business services which are specified in
-separate documents.
-
-The library of currently supported services can be found at: <URL of the
-online documentation – in the short term we can share Word documents>
+dedicated chapters.
 
 The service specifications are agnostic with respect to the underlying
 public sector organisations and systems. For example, the appointment
@@ -126,8 +124,7 @@ General platform features
 -------------------------
 
 The platform has a number of features which are available across a
-number of business services. These are described in a separate document
-on technical services.
+number of business services. 
 
 In summary, these features currently cover:
 
@@ -167,10 +164,6 @@ In order to connect to the platform, organisations need to establish a
 business relationship and integrate systems. This is handled on a case
 by case basis and follows the same approach that is currently taken for
 any other kind of business and system integration project.
-
-To support system integration, the technical services document describes
-a few aspects of this which arise in the unique context of this
-platform.
 
 To support the wider service integration, it is necessary that the
 platform operator and respective CSO or TPP join their support processes
