@@ -1,6 +1,6 @@
-=======================================
+***************************************
 Emergency Care Summary Business Service
-=======================================
+***************************************
 This chapter contains the specification for the **Emergency Care
 Summary Service** on the Digital Health Platform (DHP) in Scotland.
 
@@ -19,7 +19,6 @@ Please note that this service is currently aimed at TPPs only and
 reflects records held in the Scottish Emergency Care Summary database.
 
 Content of this chapter 
------------------------
 
 +-----------------------------------+-----------------------------------+
 | Business level specification      | Read first in order to learn what |
