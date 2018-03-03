@@ -1,7 +1,7 @@
 ======================
 Forms Business Service
 ======================
-This document contains the specification for the **Forms Service** on
+This chapter contains the specification for the **Forms Service** on
 the Digital Health Platform (DHP) in Scotland.
 
 What you can do with this service:
@@ -19,11 +19,7 @@ What you can do with this service:
 Please note that at present the service is an early exemplar of one
 specific form only ('About Me').
 
-Contact for enquiries and suggested changes: <email of the platform
-technical lead and/or platform service desk – must be able to fulfil any
-enquiries, if need be via delegation>
-
-Content of this document 
+Content of this chapter 
 -------------------------
 
 +-----------------------------------+-----------------------------------+
@@ -33,8 +29,6 @@ Content of this document
 |                                   | successful use. Contains          |
 |                                   | important concepts and            |
 |                                   | definitions.                      |
-+===================================+===================================+
-|                                   |                                   |
 +-----------------------------------+-----------------------------------+
 | Technical level specification     | Overview that explains how the    |
 |                                   | service was implemented           |
@@ -42,16 +36,9 @@ Content of this document
 |                                   | achieve a successful integration. |
 +-----------------------------------+-----------------------------------+
 
-Additional reference information
---------------------------------
-
-[1] DHP Introduction: A summary of the platform architecture that
-provides the general framework for this service. It is assumed that you
-are familiar with this.
-
-[2] Additional Technical Services: A technical reference that describes
-features which are available across a number of business services.
-Selected aspects of this business service rely on these features.
+It is assumed that you have read the introduction chapter and are 
+familiar with the platform architecture that provides the general 
+framework for this service. 
 
 Business level specification
 ============================
@@ -64,7 +51,7 @@ by a TPP in whatever format is suitable.
 
 **By using this service as CSO (Core System Owner) or as TPP (Third
 Party Provider) you enter into a set of important commitments (the
-'service contract'). **
+'service contract').**
 
 **In general, this requires the implementations to be consistent with
 the meanings defined here and for the implementations to be backed by
@@ -72,7 +59,7 @@ safe and effective real-life service fulfilment.**
 
 **CSOs and TPPs must ensure that they post complete and timely
 information that is consistent with the definitions here. Both parties
-are responsible for mapping data if necessary. **
+are responsible for mapping data if necessary.**
 
 **TPPs must ensure that they display and otherwise use information in a
 manner that is consistent with the definitions here. If a record is
@@ -147,10 +134,7 @@ Technical level specification
 
 The service is implemented via profiles defined on the HL7 FHIR API of
 the platform. Access is secured via the access control engine and token
-service of the platform. See reference [2] for details.
-
-The applicable FHIR Profiles can be found at: <URL of the online
-documentation – in the short term we can share Word documents>
+service of the platform.
 
 It is assumed that the development team has a general understanding of
 the HL7 FHIR specifications. All provisions of HL7 FHIR DSTU 2 [1]_
@@ -174,16 +158,15 @@ The underlying core system or its proxy integration engine needs to
 collect completed forms from the DHP.
 
 This can be done by using a history search with the relevant time period
-in addition to naming the relevant platform profile for the form (see
-reference [2]).
+in addition to naming the relevant platform profile for the form.
 
 Notify and viewed flag
 ----------------------
 
 The service supports a general platform feature that allows a given
 piece of information to be included in the notification feed of the
-service user and tracks whether the user has viewed the record (see
-reference [2] for details). In this instance this applies to a new form
+service user and tracks whether the user has viewed the record. 
+In this instance this applies to a new form
 that was issued for completion.
 
 .. [1]
