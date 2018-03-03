@@ -1,6 +1,6 @@
-=============
+************
 Introduction
-=============
+************
 This document contains an introductory overview of the Digital Health
 Platform (DHP) in Scotland.
 
@@ -20,7 +20,7 @@ platform:
 the following text.)
 
 What you can do with this platform
-----------------------------------
+==================================
 
 **If you are a TPP** connecting to the platform then you can think of
 accessing services via a Digital Front Door, see Figure 1 below.
@@ -102,7 +102,7 @@ you verify their identities on the myaccount system, or if another
 public service has already done so.*
 
 Business service specifications
--------------------------------
+===============================
 
 The platform supports a set of business services which are specified in
 dedicated chapters.
@@ -121,7 +121,7 @@ meanings defined by the service and for the implementations to be backed
 by safe and effective real-life service fulfilment.
 
 General platform features
--------------------------
+=========================
 
 The platform has a number of features which are available across a
 number of business services. 
@@ -158,7 +158,7 @@ systems with the platform, follow the related standards and
 specifications, and implement adaptions such as mapping data.*
 
 Accreditation and connection to the platform
---------------------------------------------
+============================================
 
 In order to connect to the platform, organisations need to establish a
 business relationship and integrate systems. This is handled on a case
