@@ -1,6 +1,6 @@
-=============================
+*****************************
 Appointments Business Service
-=============================
+*****************************
 This chapter contains the specification for the **Appointments
 Service** on the Digital Health Platform (DHP) in Scotland.
 
@@ -21,7 +21,6 @@ Please note that this is not an appointment booking service. Core
 systems perform booking and send appointment notifications.
 
 Content of this chapter 
------------------------
 
 +-----------------------------------+-----------------------------------+
 | Business level specification      | Read first in order to learn what |
