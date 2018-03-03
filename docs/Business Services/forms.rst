@@ -1,6 +1,7 @@
-======================
+**********************
 Forms Business Service
-======================
+**********************
+
 This chapter contains the specification for the **Forms Service** on
 the Digital Health Platform (DHP) in Scotland.
 
@@ -20,7 +21,6 @@ Please note that at present the service is an early exemplar of one
 specific form only ('About Me').
 
 Content of this chapter 
--------------------------
 
 +-----------------------------------+-----------------------------------+
 | Business level specification      | Read first in order to learn what |
