@@ -1,7 +1,7 @@
 ===============================
 Correspondence Business Service
 ===============================
-This document contains the specification for the **Correspondence
+This chapter contains the specification for the **Correspondence
 Service** on the Digital Health Platform (DHP) in Scotland.
 
 What you can do with this service:
@@ -20,11 +20,7 @@ What you can do with this service:
 Please note that this is not a general file storage service or document
 management service. Core systems hold the original documents.
 
-Contact for enquiries and suggested changes: <email of the platform
-technical lead and/or platform service desk – must be able to fulfil any
-enquiries, if need be via delegation>
-
-Content of this document 
+Content of this chapter 
 -------------------------
 
 +-----------------------------------+-----------------------------------+
@@ -34,8 +30,6 @@ Content of this document
 |                                   | successful use. Contains          |
 |                                   | important concepts and            |
 |                                   | definitions.                      |
-+===================================+===================================+
-|                                   |                                   |
 +-----------------------------------+-----------------------------------+
 | Technical level specification     | Overview that explains how the    |
 |                                   | service was implemented           |
@@ -43,16 +37,9 @@ Content of this document
 |                                   | achieve a successful integration. |
 +-----------------------------------+-----------------------------------+
 
-Additional reference information
---------------------------------
-
-[1] DHP Introduction: A summary of the platform architecture that
-provides the general framework for this service. It is assumed that you
-are familiar with this.
-
-[2] Additional Technical Services: A technical reference that describes
-features which are available across a number of business services.
-Selected aspects of this business service rely on these features.
+It is assumed that you have read the introduction chapter and are 
+familiar with the platform architecture that provides the general 
+framework for this service. 
 
 Business level specification
 ============================
@@ -66,14 +53,14 @@ contents via URLs or as binary files in a variety of formats.
 
 **By using this service as CSO (Core System Owner) or as TPP (Third
 Party Provider) you enter into a set of important commitments (the
-'service contract'). **
+'service contract').**
 
 **In general, this requires the implementations to be consistent with
 the meanings defined here and for the implementations to be backed by
 safe and effective real-life service fulfilment.**
 
 **CSOs and TPPs must ensure that they post complete and timely
-information that is consistent with the definitions here. **
+information that is consistent with the definitions here.**
 
 **CSOs and TPPs are responsible for ensuring that binary files that are
 posted as attachments are free from malware.**
@@ -82,7 +69,7 @@ posted as attachments are free from malware.**
 external systems are reputable and accessible over the internet.**
 
 **CSOs and TPPs are responsible for mapping data if necessary and must
-ensure that their binary files only contain appropriate metadata. **
+ensure that their binary files only contain appropriate metadata.**
 
 **CSOs and TPPs must ensure that they display and otherwise use
 information in a manner that is consistent with the definitions here. If
@@ -96,7 +83,7 @@ Information held in a Correspondence record
 -------------------------------------------
 
 +-----------------------------------+-----------------------------------+
-| **Information item**\  [2]_       | **Description**                   |
+| **Information item**\  [1]_       | **Description**                   |
 +===================================+===================================+
 | ServiceUserXRef                   | Reference to the record of the    |
 |                                   | service user where this           |
@@ -171,13 +158,10 @@ Technical level specification
 
 The service is implemented via profiles defined on the HL7 FHIR API of
 the platform. Access is secured via the access control engine and token
-service of the platform. See reference [2] for details.
-
-The applicable FHIR Profiles can be found at: <URL of the online
-documentation – in the short term we can share Word documents>
+service of the platform. 
 
 It is assumed that the development team has a general understanding of
-the HL7 FHIR specifications. All provisions of HL7 FHIR DSTU 2 [3]_
+the HL7 FHIR specifications. All provisions of HL7 FHIR DSTU 2 [2]_
 apply unless changes are described in this document.
 
 The following is additional information to explain key aspects of the
@@ -188,8 +172,8 @@ Notify and viewed flag
 
 The service supports a general platform feature that allows a given
 piece of information to be included in the notification feed of the
-service user and tracks whether the user has viewed the record (see
-reference [2] for details). In this instance this applies to a package
+service user and tracks whether the user has viewed the record. 
+In this instance this applies to a package
 of correspondence that was created.
 
 .. [1]
@@ -197,8 +181,4 @@ of correspondence that was created.
    development.
 
 .. [2]
-   A mechanism to link correspondence to an appointment is under
-   development.
-
-.. [3]
    https://www.hl7.org/fhir/DSTU2/index.html
