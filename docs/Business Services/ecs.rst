@@ -1,7 +1,7 @@
 =======================================
 Emergency Care Summary Business Service
 =======================================
-This document contains the specification for the **Emergency Care
+This chapter contains the specification for the **Emergency Care
 Summary Service** on the Digital Health Platform (DHP) in Scotland.
 
 What you can do with this service:
@@ -18,12 +18,8 @@ What you can do with this service:
 Please note that this service is currently aimed at TPPs only and
 reflects records held in the Scottish Emergency Care Summary database.
 
-Contact for enquiries and suggested changes: <email of the platform
-technical lead and/or platform service desk – must be able to fulfil any
-enquiries, if need be via delegation>
-
-Content of this document 
--------------------------
+Content of this chapter 
+-----------------------
 
 +-----------------------------------+-----------------------------------+
 | Business level specification      | Read first in order to learn what |
@@ -32,8 +28,6 @@ Content of this document
 |                                   | successful use. Contains          |
 |                                   | important concepts and            |
 |                                   | definitions.                      |
-+===================================+===================================+
-|                                   |                                   |
 +-----------------------------------+-----------------------------------+
 | Technical level specification     | Overview that explains how the    |
 |                                   | service was implemented           |
@@ -41,16 +35,9 @@ Content of this document
 |                                   | achieve a successful integration. |
 +-----------------------------------+-----------------------------------+
 
-Additional reference information
---------------------------------
-
-[1] DHP Introduction: A summary of the platform architecture that
-provides the general framework for this service. It is assumed that you
-are familiar with this.
-
-[2] Additional Technical Services: A technical reference that describes
-features which are available across a number of business services.
-Selected aspects of this business service rely on these features.
+It is assumed that you have read the introduction chapter and are 
+familiar with the platform architecture that provides the general 
+framework for this service.
 
 Business level specification
 ============================
@@ -65,7 +52,7 @@ hospital) and that there is in-flight information that is not yet known
 to the GP.
 
 **By using this service as TPP (Third Party Provider) you enter into a
-set of important commitments (the 'service contract'). **
+set of important commitments (the 'service contract').**
 
 **In general, this requires the implementations to be consistent with
 the meanings defined here.**
@@ -74,14 +61,14 @@ the meanings defined here.**
 made by the GP in the practice system.**
 
 **Records will not be transferred if the patient told their GP that he
-or she withdraws consent for their ECS to be shared. **
+or she withdraws consent for their ECS to be shared.**
 
 **The record represents a snapshot valid at the time recorded. The
 snapshot will only be updated when an actual change happened.**
 
 **TPPs must ensure that they display and otherwise use information in a
 manner that is consistent with the definitions here. The TPP is
-responsible for mapping data if necessary. **
+responsible for mapping data if necessary.**
 
 Information held in an ECS record
 ---------------------------------
@@ -154,10 +141,7 @@ Technical level specification
 
 The service is implemented via profiles defined on the HL7 FHIR API of
 the platform. Access is secured via the access control engine and token
-service of the platform. See reference [2] for details.
-
-The applicable FHIR Profiles can be found at: <URL of the online
-documentation – in the short term we can share Word documents>
+service of the platform. 
 
 It is assumed that the development team has a general understanding of
 the HL7 FHIR specifications. All provisions of HL7 FHIR DSTU 2 [1]_
