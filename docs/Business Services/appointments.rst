@@ -37,16 +37,9 @@ Content of this chapter
 |                                   | achieve a successful integration. |
 +-----------------------------------+-----------------------------------+
 
-Additional reference information
---------------------------------
-
-[1] DHP Introduction: A summary of the platform architecture that
-provides the general framework for this service. It is assumed that you
-are familiar with this.
-
-[2] Additional Technical Services: A technical reference that describes
-features which are available across a number of business services.
-Selected aspects of this business service rely on these features.
+It is assumed that you have read the introduction chapter and are 
+familiar with the platform architecture that provides the general 
+framework for this service.
 
 Business level specification
 ============================
@@ -92,7 +85,7 @@ Information held in an Appointment record
 -----------------------------------------
 
 +-----------------------------------+-----------------------------------+
-| **Information item**\  [2]_       | **Description**                   |
+| **Information item**\  [1]_       | **Description**                   |
 +===================================+===================================+
 | ServiceUserXRef                   | Reference to the record of the    |
 |                                   | service user where this           |
@@ -201,7 +194,7 @@ Appointment states
 |                                   | appointment.                      |
 +-----------------------------------+-----------------------------------+
 
- 'Readonly' appointments
+'Readonly' appointments
 ------------------------
 
 The appointment record includes a ViewOnly flag which a CSO can use as
@@ -271,13 +264,10 @@ Technical level specification
 
 The service is implemented via profiles defined on the HL7 FHIR API of
 the platform. Access is secured via the access control engine and token
-service of the platform. See reference [2] for details.
-
-The applicable FHIR Profiles can be found at: <URL of the online
-documentation – in the short term we can share Word documents>
+service of the platform. 
 
 It is assumed that the development team has a general understanding of
-the HL7 FHIR specifications. All provisions of HL7 FHIR DSTU 2 [3]_
+the HL7 FHIR specifications. All provisions of HL7 FHIR DSTU 2 [2]_
 apply unless changes are described in this document.
 
 The following is additional information to explain key aspects of the
@@ -329,8 +319,7 @@ to collect relevant service user responses.
 
 This can be done by using a history search with the relevant time period
 and information known about the service user identity and/or appointment
-system, in addition to naming the relevant platform profile (see
-reference [2]).
+system, in addition to naming the relevant platform profile.
 
 Notify and viewed flag
 ----------------------
@@ -346,8 +335,4 @@ appointment record that was created or updated.
    development.
 
 .. [2]
-   A mechanism to attach supporting documents to an appointment is under
-   development.
-
-.. [3]
    https://www.hl7.org/fhir/DSTU2/index.html
