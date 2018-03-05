@@ -48,13 +48,15 @@ DhpAppointment
 .. raw:: xml
    :file: Profiles/DhpAppointment.structuredefinition.xml
 
-FHIR Profile :download:'https://digitalhealthplatform.scot/fhir/DhpAppointment <Profiles/DhpAppointment.structuredefinition.xml>`
+FHIR Profile :download:`https://digitalhealthplatform.scot/fhir/DhpAppointment <Profiles/DhpAppointment.structuredefinition.xml>`
 
-test1 :download:'https://digitalhealthplatform.scot/fhir/DhpAppointment <Profiles/DhpAppointment.structuredefinition.xml>`
+test1 :download:`https://digitalhealthplatform.scot/fhir/DhpAppointment <Profiles/DhpAppointment.structuredefinition.xml>`
 
-test2 :download:'Profiles/DhpAppointment.structuredefinition.xml <Profiles/DhpAppointment.structuredefinition.xml>`
+test2 :download:`Profiles/DhpAppointment.structuredefinition.xml <Profiles/DhpAppointment.structuredefinition.xml>`
 
-test3 :download:'DhpAppointment.structuredefinition.xml <Profiles/DhpAppointment.structuredefinition.xml>`
+test3 :download:`DhpAppointment.structuredefinition.xml <Profiles/DhpAppointment.structuredefinition.xml>`
+
+test4 :download:`DhpAppointment <Profiles/DhpAppointment.structuredefinition.xml>`
 
 here is a pdf file :download:`pdf <doc/mypdf.pdf>`
 
