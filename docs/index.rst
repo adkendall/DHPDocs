@@ -18,6 +18,8 @@ Contents:
    Business Services/correspondence.rst
    Business Services/forms.rst
    Business Services/ecs.rst
+   
+   FHIR Implementation/fhir_appointments.rst
 
 
 
