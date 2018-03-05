@@ -46,7 +46,10 @@ DhpAppointment
 .. include:: FHIR Implementation/Profiles/DhpAppointment.structuredefinition.xml
 
 .. raw:: xml
-   :file: FHIR Implementation/Profiles/DhpAppointment.structuredefinition.xml
+   :file: Profiles/DhpAppointment.structuredefinition.xml
+
+here is a pdf file :download:`pdf <Profiles/DhpAppointment.structuredefinition.xml>`
+
 
 **Description**: The DhpAppointment resource is used to capture
 appointment notification records for a patient. The term appointment
