@@ -48,7 +48,7 @@ DhpAppointment
 .. raw:: xml
    :file: Profiles/DhpAppointment.structuredefinition.xml
 
-FHIR Profile :download:`https://digitalhealthplatform.scot/fhir/DhpAppointment <Profiles/DhpAppointment.structuredefinition.xml>`
+**FHIR Profile:** :download:`https://digitalhealthplatform.scot/fhir/DhpAppointment <Profiles/DhpAppointment.structuredefinition.xml>`
 
 test1 :download:`https://digitalhealthplatform.scot/fhir/DhpAppointment <Profiles/DhpAppointment.structuredefinition.xml>`
 
