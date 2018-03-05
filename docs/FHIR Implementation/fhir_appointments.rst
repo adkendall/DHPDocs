@@ -37,29 +37,9 @@ authenticated user.
 DhpAppointment
 ~~~~~~~~~~~~~~
 
-**Url**: https://digitalhealthplatform.scot/fhir/DhpAppointment
-
-**Base Fhir Resource:** http://hl7.org/fhir/DSTU2/appointment.html
-
-**FHIR Profile:** ..Profiles/DhpAppointment.structuredefinition.xml
-
-.. include:: FHIR Implementation/Profiles/DhpAppointment.structuredefinition.xml
-
-.. raw:: xml
-   :file: Profiles/DhpAppointment.structuredefinition.xml
-
 **FHIR Profile:** :download:`https://digitalhealthplatform.scot/fhir/DhpAppointment <Profiles/DhpAppointment.structuredefinition.xml>`
 
-test1 :download:`https://digitalhealthplatform.scot/fhir/DhpAppointment <Profiles/DhpAppointment.structuredefinition.xml>`
-
-test2 :download:`Profiles/DhpAppointment.structuredefinition.xml <Profiles/DhpAppointment.structuredefinition.xml>`
-
-test3 :download:`DhpAppointment.structuredefinition.xml <Profiles/DhpAppointment.structuredefinition.xml>`
-
-test4 :download:`DhpAppointment <Profiles/DhpAppointment.structuredefinition.xml>`
-
-here is a pdf file :download:`pdf <doc/mypdf.pdf>`
-
+**Base Fhir Resource:** http://hl7.org/fhir/DSTU2/appointment.html
 
 **Description**: The DhpAppointment resource is used to capture
 appointment notification records for a patient. The term appointment
