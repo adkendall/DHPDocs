@@ -61,7 +61,7 @@ correctly.
 *A myaccount authentication prompt will be presented by the platform
 when a user is going through the process of approving a connection.*
 
-**If you are a CSO** connecting to the platform then you can think of a
+**If you are a CSO** connecting to the platform then you can think of the DHP as a
 special type of national core system that lets you add a range of online
 channels to your system, and lets you support associated innovation at
 the cost of a single integration.
