@@ -1,0 +1,74 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<StructureDefinition xmlns="http://hl7.org/fhir">
+  <meta>
+    <lastUpdated value="2017-12-04T21:27:32.364+00:00" />
+  </meta>
+  <url value="https://digitalhealthplatform.scot/fhir/DhpAppointmentResponse" />
+  <name value="DhpAppointmentResponse" />
+  <status value="draft" />
+  <date value="2017-12-04T16:39:30.2988448Z" />
+  <description value="Records a status change request. DhpAppointmentResponses can trigger an update in the core appointment system either electronically (using push notifications or history based polling) or with manual intervention using an administration application." />
+  <fhirVersion value="1.0.2" />
+  <kind value="resource" />
+  <constrainedType value="AppointmentResponse" />
+  <abstract value="false" />
+  <base value="http://hl7.org/fhir/StructureDefinition/AppointmentResponse" />
+  <differential>
+    <element>
+      <path value="AppointmentResponse" />
+    </element>
+    <element>
+      <path value="AppointmentResponse.identifier" />
+      <short value="Core system unique appointment identifier" />
+      <definition value="If the DhpAppointment that this response is replying to had a core system unique identifier specified, then it is copied here. The core system appointment identifier is a system+value pair uniquely identifying the appointment in the originating core system. system is in the format https://digitalhealthplatform.scot/fhir/coresystems/{system identifier} e.g. &quot;https://digitalhealthplatform.scot/fhir/coresystems/ggctrak&quot;" />
+    </element>
+    <element>
+      <path value="AppointmentResponse.identifier.use" />
+      <max value="0" />
+    </element>
+    <element>
+      <path value="AppointmentResponse.identifier.type" />
+      <max value="0" />
+    </element>
+    <element>
+      <path value="AppointmentResponse.identifier.period" />
+      <max value="0" />
+    </element>
+    <element>
+      <path value="AppointmentResponse.identifier.assigner" />
+      <max value="0" />
+    </element>
+    <element>
+      <path value="AppointmentResponse.start" />
+      <definition value="Start and end are not specified as specific alternate dates cannot be requested." />
+      <max value="0" />
+    </element>
+    <element>
+      <path value="AppointmentResponse.end" />
+      <definition value="Start and end are not specified as specific alternate dates cannot be requested." />
+      <max value="0" />
+    </element>
+    <element>
+      <path value="AppointmentResponse.participantType" />
+      <max value="0" />
+    </element>
+    <element>
+      <path value="AppointmentResponse.actor" />
+      <short value="Patient" />
+      <definition value="Mandatory and must be the Patient reference specified in the appointment being responded to." />
+      <min value="1" />
+      <type>
+        <code value="Reference" />
+        <profile value="http://hl7.org/fhir/StructureDefinition/Patient" />
+      </type>
+    </element>
+    <element>
+      <path value="AppointmentResponse.participantStatus" />
+      <definition value="Participation status of the patient. Valid values from http://hl7.org/fhir/ValueSet/participantstatus are accepted, declined and tentative which is interpreted as 'reschedule requested' and accompanied by optional comments - for example “I’m always unavailable on Mondays. Can I please have an appointment on a different day”. &#xD;&#xA;&#xD;&#xA;Start and end are not specified as specific alternate dates cannot be requested.&#xD;&#xA;&#xD;&#xA;When a DhpAppointmentResponse is created, the participant and overall status of the DhpAppointment must also be updated accordingly within a transaction.&#xD;&#xA;&#xD;&#xA;Participant status on the appointment also includes needs-action, which indicates that the patient has not yet responded and so this status will never appear in DhpAppointmentResponse.&#xD;&#xA;" />
+    </element>
+    <element>
+      <path value="AppointmentResponse.comment" />
+      <comments value="A comment which is presented to the administrator who will reschedule or cancel the appointment.&#xD;&#xA;This comment is particularly important when the responder is requesting another time to indicate unavailability." />
+    </element>
+  </differential>
+</StructureDefinition>

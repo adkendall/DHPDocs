@@ -1,0 +1,153 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<StructureDefinition xmlns="http://hl7.org/fhir">
+  <meta>
+    <lastUpdated value="2017-12-06T11:19:25.842+00:00" />
+    <tag>
+      <code value="1" />
+      <display value="inform-subject" />
+    </tag>
+  </meta>
+  <url value="https://digitalhealthplatform.scot/fhir/DhpAppointment" />
+  <version value="0.1" />
+  <name value="DhpAppointment" />
+  <status value="draft" />
+  <date value="2017-10-03T15:07:53.4100414+01:00" />
+  <description value="The DhpAppointment resource is used to capture appointment notification records for a patient. The term appointment notification is adopted to differentiate these records from actual appointments which are generated and stored in the core systems. Appointment notifications provide a snapshot in time of a subset of data from an appointment as it was generated in a core system. Citizens can update their participant status (accept | decline | tentative) and this is (optionally) fed back to the originating core system." />
+  <fhirVersion value="1.0.2" />
+  <kind value="resource" />
+  <constrainedType value="Appointment" />
+  <abstract value="false" />
+  <base value="http://hl7.org/fhir/StructureDefinition/Appointment" />
+  <differential>
+    <element>
+      <path value="Appointment" />
+    </element>
+    <element>
+      <path value="Appointment.identifier" />
+      <slicing>
+        <discriminator value="system" />
+        <rules value="open" />
+      </slicing>
+      <max value="1" />
+    </element>
+    <element>
+      <path value="Appointment.identifier" />
+      <name value="CorrelationIdentifier" />
+      <short value="Core system unique appointment identifier" />
+      <definition value="A system+value pair uniquely identifiying the appointment in the originating core system. system is in the format https://digitalhealthplatform.scot/fhir/coresystems/{system identifier}  e.g. &quot;https://digitalhealthplatform.scot/fhir/coresystems/ggctrak&quot;" />
+      <max value="1" />
+    </element>
+    <element>
+      <path value="Appointment.identifier.use" />
+      <max value="0" />
+    </element>
+    <element>
+      <path value="Appointment.identifier.type" />
+      <max value="0" />
+    </element>
+    <element>
+      <path value="Appointment.identifier.period" />
+      <max value="0" />
+    </element>
+    <element>
+      <path value="Appointment.identifier.assigner" />
+      <max value="0" />
+    </element>
+    <element>
+      <path value="Appointment.identifier" />
+      <name value="OtherIdentifiers" />
+      <max value="1" />
+    </element>
+    <element>
+      <path value="Appointment.status" />
+      <short value="pending | booked | cancelled" />
+      <definition value="The overall status of the Appointment. Each of the participants has their own participation status which indicates their involvement in the process, however this status indicates the shared status. Any FHIR status is valid, however, only pending, booked and cancelled are currently acted upon. Any other status is not expected and will be ignored in the platform." />
+    </element>
+    <element>
+      <path value="Appointment.type.coding" />
+      <max value="1" />
+    </element>
+    <element>
+      <path value="Appointment.priority" />
+      <max value="0" />
+    </element>
+    <element>
+      <path value="Appointment.description" />
+      <min value="1" />
+    </element>
+    <element>
+      <path value="Appointment.start" />
+      <min value="1" />
+    </element>
+    <element>
+      <path value="Appointment.slot" />
+      <max value="0" />
+    </element>
+    <element>
+      <path value="Appointment.comment" />
+      <definition value="Comments added by the service at the time the appointment is created, updated or cancelled. Comments must always append rather than overwrite previous comments and include a date/time when the comment was appended. Citizen comments are not added here but on the corresponding AppointmentResponse" />
+    </element>
+    <element>
+      <path value="Appointment.participant" />
+      <slicing>
+        <discriminator value="actor" />
+        <rules value="open" />
+      </slicing>
+    </element>
+    <element>
+      <path value="Appointment.participant" />
+      <name value="Citizen" />
+      <short value="The citizen for whom the appointment has been scheduled" />
+      <definition value="A Patient resource which identifies the citizen for whom the appointment has been scheduled. A DhpAppointment can have any number of participants but one must be a reference to the citizen's own Patient resource." />
+      <max value="1" />
+      <mustSupport value="true" />
+    </element>
+    <element>
+      <path value="Appointment.participant.type" />
+      <max value="0" />
+    </element>
+    <element>
+      <path value="Appointment.participant.actor" />
+      <short value="Patient resource" />
+      <definition value="A Patient resource which identifies the citizen for whom the appointment has been scheduled" />
+      <min value="1" />
+      <type>
+        <code value="Reference" />
+        <profile value="http://hl7.org/fhir/StructureDefinition/Patient" />
+        <aggregation value="referenced" />
+      </type>
+    </element>
+    <element>
+      <path value="Appointment.participant.required" />
+      <fixedCode value="required" />
+    </element>
+    <element>
+      <path value="Appointment.participant" />
+      <name value="OtherParticipants" />
+      <definition value="DhpAppointments must contain one participant of type Patient. Other participants are optional but if included must be added as contained resources whether Practitioner, RelatedPerson, Device, HealthCareService or Location." />
+    </element>
+    <element>
+      <path value="Appointment.participant.actor" />
+      <type>
+        <code value="Reference" />
+        <profile value="http://hl7.org/fhir/StructureDefinition/Practitioner" />
+      </type>
+      <type>
+        <code value="Reference" />
+        <profile value="http://hl7.org/fhir/StructureDefinition/RelatedPerson" />
+      </type>
+      <type>
+        <code value="Reference" />
+        <profile value="http://hl7.org/fhir/StructureDefinition/Device" />
+      </type>
+      <type>
+        <code value="Reference" />
+        <profile value="http://hl7.org/fhir/StructureDefinition/HealthcareService" />
+      </type>
+      <type>
+        <code value="Reference" />
+        <profile value="http://hl7.org/fhir/StructureDefinition/Location" />
+      </type>
+    </element>
+  </differential>
+</StructureDefinition>
