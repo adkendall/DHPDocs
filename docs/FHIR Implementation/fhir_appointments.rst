@@ -2,24 +2,6 @@
 Appointments Service FHIR Implementation
 ========================================
 
-Figures
-=======
-
-Screenshots of element trees as displayed in Forge profile editor are
-provided. **Bold** items are mandatory, [STRIKEOUT:strikethrough]
-elements have cardinality 0..0 and so have been
-`profiled <http://hl7.org/fhir/DSTU2/profiling.html>`__ out, the blue
-pie symbol indicates where
-`slices <http://hl7.org/fhir/DSTU2/profiling.html#slicing>`__ have been
-added and the yellow fountain pen indicates modified elements.
-
-`Figure 1 DhpAppointment Element Tree 3 <#_Ref500173783>`__
-
-`Figure 2 DhpAppointmentResponse Element Tree 5 <#_Toc500245934>`__
-
-`Figure 3 DhpAppointmentResponseTransaction Element Tree
-7 <#_Toc500245935>`__
-
 System Overview
 ---------------
 
