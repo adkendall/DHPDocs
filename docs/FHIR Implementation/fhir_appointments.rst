@@ -50,9 +50,11 @@ DhpAppointment
 
 FHIR Profile :download:'https://digitalhealthplatform.scot/fhir/DhpAppointment <Profiles/DhpAppointment.structuredefinition.xml>`
 
-download:'https://digitalhealthplatform.scot/fhir/DhpAppointment <Profiles/DhpAppointment.structuredefinition.xml>`
+test1 :download:'https://digitalhealthplatform.scot/fhir/DhpAppointment <Profiles/DhpAppointment.structuredefinition.xml>`
 
-download:'Profiles/DhpAppointment.structuredefinition.xml <Profiles/DhpAppointment.structuredefinition.xml>`
+test2 :download:'Profiles/DhpAppointment.structuredefinition.xml <Profiles/DhpAppointment.structuredefinition.xml>`
+
+here is a pdf file :download:`pdf <doc/mypdf.pdf>`
 
 
 **Description**: The DhpAppointment resource is used to capture
