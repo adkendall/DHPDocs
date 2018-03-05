@@ -54,6 +54,8 @@ test1 :download:'https://digitalhealthplatform.scot/fhir/DhpAppointment <Profile
 
 test2 :download:'Profiles/DhpAppointment.structuredefinition.xml <Profiles/DhpAppointment.structuredefinition.xml>`
 
+test3 :download:'DhpAppointment.structuredefinition.xml <Profiles/DhpAppointment.structuredefinition.xml>`
+
 here is a pdf file :download:`pdf <doc/mypdf.pdf>`
 
 
