@@ -5,7 +5,7 @@ Appointments Service FHIR Implementation
 System Overview
 ---------------
 
-.. figure:: ../img/Appointments Business Service.png
+.. figure:: ../img/AppointmentsBusService.png
    :scale: 75 %
    :alt: Appointments Business Service
 
