@@ -2,14 +2,14 @@
 Appointments Service FHIR Implementation
 ========================================
 
-System Overview
----------------
+
 
 .. figure:: ../../img/AppointmentsBusService.png
-   :scale: 75 %
+   :scale: 50 %
    :alt: Appointments Business Service
 
 Figure: Appointments Business Service
+
 
 The appointments service provides an API for maintaining notifications
 of appointments in the PHF. It is not an appointment booking service;
