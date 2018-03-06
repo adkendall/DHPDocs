@@ -21,7 +21,9 @@ system where appropriate action can be taken.
 
 For a business level description of the appointments service see :doc:`../Business Services/appointments.rst <../Business Services/appointments.rst>`
 
-:doc:`../Business Services/appointments.rst`
+doclink :doc:`fhir_correspendence.rst`
+
+anylink :any:`fhir_correspendence.rst`
 
 FHIR Profiles
 -------------
