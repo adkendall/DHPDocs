@@ -73,10 +73,6 @@ definition.
 | (Slice of group.question)         | "I would like you to know".                       |
 |                                   | answer type = valueString                         |
 +-----------------------------------+---------------------------------------------------+
-| Person who knows me best          | Mandatory. Text is fixed value                    |
-| (Slice of group.question)         | "Person who knows me best".                       |
-|                                   | answer type = valueString                         |
-+-----------------------------------+---------------------------------------------------+
 
 **FHIR Interactions**
 
@@ -84,81 +80,38 @@ definition.
 | **Scope**             | **Interactions**      | **Constraints**       |
 +=======================+=======================+=======================+
 | phfapi.admin          | create, read, update, | none                  |
-|                       | delete, create        |                       |
+|                       | delete                |                       |
 +-----------------------+-----------------------+-----------------------+
-| phfapi.appointments   | read, update, search  | Citizen (i.e. a       |
-|                       |                       | participant of type   |
-|                       |                       | Patient) must         |
-|                       |                       | reference the Patient |
-|                       |                       | resource of the       |
-|                       |                       | authorised user.      |
-+-----------------------+-----------------------+-----------------------+
+
 
 Usage Scenarios
 ---------------
 
-New Appointment
+Create Form
 ~~~~~~~~~~~~~~~
 
-+-----------------------------------+-----------------------------------+
-| Actor                             | Core Appointment system (via the  |
-|                                   | IH)                               |
-+===================================+===================================+
-| Interaction                       | POST {fhir base}/Appointment      |
-+-----------------------------------+-----------------------------------+
-| Mandatory Requirements            | 1) `https://digitalhealthplatform |
-|                                   | .scot/fhir/DhpAppointment         |
-|                                   |    included in                    |
-|                                   |    meta.profile <https://digitalh |
-|                                   | ealthplatform.scot/fhir/DhpAppoin |
-|                                   | tment%20included%20in%20meta.prof |
-|                                   | ile>`__                           |
-|                                   |                                   |
-|                                   | 2) status = pending               |
-|                                   |                                   |
-|                                   | 3) description = brief subject    |
-|                                   |    line                           |
-|                                   |                                   |
-|                                   | 4) start = appointment start      |
-|                                   |    date/time                      |
-|                                   |                                   |
-|                                   | 5) At least one participant of    |
-|                                   |    type Patient which is          |
-|                                   |    reference to the Patient       |
-|                                   |    resource of the person for     |
-|                                   |    whom the appointment has been  |
-|                                   |    made.                          |
-|                                   |                                   |
-|                                   | 6) patient participant status =   |
-|                                   |    needs-action                   |
-|                                   |                                   |
-|                                   | 7) inform-subject meta tag added  |
-|                                   |    as per Notifications Service   |
-|                                   |    profile                        |
-+-----------------------------------+-----------------------------------+
-| Optional                          | 1) Correlation identifier added   |
-|                                   |    (desirable)                    |
-|                                   |                                   |
-|                                   | 2) Additional business            |
-|                                   |    identifiers                    |
-|                                   |                                   |
-|                                   | 3) Additional participants        |
-|                                   |    (`Practitioner <http://hl7.org |
-|                                   | /fhir/DSTU2/practitioner.html>`__ |
-|                                   |  | `RelatedPerson <http://hl7.org |
-|                                   | /fhir/DSTU2/relatedperson.html>`_ |
-|                                   | _ | `Device <http://hl7.org/fhir/ |
-|                                   | DSTU2/device.html>`__ | `Healthca |
-|                                   | reService <http://hl7.org/fhir/DS |
-|                                   | TU2/healthcareservice.html>`__\ \ |
-|                                   | | \ `Location <http://hl7.org/fhi |
-|                                   | r/DSTU2/location.html>`__)        |
-|                                   |    added as contained resources   |
-|                                   |                                   |
-|                                   | 4) Any other attributes inherited |
-|                                   |    from the base resource which   |
-|                                   |    have not been profiled out.    |
-+-----------------------------------+-----------------------------------+
++-----------------------------------+-----------------------------------------------------------------+
+| Actor                             | Care Organisation                                               |
++===================================+=================================================================+
+| Interaction                       | POST {fhir base}/QuestionnaireResponse                          |
++-----------------------------------+-----------------------------------------------------------------+
+| Mandatory Requirements            | 1) ``https://digitalhealthplatform.scot/fhir/DhpAppointment``   | 
+|                                   |      included in meta.profile                                   |
+|                                   |                                                                 |
+|                                   | 2) subject = Patient who is the subject of the questions        |
+|                                   |                                                                 |
+|                                   | 3) status = in-progress                                         |
+|                                   |                                                                 |                                |
+|                                   | 4) correct questions defined as per profile definition          |
+|                                   |                                                                 |
+|                                   | 5) inform-subject meta tag added                                |
+|                                   |    as per Notifications Service                                 |
+|                                   |    profile                                                      |
++-----------------------------------+-----------------------------------------------------------------+
+| Optional                          | 1) Any other attributes inherited                               |
+|                                   |    from the base resource which                                 |
+|                                   |    have not been profiled out.                                  |
++-----------------------------------+-----------------------------------------------------------------+
 
 Update Appointment
 ~~~~~~~~~~~~~~~~~~
