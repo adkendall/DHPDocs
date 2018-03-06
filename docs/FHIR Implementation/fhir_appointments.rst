@@ -25,6 +25,8 @@ doclink :doc:`fhir_correspondence.rst`
 
 anylink :any:`fhir_correspondence.rst`
 
+Click clink here `Appointments Business Service`_.
+
 FHIR Profiles
 -------------
 
