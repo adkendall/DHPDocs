@@ -92,7 +92,7 @@ Create Form
 
 +-----------------------------------+-----------------------------------------------------------------+
 | Actor                             | Care Organisation                                               |
-+===================================+=================================================================+
++-----------------------------------------------------------------------------------------------------+
 | Interaction                       | POST {fhir base}/QuestionnaireResponse                          |
 +-----------------------------------+-----------------------------------------------------------------+
 | Mandatory Requirements            | 1) ``https://digitalhealthplatform.scot/fhir/DhpAppointment``   | 
@@ -101,7 +101,7 @@ Create Form
 |                                   | 2) subject = Patient who is the subject of the questions        |
 |                                   |                                                                 |
 |                                   | 3) status = in-progress                                         |
-|                                   |                                                                 |                                |
+|                                   |                                                                 |                                
 |                                   | 4) correct questions defined as per profile definition          |
 |                                   |                                                                 |
 |                                   | 5) inform-subject meta tag added                                |
