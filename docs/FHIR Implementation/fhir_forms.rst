@@ -173,8 +173,8 @@ Search (Poll for updates)
 | Interaction                       | GET {fhir base}/QuestionnaireResponse                                 |
 +-----------------------------------+-----------------------------------------------------------------------+
 | Parameters                        | _profile=``https://digitalhealthplatform.scot/fhir/AboutMeResponse``  |
-|                                   | status=completed
-|                                   | _lastUpdated=gt{datetime of last poll}
+|                                   | status=completed                                                      |
+|                                   | _lastUpdated=gt{datetime of last poll}                                |
 +-----------------------------------+-----------------------------------------------------------------------+
 | Comments                          | Used by the party which issued the form to poll for updates.          |
 |                                   | Forms with status=completed that have been updated since the last poll| 
