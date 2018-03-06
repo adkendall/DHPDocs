@@ -8,7 +8,7 @@ Appointments Service FHIR Implementation
    :scale: 50 %
    :alt: Appointments Business Service
 
-Figure: Appointments Business Service
+Figure1: Appointments Business Service
 
 
 The appointments service provides an API for maintaining notifications
@@ -19,17 +19,19 @@ record the citizen’s response to an appointment notification (accepted,
 declined, tentative) and these responses are relayed back to the core
 system where appropriate action can be taken.
 
+For a business level description of the appointments service see :doc:`../Business Services/appointments.rst`
+
 FHIR Profiles
 -------------
 
-FHIR Profiles have been created and are included as an appendix. The
+FHIR Profiles have been created and are available to download from this page. The
 Access Control Engine (ACE) in the PHF uses the profile, which must be
 specified in metadata, to make access control decisions based on scopes
 contained within the OAuth2 Access Token. There are two relevant scopes
 in the context of appointments: The first is **phfapi.admin** which
 gives full access to the PHF and is used by the Integration Hub for CRUD
 operations on appointments for any patient. The second is
-**phfapi.appointments** which is used by the CA to respond and update
+**phfapi.appointments** which is not currently used but is intended to for use by a CA to respond to, and update
 the status of appointments; this is limited access scope which grants
 only the permitted operations for appointments relating to the
 authenticated user.
@@ -50,9 +52,11 @@ from an appointment as it was generated in a core system. Citizens can
 update their participant status (accept \| decline \| tentative) and
 this is (optionally) fed back to the originating core system.
 
-|image1|
+.. figure:: ../../img/DhpAppointment_forge.png
+   :scale: 50 %
+   :alt: DhpAppointment Element Tree
 
-Figure 1 DhpAppointment Element Tree
+Figure2: DhpAppointment Element Tree
 
 The following table is a `differential
 statement <http://hl7.org/fhir/DSTU2/profiling.html#snapshot>`__ which
@@ -144,7 +148,7 @@ definition.
 DhpAppointmentResponse
 ~~~~~~~~~~~~~~~~~~~~~~
 
-**Url**: https://digitalhealthplatform.scot/fhir/DhpAppointmentResponse
+**FHIR Profile:** :download:`https://digitalhealthplatform.scot/fhir/DhpAppointmentResponse <Profiles/DhpAppointmentResponse.structuredefinition.xml>`
 
 **Base Fhir Resource:**
 http://hl7.org/fhir/DSTU2/appointmentresponse.html
@@ -155,9 +159,11 @@ system either electronically (using push notifications or history based
 polling) or with manual intervention using an administration
 application.
 
-|image2|
+.. figure:: ../../img/DhpAppointmentResponse_forge.png
+   :scale: 50 %
+   :alt: DhpAppointmentResponse Element Tree
 
-Figure 2 DhpAppointmentResponse Element Tree
+Figure3: DhpAppointmentResponse Element Tree
 
 The following table is a `differential
 statement <http://hl7.org/fhir/DSTU2/profiling.html#snapshot>`__ which
@@ -260,8 +266,7 @@ structure definition.
 DhpAppointmentResponseTransaction
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-**Url**:
-https://digitalhealthplatform.scot/fhir/DhpAppointmentResponseTransaction
+**FHIR Profile:** :download:`https://digitalhealthplatform.scot/fhir/DhpAppointmentResponseTransaction <Profiles/DhpAppointmentResponseTransaction.structuredefinition.xml>`
 
 **Base Fhir Resource:** http://hl7.org/fhir/DSTU2/bundle.html
 
@@ -270,9 +275,11 @@ creating a new DhpAppointmentResponse and b) updating the overall status
 of the DhpAppointment. DhpAppointmentResponseTransaction provides a
 means to apply both in a single atomic operation.
 
-|image3|
+.. figure:: ../../img/DhpAppointmentResponseTransaction_forge.png
+   :scale: 50 %
+   :alt: DhpAppointmentResponseTransaction Element Tree
 
-Figure 3 DhpAppointmentResponseTransaction Element Tree
+Figure4: DhpAppointmentResponseTransaction Element Tree
 
 The following table is a `differential
 statement <http://hl7.org/fhir/DSTU2/profiling.html#snapshot>`__ which
@@ -653,28 +660,20 @@ Summary of business rules for allowed responses
 Appendix I – FHIR Profiles
 --------------------------
 
-Download Forge from https://simplifier.net/forge/download to view these
-profiles.
+:download:`https://digitalhealthplatform.scot/fhir/DhpAppointment <Profiles/DhpAppointment.structuredefinition.xml>`
+:download:`https://digitalhealthplatform.scot/fhir/DhpAppointmentResponse <Profiles/DhpAppointmentResponse.structuredefinition.xml>`
+:download:`https://digitalhealthplatform.scot/fhir/DhpAppointmentResponseTransaction <Profiles/DhpAppointmentResponseTransaction.structuredefinition.xml>`
 
-Appendix II – Examples
+Download Forge from https://simplifier.net/forge/download to view these profiles.
+
+Examples
 ----------------------
 
 tbc
 
-Appendix IV – C# Examples
+C# Examples
 -------------------------
 
 tbc
 
-.. |image0| image:: media/image1.png
-   :width: 6.26806in
-   :height: 1.10208in
-.. |image1| image:: media/image2.png
-   :width: 5.75in
-   :height: 6.33333in
-.. |image2| image:: media/image3.png
-   :width: 5.975in
-   :height: 4.73333in
-.. |image3| image:: media/image4.png
-   :width: 5.625in
-   :height: 6.46667in
+
