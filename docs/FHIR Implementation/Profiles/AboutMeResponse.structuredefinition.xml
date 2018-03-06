@@ -1,0 +1,144 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<StructureDefinition xmlns="http://hl7.org/fhir">
+  <meta>
+    <lastUpdated value="2018-03-06T19:58:12.264+00:00" />
+  </meta>
+  <url value="https://digitalhealthplatform.scot/fhir/DhpAboutMeResponse" />
+  <name value="DhpAboutMeResponse" />
+  <status value="draft" />
+  <date value="2017-11-22T04:53:50.680216Z" />
+  <description value="QuestionnaireResponse profile with set questions relating to the 'About Me' form used within the Patient Portal PoV project. Resources conforming to this profile are created when the Patient completes the About Me form page in the Portal. The resources are then transferred to SCI Store for sharing with relevant clinicians." />
+  <fhirVersion value="1.0.2" />
+  <kind value="resource" />
+  <constrainedType value="QuestionnaireResponse" />
+  <abstract value="false" />
+  <base value="http://hl7.org/fhir/StructureDefinition/QuestionnaireResponse" />
+  <differential>
+    <element>
+      <path value="QuestionnaireResponse" />
+    </element>
+    <element>
+      <path value="QuestionnaireResponse.questionnaire" />
+      <max value="0" />
+    </element>
+    <element>
+      <path value="QuestionnaireResponse.author" />
+      <max value="0" />
+    </element>
+    <element>
+      <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-explicit-type-name">
+        <valueString value="Group" />
+      </extension>
+      <path value="QuestionnaireResponse.group" />
+      <name value="group" />
+      <definition value="DhpAboutMeResponse defines a single group of questions" />
+      <min value="1" />
+    </element>
+    <element>
+      <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-explicit-type-name">
+        <valueString value="Question" />
+      </extension>
+      <path value="QuestionnaireResponse.group.question" />
+      <slicing>
+        <discriminator value="id" />
+        <rules value="open" />
+      </slicing>
+    </element>
+    <element>
+      <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-explicit-type-name">
+        <valueString value="Question" />
+      </extension>
+      <path value="QuestionnaireResponse.group.question" />
+      <name value="Person who knows me best" />
+      <min value="1" />
+      <max value="1" />
+    </element>
+    <element>
+      <path value="QuestionnaireResponse.group.question.text" />
+      <min value="1" />
+      <fixedString value="Person who knows me best" />
+    </element>
+    <element>
+      <path value="QuestionnaireResponse.group.question.answer.valueString" />
+      <type>
+        <code value="string" />
+      </type>
+    </element>
+    <element>
+      <path value="QuestionnaireResponse.group.question.answer.group" />
+      <max value="0" />
+    </element>
+    <element>
+      <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-explicit-type-name">
+        <valueString value="Question" />
+      </extension>
+      <path value="QuestionnaireResponse.group.question" />
+      <name value="Home, family &amp; things that are important to me" />
+      <min value="1" />
+      <max value="1" />
+    </element>
+    <element>
+      <path value="QuestionnaireResponse.group.question.text" />
+      <min value="1" />
+      <fixedString value="Home, family &amp; things that are important to me: your family, friends, pets or things about home" />
+    </element>
+    <element>
+      <path value="QuestionnaireResponse.group.question.answer.valueString" />
+      <type>
+        <code value="string" />
+      </type>
+    </element>
+    <element>
+      <path value="QuestionnaireResponse.group.question.answer.group" />
+      <max value="0" />
+    </element>
+    <element>
+      <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-explicit-type-name">
+        <valueString value="Question" />
+      </extension>
+      <path value="QuestionnaireResponse.group.question" />
+      <name value="My life so far" />
+      <min value="1" />
+      <max value="1" />
+    </element>
+    <element>
+      <path value="QuestionnaireResponse.group.question.text" />
+      <min value="1" />
+      <fixedString value="My life so far: this may include your previous or present employment, interests, hobbies, important dates &amp; events" />
+    </element>
+    <element>
+      <path value="QuestionnaireResponse.group.question.answer.valueString" />
+      <type>
+        <code value="string" />
+      </type>
+    </element>
+    <element>
+      <path value="QuestionnaireResponse.group.question.answer.group" />
+      <max value="0" />
+    </element>
+    <element>
+      <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-explicit-type-name">
+        <valueString value="Question" />
+      </extension>
+      <path value="QuestionnaireResponse.group.question" />
+      <name value="I would like you to know" />
+      <min value="1" />
+      <max value="1" />
+    </element>
+    <element>
+      <path value="QuestionnaireResponse.group.question.text" />
+      <min value="1" />
+      <fixedString value="I would like you to know: anything that will help the staff get to know you, perhaps things that help you relax or upset you" />
+    </element>
+    <element>
+      <path value="QuestionnaireResponse.group.question.answer.valueString" />
+      <type>
+        <code value="string" />
+      </type>
+    </element>
+    <element>
+      <path value="QuestionnaireResponse.group.question.answer.group" />
+      <max value="0" />
+    </element>
+  </differential>
+</StructureDefinition>
