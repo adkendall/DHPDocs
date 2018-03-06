@@ -19,13 +19,8 @@ record the citizen’s response to an appointment notification (accepted,
 declined, tentative) and these responses are relayed back to the core
 system where appropriate action can be taken.
 
-For a business level description of the appointments service see :doc:`../Business Services/appointments.rst <../Business Services/appointments.rst>`
+For a business level description of the appointments service see section "*Appointments Business Service*" of this documentation.
 
-doclink :doc:`fhir_correspondence.rst`
-
-anylink :any:`fhir_correspondence.rst`
-
-Click clink here `Appointments Business Service`_.
 
 FHIR Profiles
 -------------
