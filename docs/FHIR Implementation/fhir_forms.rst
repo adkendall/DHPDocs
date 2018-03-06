@@ -194,7 +194,6 @@ Examples
 ----------------------
 
 .. code-block:: json
-
 {
   "resourceType": "QuestionnaireResponse",
   "meta": {
