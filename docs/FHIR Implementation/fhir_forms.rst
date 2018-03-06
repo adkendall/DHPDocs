@@ -194,62 +194,62 @@ Examples
 ----------------------
 
 .. code-block:: json
-{
-  "resourceType": "QuestionnaireResponse",
-  "meta": {
-    "profile": [
-      "https://digitalhealthplatform.scot/fhir/AboutMeResponse"
-    ]
-  },
-  "text": {
-    "status": "generated",
-    "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><div><h4>Person who knows me best</h4><p>Jane Doe, 07453471176</p></div><div><h4>Home, family and things that are important to me: your family, friends, pets or things about home</h4><p>My cat Dollar, he's like a child to us. Great to have someone to cuddle.</p></div><div><h4>My life so far: this may include your previous or present employment, interests, hobbies, important dates and events</h4><p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s</p></div><div><h4>I would like you to know: anything that will help the staff get to know you, perhaps things that help you relax or upset you</h4><p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s</p></div></div>"
-  },
-  "status": "completed",
-  "subject": {
-    "reference": "Patient/spark43"
-  },
-  "authored": "2018-03-06T21:29:36.1009323Z",
-  "source": {
-    "reference": "Patient/spark43"
-  },
-  "group": {
-    "question": [
-      {
-        "text": "Person who knows me best",
-        "answer": [
-          {
-            "valueString": "Jane Doe, 07453471176"
-          }
-        ]
-      },
-      {
-        "text": "Home, family & things that are important to me: your family, friends, pets or things about home",
-        "answer": [
-          {
-            "valueString": "My cat Dollar, he's like a child to us. Great to have someone to cuddle."
-          }
-        ]
-      },
-      {
-        "text": "My life so far: this may include your previous or present employment, interests, hobbies, important dates & events",
-        "answer": [
-          {
-            "valueString": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s"
-          }
-        ]
-      },
-      {
-        "text": "I would like you to know: anything that will help the staff get to know you, perhaps things that help you relax or upset you",
-        "answer": [
-          {
-            "valueString": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s"
-          }
-        ]
-      }
-    ]
-  }
-}
+   {
+     "resourceType": "QuestionnaireResponse",
+     "meta": {
+       "profile": [
+         "https://digitalhealthplatform.scot/fhir/AboutMeResponse"
+       ]
+     },
+     "text": {
+       "status": "generated",
+       "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><div><h4>Person who knows me best</h4><p>Jane Doe, 07453471176</p></div><div><h4>Home, family and things that are important to me: your family, friends, pets or things about home</h4><p>My cat Dollar, he's like a child to us. Great to have someone to cuddle.</p></div><div><h4>My life so far: this may include your previous or present employment, interests, hobbies, important dates and events</h4><p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s</p></div><div><h4>I would like you to know: anything that will help the staff get to know you, perhaps things that help you relax or upset you</h4><p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s</p></div></div>"
+     },
+     "status": "completed",
+     "subject": {
+       "reference": "Patient/spark43"
+     },
+     "authored": "2018-03-06T21:29:36.1009323Z",
+     "source": {
+       "reference": "Patient/spark43"
+     },
+     "group": {
+       "question": [
+         {
+           "text": "Person who knows me best",
+           "answer": [
+             {
+               "valueString": "Jane Doe, 07453471176"
+             }
+           ]
+         },
+         {
+           "text": "Home, family & things that are important to me: your family, friends, pets or things about home",
+           "answer": [
+             {
+               "valueString": "My cat Dollar, he's like a child to us. Great to have someone to cuddle."
+             }
+           ]
+         },
+         {
+           "text": "My life so far: this may include your previous or present employment, interests, hobbies, important dates & events",
+           "answer": [
+             {
+               "valueString": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s"
+             }
+           ]
+         },
+         {
+           "text": "I would like you to know: anything that will help the staff get to know you, perhaps things that help you relax or upset you",
+           "answer": [
+             {
+               "valueString": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s"
+             }
+           ]
+         }
+       ]
+     }
+   }
 
 C# Examples
 -------------------------
