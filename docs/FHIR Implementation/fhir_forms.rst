@@ -255,4 +255,29 @@ Examples
 C# Examples
 -------------------------
 
-tbc
+.. code-block:: c#
+
+            QuestionnaireResponse questionnaire = new QuestionnaireResponse
+            {
+                Subject = new ResourceReference { Reference = string.Format(CultureInfo.CurrentCulture, "Patient/{0}", GetPatientSparkId()) },
+                Status = QuestionnaireResponseStatus.Completed,
+                Group = new GroupComponent
+                {
+                    Question = new List<QuestionComponent>
+                    {
+                        new QuestionComponent{ Text="Person who knows me best",
+                                Answer = new List<AnswerComponent>{ new AnswerComponent {  Value= new FhirString("Jane Doe, 07453471176")} } },
+                        new QuestionComponent{ Text="Home, family & things that are important to me: your family, friends, pets or things about home",
+                                Answer = new List<AnswerComponent>{ new AnswerComponent {  Value= new FhirString("My cat Dollar, he's like a child to us. Great to have someone to cuddle.")} } },
+                        new QuestionComponent{ Text="My life so far: this may include your previous or present employment, interests, hobbies, important dates & events",
+                                Answer = new List<AnswerComponent>{ new AnswerComponent {  Value= new FhirString("Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s") } } },
+                        new QuestionComponent{ Text="I would like you to know: anything that will help the staff get to know you, perhaps things that help you relax or upset you",
+                                Answer = new List<AnswerComponent>{ new AnswerComponent {  Value= new FhirString("Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s") } } },
+                    }
+                },
+                AuthoredElement = FhirDateTime.Now(),
+                Source = new ResourceReference { Reference = string.Format(CultureInfo.CurrentCulture, "Patient/{0}", GetPatientSparkId()) },
+                Meta = new Meta() { Profile = new string[] { "https://digitalhealthplatform.scot/fhir/AboutMeResponse" } },
+                Text= new Narrative { Status = Narrative.NarrativeStatus.Generated, Div=getQuestionnaireFragment()}
+            };
+            
