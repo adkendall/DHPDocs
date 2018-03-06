@@ -46,37 +46,37 @@ profile. For a full description of all elements see also the FHIR
 `QuestionnaireResponse <http://hl7.org/fhir/DSTU2/questionnaireresponse.html>`__ structure
 definition.
 
-+-----------------------------------+-------------------------------------------+
-| **Attribute**                     | **Notes**                                 |
-+===================================+===========================================+
-| questionnaire                     | profiled out. Only QuestionnaireResponse  |
-|                                   | is used at present                        |
-+-----------------------------------+-------------------------------------------+
-| author                            | profiled out                              |
-+-----------------------------------+-------------------------------------------+
-| group                             | DhpAboutMeResponse defines a single       |
-|                                   | group of questions                        |
-+-----------------------------------+-------------------------------------------+
-| Person who knows me best          | Mandatory. Text is fixed value            |
-| (Slice of group.question)         | "Person who knows me best".               |
-|                                   | answer type = valueString                 |
-+-----------------------------------+-------------------------------------------+
-| Home, family & things that are    | Mandatory. Text is fixed value            |
++-----------------------------------+---------------------------------------------------+
+| **Attribute**                     | **Notes**                                         |
++===================================+===================================================+
+| questionnaire                     | profiled out. Only QuestionnaireResponse          |
+|                                   | is used at present                                |
++-----------------------------------+---------------------------------------------------+
+| author                            | profiled out                                      |
++-----------------------------------+---------------------------------------------------+
+| group                             | DhpAboutMeResponse defines a single               |
+|                                   | group of questions                                |
++-----------------------------------+---------------------------------------------------+
+| Person who knows me best          | Mandatory. Text is fixed value                    |
+| (Slice of group.question)         | "Person who knows me best".                       |
+|                                   | answer type = valueString                         |
++-----------------------------------+---------------------------------------------------+
+| Home, family & things that are    | Mandatory. Text is fixed value                    |
 | important to me                   | "Home, family & things that are important to me". |
-| (Slice of group.question)         | answer type = valueString                 |
-+-----------------------------------+-------------------------------------------+
-| My life so far                    | Mandatory. Text is fixed value            |
-| (Slice of group.question)         | "My life so far".                         |
-|                                   | answer type = valueString                 |
-+-----------------------------------+-------------------------------------------+
-| I would like you to know          | Mandatory. Text is fixed value            |
-| (Slice of group.question)         | "I would like you to know".               |
-|                                   | answer type = valueString                 |
-+-----------------------------------+-------------------------------------------+
-| Person who knows me best          | Mandatory. Text is fixed value            |
-| (Slice of group.question)         | "Person who knows me best".               |
-|                                   | answer type = valueString                 |
-+-----------------------------------+-------------------------------------------+
+| (Slice of group.question)         | answer type = valueString                         |
++-----------------------------------+---------------------------------------------------+
+| My life so far                    | Mandatory. Text is fixed value                    |
+| (Slice of group.question)         | "My life so far".                                 |
+|                                   | answer type = valueString                         |
++-----------------------------------+---------------------------------------------------+
+| I would like you to know          | Mandatory. Text is fixed value                    |
+| (Slice of group.question)         | "I would like you to know".                       |
+|                                   | answer type = valueString                         |
++-----------------------------------+---------------------------------------------------+
+| Person who knows me best          | Mandatory. Text is fixed value                    |
+| (Slice of group.question)         | "Person who knows me best".                       |
+|                                   | answer type = valueString                         |
++-----------------------------------+---------------------------------------------------+
 
 **FHIR Interactions**
 
