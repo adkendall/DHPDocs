@@ -88,10 +88,10 @@ Usage Scenarios
 ---------------
 
 Create Form
-~~~~~~~~~~~~~~~
+~~~~~~~~~~~
 
 +-----------------------------------+-----------------------------------------------------------------+
-| Actor                             | Care Organisation                                               |
+| Actor                             | Care Organisation (via a CA)                      |
 +-----------------------------------+-----------------------------------------------------------------+
 | Interaction                       | POST {fhir base}/QuestionnaireResponse                          |
 +-----------------------------------+-----------------------------------------------------------------+
@@ -108,259 +108,78 @@ Create Form
 |                                   |    as per Notifications Service                                 |
 |                                   |    profile                                                      |
 +-----------------------------------+-----------------------------------------------------------------+
-| Optional                          | 1) Any other attributes inherited                               |
+| Optional                          | 1) Any attributes inherited                                     |
 |                                   |    from the base resource which                                 |
 |                                   |    have not been profiled out.                                  |
 +-----------------------------------+-----------------------------------------------------------------+
 
-Update Appointment
-~~~~~~~~~~~~~~~~~~
+Update Form
+~~~~~~~~~~~
++-----------------------------------+-----------------------------------------------------------------+
+| Actor                             | Citizen (via a CA)                                              |
++-----------------------------------+-----------------------------------------------------------------+
+| Interaction                       | PUT {fhir base}/QuestionnaireResponse/id                        |
++-----------------------------------+-----------------------------------------------------------------+
+| Mandatory Requirements            | 1) ``https://digitalhealthplatform.scot/fhir/AboutMeResponse``  | 
+|                                   |    included in meta.profile                                     |
+|                                   |                                                                 |
+|                                   | 2) subject = Patient who is the subject of the questions        |
+|                                   |                                                                 |
+|                                   | 3) status = in-progress OR completed                            |
+|                                   |                                                                 |                                
+|                                   | 4) correct questions defined as per profile definition          |
+|                                   |                                                                 |
++-----------------------------------+-----------------------------------------------------------------+
+| Optional                          | 1) Any attributes inherited                                     |
+|                                   |    from the base resource which                                 |
+|                                   |    have not been profiled out.                                  |
++-----------------------------------+-----------------------------------------------------------------+
 
-+-----------------------------------+-----------------------------------+
-| Actor                             | Core Appointment system (via the  |
-|                                   | IH)                               |
-+===================================+===================================+
-| Interaction                       | PUT {fhir base}/Appointment/id    |
-+-----------------------------------+-----------------------------------+
-| Mandatory Requirements            | 1) `Change <https://digitalhealth |
-|                                   | platform.scot/fhir/DhpAppointment |
-|                                   | %20included%20in%20meta.profile>` |
-|                                   | __                                |
-|                                   |    details updated (e.g. time,    |
-|                                   |    location)                      |
-|                                   |                                   |
-|                                   | 2) Comment appended with human    |
-|                                   |    readable datestamp and brief   |
-|                                   |    description – e.g.             |
-|                                   |    why/what/who updated the       |
-|                                   |    appointment                    |
-|                                   |                                   |
-|                                   | 3) inform-subject meta tag        |
-|                                   |    re-applied if necessary.       |
-|                                   |                                   |
-|                                   | 4) Patient participant status set |
-|                                   |    to needs-action                |
-|                                   |                                   |
-|                                   | 5) Updates must not be made after |
-|                                   |    the appointment datetime has   |
-|                                   |    passed.                        |
-+-----------------------------------+-----------------------------------+
+Read Form
+~~~~~~~~~
 
-Cancel Appointment
-~~~~~~~~~~~~~~~~~~
++-----------------------------------+-----------------------------------------------------------------+
+| Actor                             | Citizen (via a CA)                                              |
++-----------------------------------+-----------------------------------------------------------------+
+| Interaction                       | GET {fhir base}/QuestionnaireResponse/id                        |
++-----------------------------------+-----------------------------------------------------------------+
+| Comments                          | Used when the id of the QuestionnaireResponse is known,         |
+|                                   | probably by performing a search operation prior to this call.   |
++-----------------------------------+-----------------------------------------------------------------+
 
-+-----------------------------------+-----------------------------------+
-| Actor                             | Core Appointment system (via the  |
-|                                   | IH)                               |
-+===================================+===================================+
-| Interaction                       | PUT {fhir base}/Appointment/id    |
-+-----------------------------------+-----------------------------------+
-| Mandatory Requirements            | 1) Appointment status = cancelled |
-|                                   |                                   |
-|                                   | 2) Comment appended with human    |
-|                                   |    readable datestamp and brief   |
-|                                   |    description – e.g.             |
-|                                   |    why/what/who cancelled the     |
-|                                   |    appointment                    |
-|                                   |                                   |
-|                                   | 3) inform-subject meta tag        |
-|                                   |    re-applied if necessary.       |
-|                                   |                                   |
-|                                   | 4) Cancellation must not occur    |
-|                                   |    after the appointment datetime |
-|                                   |    has passed.                    |
-+-----------------------------------+-----------------------------------+
+Search
+~~~~~~
 
-Delete Appointment
-~~~~~~~~~~~~~~~~~~
++-----------------------------------+-----------------------------------------------------------------------+
+| Actor                             | Citizen (via a CA)                                                    |
++-----------------------------------+-----------------------------------------------------------------------+
+| Interaction                       | GET {fhir base}/QuestionnaireResponse                                 |
++-----------------------------------+-----------------------------------------------------------------------+
+| Parameters                        | _profile=``https://digitalhealthplatform.scot/fhir/AboutMeResponse``  |
+|                                   | subject={PHF id of subject's Patient resource}                        |
++-----------------------------------+-----------------------------------------------------------------------+
+| Comments                          | Used to determine if a Patient has an AboutMe form associated with    |
+|                                   | their account. A Patient can have only 1 AboutForm. A resultset count |
+|                                   | of > 1 must be treated as an error condition.                         |
+|                                   |                                                                       |      
++-----------------------------------+-----------------------------------------------------------------------+
 
-+-----------------------------------+-----------------------------------+
-| Actor                             | Core Appointment system (via the  |
-|                                   | IH)                               |
-+===================================+===================================+
-| Interaction                       | DELETE {fhir base}/Appointment/id |
-+-----------------------------------+-----------------------------------+
-| Mandatory Requirements            | None - Deleted means the provider |
-|                                   | wants the appointment removed     |
-|                                   | from the patients PHF (as in      |
-|                                   | potential data quality issues)    |
-+-----------------------------------+-----------------------------------+
+Search (Poll for updates)
+~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Accept Appointment
-~~~~~~~~~~~~~~~~~~
-
-+-----------------------------------+-----------------------------------+
-| Actor                             | Citizen (via a CA)                |
-+===================================+===================================+
-| Interaction                       | POST {fhir base}/Transaction      |
-|                                   |                                   |
-|                                   | Containing:                       |
-|                                   |                                   |
-|                                   | PUT {fhir base}/Appointment/id    |
-|                                   |                                   |
-|                                   | POST {fhir                        |
-|                                   | base}/AppointmentResponse         |
-+-----------------------------------+-----------------------------------+
-| Mandatory Requirements            | 1) Bundle specifying              |
-|                                   |    `https://digitalhealthplatform |
-|                                   | .scot/fhir/DhpAppointmentResponse |
-|                                   | Transaction                       |
-|                                   |    in                             |
-|                                   |    meta.profile <https://digitalh |
-|                                   | ealthplatform.scot/fhir/DhpAppoin |
-|                                   | tmentResponseTransaction%20in%20m |
-|                                   | eta.profile>`__                   |
-|                                   |                                   |
-|                                   | 2) Type=transaction               |
-|                                   |                                   |
-|                                   | 3) two entries must be provided;  |
-|                                   |    an Appointment relating to the |
-|                                   |    DhpAppointment being updated   |
-|                                   |    with request.method having     |
-|                                   |    fixed value 'PUT' and a        |
-|                                   |    DhpAppointmentResponse which   |
-|                                   |    is the response being recorded |
-|                                   |    and has request.method fixed   |
-|                                   |    value 'POST'                   |
-|                                   |                                   |
-|                                   | 4) Appointment status is updated  |
-|                                   |    to ‘Booked’                    |
-|                                   |                                   |
-|                                   | 5) Patient participant status     |
-|                                   |    updated to ‘accepted’          |
-|                                   |                                   |
-|                                   | NOTE: As a business rule it is    |
-|                                   | not valid to accept an            |
-|                                   | appointment which has previously  |
-|                                   | been cancelled or deleted or      |
-|                                   | where participant status has      |
-|                                   | previously been set to accepted,  |
-|                                   | declined or tentative. In other   |
-|                                   | words, the appointment status     |
-|                                   | must be ‘pending’ and the         |
-|                                   | participant status must be        |
-|                                   | ‘needs-action’                    |
-+-----------------------------------+-----------------------------------+
-
-Decline Appointment
-~~~~~~~~~~~~~~~~~~~
-
-+-----------------------------------+-----------------------------------+
-| Actor                             | Citizen (via a CA)                |
-+===================================+===================================+
-| Interaction                       | POST {fhir base}/Transaction      |
-|                                   |                                   |
-|                                   | Containing:                       |
-|                                   |                                   |
-|                                   | PUT {fhir base}/Appointment/id    |
-|                                   |                                   |
-|                                   | POST {fhir                        |
-|                                   | base}/AppointmentResponse         |
-+-----------------------------------+-----------------------------------+
-| Mandatory Requirements            | 1) Bundle specifying              |
-|                                   |    `https://digitalhealthplatform |
-|                                   | .scot/fhir/DhpAppointmentResponse |
-|                                   | Transaction                       |
-|                                   |    in                             |
-|                                   |    meta.profile <https://digitalh |
-|                                   | ealthplatform.scot/fhir/DhpAppoin |
-|                                   | tmentResponseTransaction%20in%20m |
-|                                   | eta.profile>`__                   |
-|                                   |                                   |
-|                                   | 2) Type=transaction               |
-|                                   |                                   |
-|                                   | 3) two entries must be provided;  |
-|                                   |    an Appointment relating to the |
-|                                   |    DhpAppointment being updated   |
-|                                   |    with request.method having     |
-|                                   |    fixed value 'PUT' and a        |
-|                                   |    DhpAppointmentResponse which   |
-|                                   |    is the response being recorded |
-|                                   |    and has request.method fixed   |
-|                                   |    value 'POST'                   |
-|                                   |                                   |
-|                                   | 4) Appointment status is updated  |
-|                                   |    to ‘pending’                   |
-|                                   |                                   |
-|                                   | 5) Patient participant status     |
-|                                   |    updated to ‘declined’          |
-|                                   |                                   |
-|                                   | NOTE: As a business rule it is    |
-|                                   | not valid to decline an           |
-|                                   | appointment which has previously  |
-|                                   | been cancelled or deleted or      |
-|                                   | where participant status has      |
-|                                   | previously been set to declined   |
-|                                   | or tentative. It **is** possible  |
-|                                   | to decline an appointment that    |
-|                                   | has previously been accepted. In  |
-|                                   | other words, to decline, the      |
-|                                   | appointment status must be        |
-|                                   | ‘pending’ or ‘booked’ and the     |
-|                                   | participant status must be        |
-|                                   | ‘needs-action’ or ‘accepted’      |
-+-----------------------------------+-----------------------------------+
-
-Reschedule Appointment
-~~~~~~~~~~~~~~~~~~~~~~
-
-+-----------------------------------+-----------------------------------+
-| Actor                             | Citizen (via a CA)                |
-+===================================+===================================+
-| Interaction                       | POST {fhir base}/Transaction      |
-|                                   |                                   |
-|                                   | Containing:                       |
-|                                   |                                   |
-|                                   | PUT {fhir base}/Appointment/id    |
-|                                   |                                   |
-|                                   | POST {fhir                        |
-|                                   | base}/AppointmentResponse         |
-+-----------------------------------+-----------------------------------+
-| Mandatory Requirements            | 1) Bundle specifying              |
-|                                   |    `https://digitalhealthplatform |
-|                                   | .scot/fhir/DhpAppointmentResponse |
-|                                   | Transaction                       |
-|                                   |    in                             |
-|                                   |    meta.profile <https://digitalh |
-|                                   | ealthplatform.scot/fhir/DhpAppoin |
-|                                   | tmentResponseTransaction%20in%20m |
-|                                   | eta.profile>`__                   |
-|                                   |                                   |
-|                                   | 2) Type=transaction               |
-|                                   |                                   |
-|                                   | 3) two entries must be provided;  |
-|                                   |    an Appointment relating to the |
-|                                   |    DhpAppointment being updated   |
-|                                   |    with request.method having     |
-|                                   |    fixed value 'PUT' and a        |
-|                                   |    DhpAppointmentResponse which   |
-|                                   |    is the response being recorded |
-|                                   |    and has request.method fixed   |
-|                                   |    value 'POST'                   |
-|                                   |                                   |
-|                                   | 4) Appointment status is updated  |
-|                                   |    to ‘pending’                   |
-|                                   |                                   |
-|                                   | 5) Patient participant status     |
-|                                   |    updated to ‘tentative’         |
-|                                   |                                   |
-|                                   | NOTE: As a business rule it is    |
-|                                   | not valid to set status to        |
-|                                   | tentative on an appointment which |
-|                                   | has previously been cancelled or  |
-|                                   | deleted or where participant      |
-|                                   | status has previously been set to |
-|                                   | declined or tentative. It **is**  |
-|                                   | possible to specify tentative on  |
-|                                   | an an appointment that has        |
-|                                   | previously been accepted. In      |
-|                                   | other words, to set to tentative, |
-|                                   | the appointment status must be    |
-|                                   | ‘pending’ or ‘booked’ and the     |
-|                                   | participant status must be        |
-|                                   | ‘needs-action’ or ‘accepted’      |
-+-----------------------------------+-----------------------------------+
-
++-----------------------------------+-----------------------------------------------------------------------+
+| Actor                             | Care Organisation (via the Hub)                                       |
++-----------------------------------+-----------------------------------------------------------------------+
+| Interaction                       | GET {fhir base}/QuestionnaireResponse                                 |
++-----------------------------------+-----------------------------------------------------------------------+
+| Parameters                        | _profile=``https://digitalhealthplatform.scot/fhir/AboutMeResponse``  |
+|                                   | status=completed
+|                                   | _lastUpdated=gt{datetime of last poll}
++-----------------------------------+-----------------------------------------------------------------------+
+| Comments                          | Used by the party which issued the form to poll for updates.          |
+|                                   | Forms with status=completed that have been updated since the last poll| 
+|                                   | are returned                                                          |
++-----------------------------------+-----------------------------------------------------------------------+
 
 
 FHIR Profiles
@@ -369,7 +188,7 @@ FHIR Profiles
 :download:`https://digitalhealthplatform.scot/fhir/AboutMeResponse <Profiles/AboutMeResponse.structuredefinition.xml>`
 
 
-Download Forge from https://simplifier.net/forge/download to view this profiles.
+Download Forge from https://simplifier.net/forge/download to view this profile.
 
 Examples
 ----------------------
