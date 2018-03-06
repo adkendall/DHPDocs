@@ -95,8 +95,8 @@ Create Form
 +-----------------------------------------------------------------------------------------------------+
 | Interaction                       | POST {fhir base}/QuestionnaireResponse                          |
 +-----------------------------------+-----------------------------------------------------------------+
-| Mandatory Requirements            | 1) ``https://digitalhealthplatform.scot/fhir/DhpAppointment``   | 
-|                                   |      included in meta.profile                                   |
+| Mandatory Requirements            | 1) ``https://digitalhealthplatform.scot/fhir/AboutMeResponse``  | 
+|                                   |    included in meta.profile                                     |
 |                                   |                                                                 |
 |                                   | 2) subject = Patient who is the subject of the questions        |
 |                                   |                                                                 |
