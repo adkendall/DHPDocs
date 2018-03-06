@@ -194,6 +194,7 @@ Examples
 ----------------------
 
 .. code-block:: json
+
    {
      "resourceType": "QuestionnaireResponse",
      "meta": {
@@ -235,7 +236,7 @@ Examples
            "text": "My life so far: this may include your previous or present employment, interests, hobbies, important dates & events",
            "answer": [
              {
-               "valueString": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s"
+               "valueString": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the     industry's standard dummy text ever since the 1500s"
              }
            ]
          },
