@@ -8,7 +8,9 @@ Forms Service FHIR Implementation
 Figure 1: Forms Service
 
 
-Forms are organised collections of questions intended to solicit information from citizens. The Forms Business Service enables users to answer set questions electronically and share those answers with relevant parties.
+Forms are organised collections of questions intended to solicit information from citizens. The Forms Business Service enables users to answer set questions electronically and share those answers with relevant parties. 
+
+Currently a single form is implemented called “About Me” which has a corresponding FHIR profile. FHIR profiles will be created on a one-to-one basis as new forms are added to the system - although a more genric profile may be created in future releases.
 
 For a business level description of the forms service see section "*Forms Business Service*" of this documentation.
 
@@ -44,69 +46,37 @@ profile. For a full description of all elements see also the FHIR
 `QuestionnaireResponse <http://hl7.org/fhir/DSTU2/questionnaireresponse.html>`__ structure
 definition.
 
-+-----------------------------------+-----------------------------------+
-| **Attribute**                     | **Notes**                         |
-+===================================+===================================+
-| CorrelationIdentifier (slice of   | Core system unique appointment    |
-| identifier)                       | identifier                        |
-|                                   |                                   |
-|                                   | A system+value pair uniquely      |
-|                                   | identifiying the appointment in   |
-|                                   | the originating core system.      |
-|                                   | system is in the format           |
-|                                   | https://digitalhealthplatform.sco |
-|                                   | t/fhir/coresystems/{system        |
-|                                   | identifier} e.g.                  |
-|                                   | "https://digitalhealthplatform.sc |
-|                                   | ot/fhir/coresystems/ggctrak"      |
-+-----------------------------------+-----------------------------------+
-| status                            | The overall status of the         |
-|                                   | Appointment. Each of the          |
-|                                   | participants has their own        |
-|                                   | participation status which        |
-|                                   | indicates their involvement in    |
-|                                   | the process, however this status  |
-|                                   | indicates the shared status. Any  |
-|                                   | FHIR status is valid, however,    |
-|                                   | only pending, booked and          |
-|                                   | cancelled are currently acted     |
-|                                   | upon. Any other status is not     |
-|                                   | expected and will be ignored in   |
-|                                   | the platform.                     |
-+-----------------------------------+-----------------------------------+
-| priority                          | profiled out                      |
-+-----------------------------------+-----------------------------------+
-| slot                              | profiled out                      |
-+-----------------------------------+-----------------------------------+
-| comment                           | Comments added by the service at  |
-|                                   | the time the appointment is       |
-|                                   | created, updated or cancelled.    |
-|                                   | Comments must always append       |
-|                                   | rather than overwrite previous    |
-|                                   | comments and include a date/time  |
-|                                   | when the comment was appended.    |
-|                                   | Citizen comments are not added    |
-|                                   | here but on the corresponding     |
-|                                   | AppointmentResponse               |
-+-----------------------------------+-----------------------------------+
-| Citizen (slice of participant)    | Mandatory. A Patient resource     |
-|                                   | which identifies the citizen for  |
-|                                   | whom the appointment has been     |
-|                                   | scheduled. A DhpAppointment can   |
-|                                   | have any number of participants   |
-|                                   | but one must be a reference to    |
-|                                   | the citizen's own Patient         |
-|                                   | resource.                         |
-+-----------------------------------+-----------------------------------+
-| OtherParticipants (slice of       | DhpAppointments must contain one  |
-| participant)                      | participant of type Patient.      |
-|                                   | Other participants are optional   |
-|                                   | but if included must be added as  |
-|                                   | contained resources whether       |
-|                                   | Practitioner, RelatedPerson,      |
-|                                   | Device, HealthCareService or      |
-|                                   | Location.                         |
-+-----------------------------------+-----------------------------------+
++-----------------------------------+-------------------------------------------+
+| **Attribute**                     | **Notes**                                 |
++===================================+===========================================+
+| questionnaire                     | profiled out. Only QuestionnaireResponse  |
+|                                   | is used at present                        |
++-----------------------------------+-------------------------------------------+
+| author                            | profiled out                              |
++-----------------------------------+-------------------------------------------+
+| group                             | DhpAboutMeResponse defines a single       |
+|                                   | group of questions                        |
++-----------------------------------+-------------------------------------------+
+| Person who knows me best          | Mandatory. Text is fixed value            |
+| (Slice of group.question)         | "Person who knows me best".               |
+|                                   | answer type = valueString                 |
++-----------------------------------+-------------------------------------------+
+| Home, family & things that are    | Mandatory. Text is fixed value            |
+| important to me                   | "Home, family & things that are important to me". |
+| (Slice of group.question)         | answer type = valueString                 |
++-----------------------------------+-------------------------------------------+
+| My life so far                    | Mandatory. Text is fixed value            |
+| (Slice of group.question)         | "My life so far".                         |
+|                                   | answer type = valueString                 |
++-----------------------------------+-------------------------------------------+
+| I would like you to know          | Mandatory. Text is fixed value            |
+| (Slice of group.question)         | "I would like you to know".               |
+|                                   | answer type = valueString                 |
++-----------------------------------+-------------------------------------------+
+| Person who knows me best          | Mandatory. Text is fixed value            |
+| (Slice of group.question)         | "Person who knows me best".               |
+|                                   | answer type = valueString                 |
++-----------------------------------+-------------------------------------------+
 
 **FHIR Interactions**
 
