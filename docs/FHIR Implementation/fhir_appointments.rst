@@ -8,7 +8,7 @@ Appointments Service FHIR Implementation
    :scale: 50 %
    :alt: Appointments Business Service
 
-Figure1: Appointments Business Service
+Figure 1: Appointments Business Service
 
 
 The appointments service provides an API for maintaining notifications
@@ -19,7 +19,7 @@ record the citizen’s response to an appointment notification (accepted,
 declined, tentative) and these responses are relayed back to the core
 system where appropriate action can be taken.
 
-For a business level description of the appointments service see :doc:`../Business Services/appointments.rst`
+For a business level description of the appointments service see :doc:`../Business Services/appointments.rst <../Business Services/appointments.rst>`
 
 FHIR Profiles
 -------------
@@ -53,7 +53,7 @@ update their participant status (accept \| decline \| tentative) and
 this is (optionally) fed back to the originating core system.
 
 .. figure:: ../../img/DhpAppointment_forge.png
-   :scale: 50 %
+   :scale: 75 %
    :alt: DhpAppointment Element Tree
 
 Figure2: DhpAppointment Element Tree
@@ -160,7 +160,7 @@ polling) or with manual intervention using an administration
 application.
 
 .. figure:: ../../img/DhpAppointmentResponse_forge.png
-   :scale: 50 %
+   :scale: 75 %
    :alt: DhpAppointmentResponse Element Tree
 
 Figure3: DhpAppointmentResponse Element Tree
@@ -276,7 +276,7 @@ of the DhpAppointment. DhpAppointmentResponseTransaction provides a
 means to apply both in a single atomic operation.
 
 .. figure:: ../../img/DhpAppointmentResponseTransaction_forge.png
-   :scale: 50 %
+   :scale: 75 %
    :alt: DhpAppointmentResponseTransaction Element Tree
 
 Figure4: DhpAppointmentResponseTransaction Element Tree
@@ -657,7 +657,7 @@ Summary of business rules for allowed responses
 | deleted                          | N      | N       | N                  |
 +----------------------------------+--------+---------+--------------------+
 
-Appendix I – FHIR Profiles
+FHIR Profiles
 --------------------------
 
 :download:`https://digitalhealthplatform.scot/fhir/DhpAppointment <Profiles/DhpAppointment.structuredefinition.xml>`
