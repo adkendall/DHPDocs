@@ -68,13 +68,13 @@ MsnDocument
 ~~~~~~~~~~~~~~~~~~~~~~~~~
 
 **FHIR Profiles:** 
-:download:`https://www.youngcancer.scot.nhs.uk/fhir/MsnScanImage <Profiles/MsnScanImage.structuredefinition.xml>`
-:download:`https://www.youngcancer.scot.nhs.uk/fhir/MsnAppointmentDoc <Profiles/MsnAppointmentDoc.structuredefinition.xml>`
-:download:`https://www.youngcancer.scot.nhs.uk/fhir/MsnBloodResultDoc <Profiles/MsnBloodResultDoc.structuredefinition.xml>`
-:download:`https://www.youngcancer.scot.nhs.uk/fhir/MsnDiagnosisDoc <Profiles/MsnDiagnosisDoc.structuredefinition.xml>`
-:download:`https://www.youngcancer.scot.nhs.uk/fhir/MsnEotSummaryDoc <Profiles/MsnEotSummaryDoc.structuredefinition.xml>`
-:download:`https://www.youngcancer.scot.nhs.uk/fhir/MsnLinksDoc <Profiles/MsnLinksDoc.structuredefinition.xml>`
-:download:`https://www.youngcancer.scot.nhs.uk/fhir/MsnTreatmentPlanDoc <Profiles/MsnTreatmentPlanDoc.structuredefinition.xml>`
+   :download:`https://www.youngcancer.scot.nhs.uk/fhir/MsnScanImage <Profiles/MsnScanImage.structuredefinition.xml>`
+   :download:`https://www.youngcancer.scot.nhs.uk/fhir/MsnAppointmentDoc <Profiles/MsnAppointmentDoc.structuredefinition.xml>`
+   :download:`https://www.youngcancer.scot.nhs.uk/fhir/MsnBloodResultDoc <Profiles/MsnBloodResultDoc.structuredefinition.xml>`
+   :download:`https://www.youngcancer.scot.nhs.uk/fhir/MsnDiagnosisDoc <Profiles/MsnDiagnosisDoc.structuredefinition.xml>`
+   :download:`https://www.youngcancer.scot.nhs.uk/fhir/MsnEotSummaryDoc <Profiles/MsnEotSummaryDoc.structuredefinition.xml>`
+   :download:`https://www.youngcancer.scot.nhs.uk/fhir/MsnLinksDoc <Profiles/MsnLinksDoc.structuredefinition.xml>`
+   :download:`https://www.youngcancer.scot.nhs.uk/fhir/MsnTreatmentPlanDoc <Profiles/MsnTreatmentPlanDoc.structuredefinition.xml>`
 
 **Base Fhir Resource:** http://hl7.org/fhir/DSTU2/documentreference.html
 
@@ -82,7 +82,7 @@ MsnDocument
 All documents are created by the Keyworker using an admin portal and read by the MSN app. Only One element tree image is shown below but the structure is the same for all types:
 
 
-.. figure:: ../../img/MsnEotSummaryDocument_forge.png_forge.png
+.. figure:: ../../img/MsnEotSummaryDocument_forge.png
    :scale: 75 %
    :alt: MsnEotSummaryDocument Element Tree
 
