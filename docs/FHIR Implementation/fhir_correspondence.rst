@@ -67,92 +67,6 @@ definition.
 | phfapi.admin          | create, read          | none                  |
 +-----------------------+-----------------------+-----------------------+
 
-MsnDocument
-~~~~~~~~~~~~~~~~~~~~~~~~~
-
-**FHIR Profiles:** 
-   :download:`https://www.youngcancer.scot.nhs.uk/fhir/MsnScanImage <Profiles/MsnScanImage.structuredefinition.xml>`
-   :download:`https://www.youngcancer.scot.nhs.uk/fhir/MsnAppointmentDoc <Profiles/MsnAppointmentDocument.structuredefinition.xml>`
-   :download:`https://www.youngcancer.scot.nhs.uk/fhir/MsnBloodResultDoc <Profiles/MsnBloodResultDocument.structuredefinition.xml>`
-   :download:`https://www.youngcancer.scot.nhs.uk/fhir/MsnDiagnosisDoc <Profiles/MsnDiagnosisDocument.structuredefinition.xml>`
-   :download:`https://www.youngcancer.scot.nhs.uk/fhir/MsnEotSummaryDoc <Profiles/MsnEotSummaryDocument.structuredefinition.xml>`
-   :download:`https://www.youngcancer.scot.nhs.uk/fhir/MsnLinksDoc <Profiles/MsnLinksDocument.structuredefinition.xml>`
-   :download:`https://www.youngcancer.scot.nhs.uk/fhir/MsnTreatmentPlanDoc <Profiles/MsnTreatmentPlanDocument.structuredefinition.xml>`
-
-**Base Fhir Resource:** http://hl7.org/fhir/DSTU2/documentreference.html
-
-**Description**: Data in MSN is stored 7 different document types. A FHIR profile has been created for each type and is based upon the DocumentReference resource. 6 of the profiles are for PDF and 1 is for an image.
-All documents are created by the Keyworker using an admin portal and read by the MSN app. Only One element tree image is shown below but the structure is the same for all types:
-
-
-.. figure:: ../../img/MsnEotSummaryDocument_forge.png
-   :scale: 75 %
-   :alt: MsnEotSummaryDocument Element Tree
-
-Figure2: MsnEotSummaryDocument Element Tree
-
-The following table is a `differential
-statement <http://hl7.org/fhir/DSTU2/profiling.html#snapshot>`__ which
-describes only the elements which have been modified from the base
-profile. For a full description of all elements see also the FHIR
-`DocumentReference <http://hl7.org/fhir/DSTU2/documentreference.html>`__ structure
-definition.
-
-+-----------------------------------+---------------------------------------------------------------------+
-| **Attribute**                     | **Notes**                                                           |
-+===================================+=====================================================================+
-| masterIdentifier                  | profiled out                                                        |
-+-----------------------------------+---------------------------------------------------------------------+
-| identifier                        | profiled out                                                        |
-+-----------------------------------+---------------------------------------------------------------------+
-| subject                           | Subject is mandatory and must reference a Patient                   |
-|                                   | resource                                                            |
-+-----------------------------------+---------------------------------------------------------------------+
-| type                              | Type must be a fixed string. One of                                 |
-|                                   |'MsnEotSummaryDoc', ‘MsnBloodResultDoc’,                             |
-|                                   |’MsnAppointmentDoc’,’MsnDiagnosisDoc’,                               |
-|                                   |‘MsnTreatmentPlanDoc’, ‘MsnLinksDoc’, ’MsnScanImg’                   |
-|                                   |                                                                     |
-+-----------------------------------+---------------------------------------------------------------------+
-| class                             | profiled out                                                        |
-+-----------------------------------+---------------------------------------------------------------------+
-| author                            | profiled out                                                        |
-+-----------------------------------+---------------------------------------------------------------------+
-| custodian                         | profiled out                                                        |
-+-----------------------------------+---------------------------------------------------------------------+
-| authenticator                     | profiled out                                                        |
-+-----------------------------------+---------------------------------------------------------------------+
-| status                            | Fixed value 'current'                                               |
-+-----------------------------------+---------------------------------------------------------------------+
-| docStatus                         | profiled out                                                        |
-+-----------------------------------+---------------------------------------------------------------------+
-| relatesTo                         | profiled out                                                        |
-+-----------------------------------+---------------------------------------------------------------------+
-| description                       | A description must be specified, either manually                    |
-|                                   | entered by a keyworker or generated by the Admin                    |
-|                                   | portal                                                              |
-+-----------------------------------+---------------------------------------------------------------------+
-| securityLabel                     | profiled out                                                        |
-+-----------------------------------+---------------------------------------------------------------------+
-| context                           | profiled out                                                        |
-+-----------------------------------+---------------------------------------------------------------------+
-| uploadedby                        | The username of the Key Worker who uploaded the                     |
-|                                   | document. This is an extension of type                              |
-|                                   | ''https://www.youngcancer.scot.nhs.uk/fhir/MsnUploadedByExtension'' |
-|                                   | which defines a single string value ‘UploadedBy’.                   |
-|                                   |                                                                     |
-+-----------------------------------+---------------------------------------------------------------------+
-
-
-**FHIR Interactions**
-
-+-----------------------+-----------------------+-----------------------+
-| **Scope**             | **Interactions**      | **Constraints**       |
-+=======================+=======================+=======================+
-| phfapi.admin          | create, read, update, | none                  |
-|                       | delete                |                       |
-+-----------------------+-----------------------+-----------------------+
-
 Usage Scenarios
 ---------------
 
@@ -203,16 +117,6 @@ Profile List
 ------------
 
 :download:`https://digitalhealthplatform.scot/fhir/DhpCorrespondenceDocument <Profiles/DhpCorrespondenceDocument.structuredefinition.xml>`
-:download:`https://www.youngcancer.scot.nhs.uk/fhir/MsnScanImage <Profiles/MsnScanImage.structuredefinition.xml>`
-:download:`https://www.youngcancer.scot.nhs.uk/fhir/MsnAppointmentDoc <Profiles/MsnAppointmentDoc.structuredefinition.xml>`
-:download:`https://www.youngcancer.scot.nhs.uk/fhir/MsnBloodResultDoc <Profiles/MsnBloodResultDoc.structuredefinition.xml>`
-:download:`https://www.youngcancer.scot.nhs.uk/fhir/MsnDiagnosisDoc <Profiles/MsnDiagnosisDoc.structuredefinition.xml>`
-:download:`https://www.youngcancer.scot.nhs.uk/fhir/MsnEotSummaryDoc <Profiles/MsnEotSummaryDoc.structuredefinition.xml>`
-:download:`https://www.youngcancer.scot.nhs.uk/fhir/MsnLinksDoc <Profiles/MsnLinksDoc.structuredefinition.xml>`
-:download:`https://www.youngcancer.scot.nhs.uk/fhir/MsnTreatmentPlanDoc <Profiles/MsnTreatmentPlanDoc.structuredefinition.xml>`
-:download:`https://www.youngcancer.scot.nhs.uk/fhir/MsnNote <Profiles/MsnNote.structuredefinition.xml>`
-:download:`https://www.youngcancer.scot.nhs.uk/fhir/MsnUploadedByExtension <Profiles/MsnUploadedByExtension.structuredefinition.xml>`
-
 
 Download Forge from https://simplifier.net/forge/download to view this profile.
 
