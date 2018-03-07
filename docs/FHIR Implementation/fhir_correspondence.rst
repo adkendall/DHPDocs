@@ -177,5 +177,19 @@ Examples
 C# Examples
 -------------------------
 
+.. code-block:: c#
 
+            DocumentReference docref = new DocumentReference
+            {
+                Description = "SampleCA Letter. This letter has not been viewed.",
+                Indexed = DateTime.Now,
+                Created = new FhirDateTime(DateTime.Now).Value,
+                Status = DocumentReferenceStatus.Current,
+                Meta = new Meta() { Tag = new List<Coding>() { new Coding() { Code = "inform-subject", System = "https://digitalhealthplatform.scot/fhir/tags" } } },
+                Content = new List<DocumentReference.ContentComponent>
+                {
+                    new DocumentReference.ContentComponent { Attachment = new Attachment { Data = GetExampleLetterPDF(), ContentType = "application/pdf", Title = "SampleCA Letter" } }
+                },
+                Subject = new ResourceReference { Reference = string.Format(CultureInfo.CurrentCulture, "Patient/{0}", GetPatientSparkId()) }
+            };
             
