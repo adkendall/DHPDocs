@@ -1,0 +1,117 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<StructureDefinition xmlns="http://hl7.org/fhir">
+  <meta>
+    <lastUpdated value="2017-10-10T09:47:40.924+01:00" />
+  </meta>
+  <url value="https://digitalhealthplatform.scot/fhir/DhpViewOnlyAppointment" />
+  <version value="0.1" />
+  <name value="DhpViewOnlyAppointment" />
+  <status value="draft" />
+  <date value="2017-10-03T15:07:53.4100414+01:00" />
+  <description value="The DhpViewOnlyAppointment resource is used to capture appointment notification records for a patient. The term appointment notification is adopted to differentiate these records from actual appointments which are generated and stored in the core systems. Appointment notifications provide a snapshot in time of a subset of data from an appointment as it was generated in a core system. Citizens cannot update their participant status as the appointment is provided for information only. If the patient declines or request an alternative using other channels (e.g. telephone) then the appointment details may be updated, or a new appointment created, by the core system." />
+  <fhirVersion value="1.0.2" />
+  <kind value="resource" />
+  <constrainedType value="Appointment" />
+  <abstract value="false" />
+  <base value="http://hl7.org/fhir/StructureDefinition/Appointment" />
+  <differential>
+    <element>
+      <path value="Appointment" />
+    </element>
+    <element>
+      <path value="Appointment.identifier" />
+      <short value="External Id for this item" />
+      <definition value="Identifier is a simple system/value pair set by the core system or intermediary and acts as a correlation id for responses and updates." />
+      <min value="1" />
+      <max value="1" />
+    </element>
+    <element>
+      <path value="Appointment.identifier.use" />
+      <max value="0" />
+    </element>
+    <element>
+      <path value="Appointment.identifier.type" />
+      <max value="0" />
+    </element>
+    <element>
+      <path value="Appointment.identifier.period" />
+      <max value="0" />
+    </element>
+    <element>
+      <path value="Appointment.identifier.assigner" />
+      <max value="0" />
+    </element>
+    <element>
+      <path value="Appointment.type.coding" />
+      <max value="1" />
+    </element>
+    <element>
+      <path value="Appointment.priority" />
+      <max value="0" />
+    </element>
+    <element>
+      <path value="Appointment.slot" />
+      <max value="0" />
+    </element>
+    <element>
+      <path value="Appointment.participant" />
+      <slicing>
+        <discriminator value="actor" />
+        <rules value="open" />
+      </slicing>
+    </element>
+    <element>
+      <path value="Appointment.participant" />
+      <name value="Citizen" />
+      <short value="The citizen for whom the appointment has been scheduled" />
+      <definition value="A Patient resource which identifies the citizen for whom the appointment has been scheduled. A DhpAppointment can have any number of participants but one must be a reference to the citizen's own Patient resource." />
+      <max value="1" />
+    </element>
+    <element>
+      <path value="Appointment.participant.type" />
+      <max value="0" />
+    </element>
+    <element>
+      <path value="Appointment.participant.actor" />
+      <short value="Patient resource" />
+      <definition value="A Patient resource which identifies the citizen for whom the appointment has been scheduled" />
+      <min value="1" />
+      <type>
+        <code value="Reference" />
+        <profile value="http://hl7.org/fhir/StructureDefinition/Patient" />
+        <aggregation value="referenced" />
+      </type>
+    </element>
+    <element>
+      <path value="Appointment.participant.required" />
+      <fixedCode value="required" />
+    </element>
+    <element>
+      <path value="Appointment.participant" />
+      <name value="sliceParticipant" />
+    </element>
+    <element>
+      <path value="Appointment.participant.actor" />
+      <type>
+        <code value="Reference" />
+        <profile value="http://hl7.org/fhir/StructureDefinition/Practitioner" />
+      </type>
+      <type>
+        <code value="Reference" />
+        <profile value="http://hl7.org/fhir/StructureDefinition/RelatedPerson" />
+      </type>
+      <type>
+        <code value="Reference" />
+        <profile value="http://hl7.org/fhir/StructureDefinition/Device" />
+      </type>
+      <type>
+        <code value="Reference" />
+        <profile value="http://hl7.org/fhir/StructureDefinition/HealthcareService" />
+      </type>
+      <type>
+        <code value="Reference" />
+        <profile value="http://hl7.org/fhir/StructureDefinition/Location" />
+      </type>
+    </element>
+  </differential>
+</StructureDefinition>
