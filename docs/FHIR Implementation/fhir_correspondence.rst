@@ -70,48 +70,62 @@ definition.
 Usage Scenarios
 ---------------
 
-Scenario 1
-~~~~~~~~~~
+Create Correspondence
+~~~~~~~~~~~~~~~~~~~~~
 
-+-----------------------------------+-----------------------------------------------------------------+
-| Actor                             | Care Organisation (via a CA)                                    |
-+-----------------------------------+-----------------------------------------------------------------+
-| Interaction                       | POST {fhir base}/QuestionnaireResponse                          |
-+-----------------------------------+-----------------------------------------------------------------+
-| Mandatory Requirements            | 1) ``https://digitalhealthplatform.scot/fhir/AboutMeResponse``  | 
-|                                   |    included in meta.profile                                     |
-|                                   |                                                                 |
-|                                   | 2) subject = Patient who is the subject of the questions        |
-|                                   |                                                                 |
-|                                   | 3) status = in-progress                                         |
-|                                   |                                                                 |                                
-|                                   | 4) correct questions defined as per profile definition          |
-|                                   |                                                                 |
-|                                   | 5) inform-subject meta tag added                                |
-|                                   |    as per Notifications Service                                 |
-|                                   |    profile                                                      |
-+-----------------------------------+-----------------------------------------------------------------+
-| Optional                          | 1) Any attributes inherited                                     |
-|                                   |    from the base resource which                                 |
-|                                   |    have not been profiled out.                                  |
-+-----------------------------------+-----------------------------------------------------------------+
++-----------------------------------+---------------------------------------------------------------------------+
+| Actor                             | Organisation                                                              |
++-----------------------------------+---------------------------------------------------------------------------+
+| Interaction                       | POST {fhir base}/DocumentReference                                        |
++-----------------------------------+---------------------------------------------------------------------------+
+| Mandatory Requirements            | 1) ``https://digitalhealthplatform.scot/fhir/DhpCorrespondenceDocument``  | 
+|                                   |    included in meta.profile                                               |
+|                                   |                                                                           |
+|                                   | 2) subject = Patient who is the subject of the correspondence             |
+|                                   |                                                                           |
+|                                   | 3) status = 'current'                                                     |
+|                                   |                                                                           |
+|                                   | 4) type specified                                                         |
+|                                   |                                                                           |
+|                                   | 5) Human-readable description set                                         |
+|                                   |                                                                           |
+|                                   | 6) At least one content element with an attachment containing either      |
+|                                   |    the actual base64-cocoded data or a uri where the data can be found    |
+|                                   |                                                                           |
+|                                   | 7) inform-subject meta tag added                                          |
+|                                   |    as per Notifications Service                                           |
+|                                   |    profile                                                                |
++-----------------------------------+---------------------------------------------------------------------------+
+| Optional                          | 1) Any attributes inherited                                               |
+|                                   |    from the base resource which                                           |
+|                                   |    have not been profiled out.                                            |
++-----------------------------------+---------------------------------------------------------------------------+
+
+Read
+~~~~
+
++-----------------------------------+-----------------------------------------------------------------------+
+| Actor                             | Citizen                                                               |
++-----------------------------------+-----------------------------------------------------------------------+
+| Interaction                       | GET {fhir base}/DocumentReference/id                                  |
++-----------------------------------+-----------------------------------------------------------------------+
+| Comments                          | Used when the id of the DocumentReference is known,                   |
+|                                   | probably by performing a search operation prior to this call.         |    
++-----------------------------------+-----------------------------------------------------------------------+
 
 Search
 ~~~~~~
 
-+-----------------------------------+-----------------------------------------------------------------------+
-| Actor                             | Citizen (via a CA)                                                    |
-+-----------------------------------+-----------------------------------------------------------------------+
-| Interaction                       | GET {fhir base}/QuestionnaireResponse                                 |
-+-----------------------------------+-----------------------------------------------------------------------+
-| Parameters                        | _profile=``https://digitalhealthplatform.scot/fhir/AboutMeResponse``  |
-|                                   | subject={PHF id of subject's Patient resource}                        |
-+-----------------------------------+-----------------------------------------------------------------------+
-| Comments                          | Used to determine if a Patient has an AboutMe form associated with    |
-|                                   | their account. A Patient can have only 1 AboutForm. A resultset count |
-|                                   | of > 1 must be treated as an error condition.                         |
-|                                   |                                                                       |      
-+-----------------------------------+-----------------------------------------------------------------------+
++-----------------------------------+---------------------------------------------------------------------------------+
+| Actor                             | Citizen                                                                         |
++-----------------------------------+---------------------------------------------------------------------------------+
+| Interaction                       | GET {fhir base}/DocumentReference                                               |
++-----------------------------------+---------------------------------------------------------------------------------+
+| Parameters                        | _profile=``https://digitalhealthplatform.scot/fhir/DhpCorrespondenceDocument``  |
+|                                   | subject={PHF id of subject's Patient resource}                                  |
++-----------------------------------+---------------------------------------------------------------------------------+
+| Comments                          | Used to return all correspondence for a patient.                                |
++-----------------------------------+---------------------------------------------------------------------------------+
 
 Profile List
 ------------
