@@ -135,7 +135,10 @@ Profile List
 Download Forge from https://simplifier.net/forge/download to view this profile.
 
 Examples
-----------------------
+--------
+
+.. code-block:: json
+
  {
         "resourceType": "DocumentReference",
         "id": "spark10",
