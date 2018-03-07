@@ -68,7 +68,9 @@ MsnDocument
 ~~~~~~~~~~~~~~~~~~~~~~~~~
 
 **FHIR Profiles:** 
+
    :download:`https://www.youngcancer.scot.nhs.uk/fhir/MsnScanImage <Profiles/MsnScanImage.structuredefinition.xml>`
+   
    :download:`https://www.youngcancer.scot.nhs.uk/fhir/MsnAppointmentDoc <Profiles/MsnAppointmentDoc.structuredefinition.xml>`
    :download:`https://www.youngcancer.scot.nhs.uk/fhir/MsnBloodResultDoc <Profiles/MsnBloodResultDoc.structuredefinition.xml>`
    :download:`https://www.youngcancer.scot.nhs.uk/fhir/MsnDiagnosisDoc <Profiles/MsnDiagnosisDoc.structuredefinition.xml>`
@@ -108,7 +110,8 @@ definition.
 | type                              | Type must be a fixed string. One of                                 |
 |                                   |'MsnEotSummaryDoc', ‘MsnBloodResultDoc’,                             |
 |                                   |’MsnAppointmentDoc’,’MsnDiagnosisDoc’,                               |
-|                                   |‘MsnTreatmentPlanDoc’, ‘MsnLinksDoc’, ’MsnScanImg’                   |                              |                                   |                                                                     |
+|                                   |‘MsnTreatmentPlanDoc’, ‘MsnLinksDoc’, ’MsnScanImg’                   |
+|                                   |                                                                     |
 +-----------------------------------+---------------------------------------------------------------------+
 | class                             | profiled out                                                        |
 +-----------------------------------+---------------------------------------------------------------------+
@@ -133,8 +136,10 @@ definition.
 | context                           | profiled out                                                        |
 +-----------------------------------+---------------------------------------------------------------------+
 | uploadedby                        | The username of the Key Worker who uploaded the                     |
-|                                   | document. This is an extension of type                              |                              |                                   | ''https://www.youngcancer.scot.nhs.uk/fhir/MsnUploadedByExtension'' | 
-|                                   | which defines a single string value ‘UploadedBy’.                   |                              |                                   |                                                                     |   
+|                                   | document. This is an extension of type                              |
+|                                   | ''https://www.youngcancer.scot.nhs.uk/fhir/MsnUploadedByExtension'' |
+|                                   | which defines a single string value ‘UploadedBy’.                   |
+|                                   |                                                                     |
 +-----------------------------------+---------------------------------------------------------------------+
 
 
