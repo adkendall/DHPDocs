@@ -1,0 +1,21 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<StructureDefinition xmlns="http://hl7.org/fhir">
+  <meta>
+    <lastUpdated value="2017-06-23T17:11:35.507+01:00" />
+  </meta>
+  <url value="https://www.youngcancer.scot.nhs.uk/fhir/MsnKeyWorker" />
+  <name value="MsnKeyWorker" />
+  <status value="draft" />
+  <date value="2017-06-22T17:35:42.1521203+01:00" />
+  <description value="Represents an MSN Keyworker role. An instance of this resource will exist for each admin app user." />
+  <fhirVersion value="1.0.2" />
+  <kind value="resource" />
+  <constrainedType value="Practitioner" />
+  <abstract value="false" />
+  <base value="http://hl7.org/fhir/StructureDefinition/Practitioner" />
+  <differential>
+    <element>
+      <path value="Practitioner" />
+    </element>
+  </differential>
+</StructureDefinition>

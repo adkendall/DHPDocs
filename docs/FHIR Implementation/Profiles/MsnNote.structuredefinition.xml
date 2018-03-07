@@ -1,0 +1,111 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<StructureDefinition xmlns="http://hl7.org/fhir">
+  <meta>
+    <lastUpdated value="2017-11-14T16:31:44.803+00:00" />
+  </meta>
+  <url value="https://www.youngcancer.scot.nhs.uk/fhir/MsnNote" />
+  <version value="1" />
+  <name value="MsnNote" />
+  <status value="draft" />
+  <date value="2017-06-21T14:31:30.9347025+01:00" />
+  <description value="Used for Notes in the My Story Now app. Notes appear in a timeline within the app and represent a communication between the patient and keyworker. Notes can be initiated (created) either by the patient or keyworker. Notes can also be private i.e. a 'note to self' if created by the patient with no recipient specified" />
+  <fhirVersion value="1.0.2" />
+  <kind value="resource" />
+  <constrainedType value="Communication" />
+  <abstract value="false" />
+  <base value="http://hl7.org/fhir/StructureDefinition/Communication" />
+  <differential>
+    <element>
+      <path value="Communication" />
+    </element>
+    <element>
+      <path value="Communication.identifier" />
+      <max value="0" />
+    </element>
+    <element>
+      <path value="Communication.category" />
+      <max value="0" />
+    </element>
+    <element>
+      <path value="Communication.sender" />
+      <definition value="Sender is mandatory and must be either a Patient reference (when sent from the Msn app) or an Organisation reference (when sent from the Admin Portal. Organisation will refer to a resource created for MSNCYPC." />
+      <type>
+        <code value="Reference" />
+        <profile value="http://hl7.org/fhir/StructureDefinition/Organization" />
+      </type>
+      <type>
+        <code value="Reference" />
+        <profile value="http://hl7.org/fhir/StructureDefinition/Patient" />
+      </type>
+    </element>
+    <element>
+      <path value="Communication.sender.reference" />
+      <min value="1" />
+    </element>
+    <element>
+      <path value="Communication.sender.display" />
+      <max value="0" />
+    </element>
+    <element>
+      <path value="Communication.recipient" />
+      <definition value="The Patient or Organisation which was the target of the communication. If Organisation the reference will be to the MSNCYPC resource (static data). Maximum of 1 recipient can be specified (0..1). If no recipient is specified, then treated as a private message only accessible by the sender." />
+      <max value="1" />
+      <type>
+        <code value="Reference" />
+        <profile value="http://hl7.org/fhir/StructureDefinition/Organization" />
+      </type>
+      <type>
+        <code value="Reference" />
+        <profile value="http://hl7.org/fhir/StructureDefinition/Patient" />
+      </type>
+    </element>
+    <element>
+      <path value="Communication.payload" />
+      <definition value="Text only. Contains the body of the note in string format which is a communication from patient to keyworker or vice versa or a 'note-to-self' created by the patient." />
+      <max value="1" />
+    </element>
+    <element>
+      <path value="Communication.payload.contentString" />
+      <name value="NoteString" />
+      <short value="Text-only message" />
+      <definition value="This is the body of the note in string format which is a communication from patient to keyworker or vice versa or a 'note-to-self' created by the patient." />
+      <type>
+        <code value="string" />
+      </type>
+    </element>
+    <element>
+      <path value="Communication.medium" />
+      <max value="0" />
+    </element>
+    <element>
+      <path value="Communication.status" />
+      <short value="in-progress | completed" />
+      <definition value="The status of the transmission. When a message is created by the Msn app the status is set to &quot;in-progress&quot;. Once an administrator has read the message using the Admin portal the status is set to &quot;completed&quot;. Private messages can either leave the status blank or it will stay in-progress." />
+    </element>
+    <element>
+      <path value="Communication.encounter" />
+      <max value="0" />
+    </element>
+    <element>
+      <path value="Communication.received" />
+      <max value="0" />
+    </element>
+    <element>
+      <path value="Communication.reason" />
+      <max value="0" />
+    </element>
+    <element>
+      <path value="Communication.subject" />
+      <definition value="The patient reference who was the focus of this communication." />
+      <min value="1" />
+    </element>
+    <element>
+      <path value="Communication.subject.display" />
+      <max value="0" />
+    </element>
+    <element>
+      <path value="Communication.requestDetail" />
+      <max value="0" />
+    </element>
+  </differential>
+</StructureDefinition>

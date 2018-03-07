@@ -1,0 +1,78 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<StructureDefinition xmlns="http://hl7.org/fhir">
+  <meta>
+    <lastUpdated value="2017-11-14T16:43:55.823+00:00" />
+  </meta>
+  <url value="https://www.youngcancer.scot.nhs.uk/fhir/MsnAppProfile" />
+  <name value="MsnAppProfile" />
+  <status value="draft" />
+  <date value="2017-06-22T17:27:46.4724183+01:00" />
+  <description value="Person profile for use within the Msn Android App and Admin Portal. Currently used only for storing an avatar image (photo) which is uploaded and displayed within the Msn app. The Admin Portal accesses (read only) the profile for display. " />
+  <fhirVersion value="1.0.2" />
+  <kind value="resource" />
+  <constrainedType value="Person" />
+  <abstract value="false" />
+  <base value="http://hl7.org/fhir/StructureDefinition/Person" />
+  <differential>
+    <element>
+      <path value="Person" />
+    </element>
+    <element>
+      <path value="Person.identifier" />
+      <max value="0" />
+    </element>
+    <element>
+      <path value="Person.name" />
+      <max value="0" />
+    </element>
+    <element>
+      <path value="Person.telecom" />
+      <max value="0" />
+    </element>
+    <element>
+      <path value="Person.gender" />
+      <max value="0" />
+    </element>
+    <element>
+      <path value="Person.birthDate" />
+      <max value="0" />
+    </element>
+    <element>
+      <path value="Person.address" />
+      <max value="0" />
+    </element>
+    <element>
+      <path value="Person.photo" />
+      <short value="Avatar Image" />
+      <definition value="An avatar image set and used within the MSN Android app" />
+    </element>
+    <element>
+      <path value="Person.photo.language" />
+      <max value="0" />
+    </element>
+    <element>
+      <path value="Person.managingOrganization" />
+      <max value="0" />
+    </element>
+    <element>
+      <path value="Person.active" />
+      <max value="0" />
+    </element>
+    <element>
+      <path value="Person.link" />
+      <definition value="Link to a resource that concerns the same actual person. The Patient resource to which this MSN Profile is associated." />
+    </element>
+    <element>
+      <path value="Person.link.target" />
+      <definition value="The Patient resource to which this MSN Profile is associated." />
+      <type>
+        <code value="Reference" />
+        <profile value="http://hl7.org/fhir/StructureDefinition/Patient" />
+      </type>
+    </element>
+    <element>
+      <path value="Person.link.assurance" />
+      <max value="0" />
+    </element>
+  </differential>
+</StructureDefinition>
