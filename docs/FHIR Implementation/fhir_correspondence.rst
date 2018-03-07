@@ -136,6 +136,39 @@ Download Forge from https://simplifier.net/forge/download to view this profile.
 
 Examples
 ----------------------
+ {
+        "resourceType": "DocumentReference",
+        "id": "spark10",
+        "meta": {
+          "versionId": "spark61",
+          "lastUpdated": "2018-03-02T11:15:16.864+00:00",
+          "profile": [
+            "https://digitalhealthplatform.scot/fhir/DhpCorrespondenceDocument"
+          ],
+          "tag": [
+            {
+              "system": "https://digitalhealthplatform.scot/fhir/tags",
+              "code": "subject-informed"
+            }
+          ]
+        },
+        "subject": {
+          "reference": "https://phfapi.ppedigitalhealthplatform.net/fhir/Patient/spark10"
+        },
+        "created": "2018-01-08T10:53:08.6119632Z",
+        "indexed": "2018-01-08T10:53:08.611+00:00",
+        "status": "current",
+        "description": "Emergency Discharge Letter - Cardiology",
+        "content": [
+          {
+            "attachment": {
+              "contentType": "application/pdf",
+              "data": "<base64-encoded string>",
+              "title": "Emergency Discharge Letter - Cardiology"
+            }
+          }
+        ]
+      }
 
 
 C# Examples
