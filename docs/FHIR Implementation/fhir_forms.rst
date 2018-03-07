@@ -31,7 +31,7 @@ AboutMeResponse
 
 **Base Fhir Resource:** http://hl7.org/fhir/DSTU2/questionnaireresponse.html
 
-**Description**: QuestionnaireResponse profile with set questions relating to the 'About Me' form used within the Patient Portal PoV project. Resources conforming to this profile are created when the Patient completes the About Me form page in the Portal. The resources are then transferred to SCI Store for sharing with relevant clinicians.
+**Description**: QuestionnaireResponse profile with set questions relating to the 'About Me' form used within the Patient Portal PoV project. Resources conforming to this profile are created when the Patient completes the About Me form page in the Portal. The resources are then available to be read by statutory systems for sharing with relevant clinicians.
 
 .. figure:: ../../img/AboutMeResponse_forge.png
    :scale: 75 %
