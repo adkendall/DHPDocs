@@ -7,9 +7,7 @@ Correspondence Service FHIR Implementation
 
 Figure 1: Correspondence Service
 
-The service currently uses two FHIR resources which are used in different scenarios: the first is DocumentReference which contains one or more Attachments. Attachments contain either encoded data inline (any data with a MIME type but commonly pdf) OR a url reference to where the encoded data can be obtained. This type of correspondence declares conformance to profile https://digitalhealthplatform.scot/fhir/DhpCorrespondenceDocument. Also in use for the Managed Service Network for Children and Young People with Cancer (MSNCYPC) project are 7 additional profiles of DocumentReference which follow the same model. For these an extension is also defined which allows the username of the Keyworker who uploaded the document to be recorded.
-The second FHIR resource used for correspondence is Communication. These are used within MSNCYPC to send short text-only notes between patients and the MSN service (and vice versa). As with documents, the means for relaying the messages between sender and recipient are currently outside the scope of the Correspondence Service.
-
+The Correspondence service enables the electronic transmission of data between individuals or organisations which might otherwise be sent as a letter or other form of written communication. It differs from the "*Health and Care Information Business Service*" in that the information communicated is not necessarily structured and can include items such as a request to make an appointment, a notification that test results are available or supplementary information such as directions to a hospital.
 
 For a business level description of the forms service see section "*Correspondence Business Service*" of this documentation.
 
@@ -21,7 +19,7 @@ FHIR Profiles have been created and are available to download from this page. Th
 Access Control Engine (ACE) in the PHF uses the profile, which must be
 specified in metadata, to make access control decisions based on scopes
 contained within the OAuth2 Access Token. In the current implementation scope **phfapi.admin** 
-is required to perform any CRUD operation on a form.
+is required to perform any CRUD operation on correspondence.
 
 DhpCorrespondenceDocument
 ~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -30,7 +28,7 @@ DhpCorrespondenceDocument
 
 **Base Fhir Resource:** http://hl7.org/fhir/DSTU2/documentreference.html
 
-**Description**: QuestionnaireResponse profile with set questions relating to the 'About Me' form used within the Patient Portal PoV project. Resources conforming to this profile are created when the Patient completes the About Me form page in the Portal. The resources are then available to be read by statutory systems for sharing with relevant clinicians.
+**Description**: DhpCorrespondenceDocument is used to record a notification of correspondence between an organisation (e.g the NHS) and the citizen.
 
 .. figure:: ../../img/DhpCorrespondenceDocument_forge.png
    :scale: 75 %
@@ -45,14 +43,20 @@ profile. For a full description of all elements see also the FHIR
 `DocumentReference <http://hl7.org/fhir/DSTU2/documentreference.html>`__ structure
 definition.
 
-+-----------------------------------+---------------------------------------------------+
-| **Attribute**                     | **Notes**                                         |
-+===================================+===================================================+
-|                                   |                                                   |
-|                                   |                                                   |
-+-----------------------------------+---------------------------------------------------+
-|                                   |                                                   |
-+-----------------------------------+---------------------------------------------------+
++-----------------------------------+---------------------------------------------------------------------+
+| **Attribute**                     | **Notes**                                                           |
++===================================+=====================================================================+
+| subject                           | Subject is mandatory and must reference a Patient                   |
+|                                   | resource                                                            |
++-----------------------------------+---------------------------------------------------------------------+
+| type                              | Type must be a fixed string? TODO: Requires clarification           |
++-----------------------------------+---------------------------------------------------------------------+
+| description                       | Human-readable description of the source document. This is sometimes|
+|                                   | known as the "title". A description must be specified, either       |
+|                                   | manually entered by staff or generated by middleware.               |
++-----------------------------------+---------------------------------------------------------------------+
+| securityLabel                     | profiled out                                                        |
++-----------------------------------+---------------------------------------------------------------------+
 
 
 **FHIR Interactions**
@@ -60,23 +64,20 @@ definition.
 +-----------------------+-----------------------+-----------------------+
 | **Scope**             | **Interactions**      | **Constraints**       |
 +=======================+=======================+=======================+
-| phfapi.admin          | create, read, update, | none                  |
-|                       | delete                |                       |
+| phfapi.admin          | create, read          | none                  |
 +-----------------------+-----------------------+-----------------------+
 
 MsnDocument
 ~~~~~~~~~~~~~~~~~~~~~~~~~
 
 **FHIR Profiles:** 
-
    :download:`https://www.youngcancer.scot.nhs.uk/fhir/MsnScanImage <Profiles/MsnScanImage.structuredefinition.xml>`
-   
-   :download:`https://www.youngcancer.scot.nhs.uk/fhir/MsnAppointmentDoc <Profiles/MsnAppointmentDoc.structuredefinition.xml>`
-   :download:`https://www.youngcancer.scot.nhs.uk/fhir/MsnBloodResultDoc <Profiles/MsnBloodResultDoc.structuredefinition.xml>`
-   :download:`https://www.youngcancer.scot.nhs.uk/fhir/MsnDiagnosisDoc <Profiles/MsnDiagnosisDoc.structuredefinition.xml>`
-   :download:`https://www.youngcancer.scot.nhs.uk/fhir/MsnEotSummaryDoc <Profiles/MsnEotSummaryDoc.structuredefinition.xml>`
-   :download:`https://www.youngcancer.scot.nhs.uk/fhir/MsnLinksDoc <Profiles/MsnLinksDoc.structuredefinition.xml>`
-   :download:`https://www.youngcancer.scot.nhs.uk/fhir/MsnTreatmentPlanDoc <Profiles/MsnTreatmentPlanDoc.structuredefinition.xml>`
+   :download:`https://www.youngcancer.scot.nhs.uk/fhir/MsnAppointmentDoc <Profiles/MsnAppointmentDocument.structuredefinition.xml>`
+   :download:`https://www.youngcancer.scot.nhs.uk/fhir/MsnBloodResultDoc <Profiles/MsnBloodResultDocument.structuredefinition.xml>`
+   :download:`https://www.youngcancer.scot.nhs.uk/fhir/MsnDiagnosisDoc <Profiles/MsnDiagnosisDocument.structuredefinition.xml>`
+   :download:`https://www.youngcancer.scot.nhs.uk/fhir/MsnEotSummaryDoc <Profiles/MsnEotSummaryDocument.structuredefinition.xml>`
+   :download:`https://www.youngcancer.scot.nhs.uk/fhir/MsnLinksDoc <Profiles/MsnLinksDocument.structuredefinition.xml>`
+   :download:`https://www.youngcancer.scot.nhs.uk/fhir/MsnTreatmentPlanDoc <Profiles/MsnTreatmentPlanDocument.structuredefinition.xml>`
 
 **Base Fhir Resource:** http://hl7.org/fhir/DSTU2/documentreference.html
 
