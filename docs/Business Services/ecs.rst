@@ -146,6 +146,9 @@ It is assumed that the development team has a general understanding of
 the HL7 FHIR specifications. All provisions of HL7 FHIR DSTU 2 [1]_
 apply unless changes are described in this document.
 
+**The details of the FHIR profile for the ECS Service can be found
+in a dedicated chapter.**
+
 The following is additional information to explain key aspects of the
 technical implementation.
 
