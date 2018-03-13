@@ -760,12 +760,13 @@ Summary of business rules for allowed responses
 | deleted                          | N      | N       | N                  |
 +----------------------------------+--------+---------+--------------------+
 
-FHIR Profiles
+List of FHIR Profiles
 --------------------------
 
 :download:`https://digitalhealthplatform.scot/fhir/DhpAppointment <Profiles/DhpAppointment.structuredefinition.xml>`
 :download:`https://digitalhealthplatform.scot/fhir/DhpAppointmentResponse <Profiles/DhpAppointmentResponse.structuredefinition.xml>`
 :download:`https://digitalhealthplatform.scot/fhir/DhpAppointmentResponseTransaction <Profiles/DhpAppointmentResponseTransaction.structuredefinition.xml>`
+:download:`https://digitalhealthplatform.scot/fhir/DhpViewOnlyAppointment <Profiles/DhpViewOnlyAppointment.structuredefinition.xml>`
 
 Download Forge from https://simplifier.net/forge/download to view these profiles.
 
