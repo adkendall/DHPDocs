@@ -1,7 +1,7 @@
 Health & Care Information Service FHIR Implementation
 ==========================================
 
-.. figure:: ../../img/EcsBusService.png
+.. figure:: ../../img/ECSBusService.png
    :scale: 50 %
    :alt: Health & Care Information Service
 
