@@ -159,7 +159,7 @@ DhpViewOnlyAppointment
    :scale: 75 %
    :alt: DhpViewOnlyAppointment Element Tree
 
-Figure2: DhpViewOnlyAppointment Element Tree
+Figure3: DhpViewOnlyAppointment Element Tree
 
 The following table is a `differential
 statement <http://hl7.org/fhir/DSTU2/profiling.html#snapshot>`__ which
@@ -266,7 +266,7 @@ application.
    :scale: 75 %
    :alt: DhpAppointmentResponse Element Tree
 
-Figure3: DhpAppointmentResponse Element Tree
+Figure4: DhpAppointmentResponse Element Tree
 
 The following table is a `differential
 statement <http://hl7.org/fhir/DSTU2/profiling.html#snapshot>`__ which
@@ -382,7 +382,7 @@ means to apply both in a single atomic operation.
    :scale: 75 %
    :alt: DhpAppointmentResponseTransaction Element Tree
 
-Figure4: DhpAppointmentResponseTransaction Element Tree
+Figure5: DhpAppointmentResponseTransaction Element Tree
 
 The following table is a `differential
 statement <http://hl7.org/fhir/DSTU2/profiling.html#snapshot>`__ which
