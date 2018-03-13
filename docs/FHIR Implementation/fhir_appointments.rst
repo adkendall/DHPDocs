@@ -149,7 +149,7 @@ definition.
 DhpViewOnlyAppointment
 ~~~~~~~~~~~~~~~~~~~~~~
 
-**FHIR Profile:** :download:`https://digitalhealthplatform.scot/fhir/DhpViewOnlyAppointment <Profiles/DhpAppointment.structuredefinition.xml>`
+**FHIR Profile:** :download:`https://digitalhealthplatform.scot/fhir/DhpViewOnlyAppointment <Profiles/DhpViewOnlyAppointment.structuredefinition.xml>`
 
 **Base Fhir Resource:** http://hl7.org/fhir/DSTU2/appointment.html
 
