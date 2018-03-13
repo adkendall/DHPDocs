@@ -856,10 +856,10 @@ Json Examples
       }
     }
 
-C# Examples
+C# Example
 -----------
 
-.. code-block:: json
+.. code-block:: c#
 
         private void CreateResponse(Appointment appointment, AppointmentResponse appointmentResponse)
         {
