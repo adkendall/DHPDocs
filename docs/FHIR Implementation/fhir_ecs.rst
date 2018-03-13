@@ -60,12 +60,12 @@ definition.
 | section                           | Two sections are defined and must be specified, even if empty.                               |
 |                                   | The sections are 'Prescriptions' and 'Allergies'                                             |
 |                                   |                                                                                              |
-|                                   | **Prescriptions:**                                                                            |
+|                                   | **Prescriptions:**                                                                           |
 |                                   | *title* is mandatory and has fixed value 'Prescriptions'                                     |
 |                                   | *code* is mandatory and specifies LONC code 29549-3                                          |
 |                                   | *entry* must be of type MedicationStatement and be contained within the Composition          |
 |                                   |                                                                                              |
-|                                   | **Allergies:**                                                                                |
+|                                   | **Allergies:**                                                                               |
 |                                   | *title* is mandatory and has fixed value 'Allergies'                                         |
 |                                   | *code* is mandatory and specifies LONC code 48765-2                                          |
 |                                   | *entry* must be of type AllergyIntolerence and be contained within the Composition           |
@@ -93,7 +93,7 @@ Create DhpEcsMedicalRecord
 +-----------------------------------+---------------------------------------------------------------------------+
 | Interaction                       | POST {fhir base}/Composition                                              |
 +-----------------------------------+---------------------------------------------------------------------------+
-| Mandatory Requirements            | 1) ``https://digitalhealthplatform.scot/fhir/DhpEcsMedicalRecord``        | 
+| Mandatory Requirements            | 1) ``https://digitalhealthplatform.scot/fhir/DhpEcsMedicalRecord``        |
 |                                   |    included in meta.profile                                               |
 |                                   |                                                                           |
 |                                   | 2) subject = Patient who is the subject of the medical record             |
@@ -124,9 +124,9 @@ Read
 +-----------------------------------+-----------------------------------------------------------------------+
 | Actor                             | Citizen                                                               |
 +-----------------------------------+-----------------------------------------------------------------------+
-| Interaction                       | GET {fhir base}/Composition/id                                  |
+| Interaction                       | GET {fhir base}/Composition/id                                        |
 +-----------------------------------+-----------------------------------------------------------------------+
-| Comments                          | Used when the id of the Composition is known,                   |
+| Comments                          | Used when the id of the Composition is known,                         |
 |                                   | probably by performing a search operation prior to this call.         |    
 +-----------------------------------+-----------------------------------------------------------------------+
 
@@ -154,8 +154,8 @@ Profile List
 
 Download Forge from https://simplifier.net/forge/download to view this profile.
 
-Examples
---------
+Json Example
+------------
 
 .. code-block:: json
 
