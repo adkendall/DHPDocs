@@ -136,9 +136,111 @@ definition.
 | **Scope**             | **Interactions**      | **Constraints**       |
 +=======================+=======================+=======================+
 | phfapi.admin          | create, read, update, | none                  |
-|                       | delete, create        |                       |
+|                       | delete                |                       |
 +-----------------------+-----------------------+-----------------------+
 | phfapi.appointments   | read, update, search  | Citizen (i.e. a       |
+|                       |                       | participant of type   |
+|                       |                       | Patient) must         |
+|                       |                       | reference the Patient |
+|                       |                       | resource of the       |
+|                       |                       | authorised user.      |
++-----------------------+-----------------------+-----------------------+
+
+DhpViewOnlyAppointment
+~~~~~~~~~~~~~~~~~~~~~~
+
+**FHIR Profile:** :download:`https://digitalhealthplatform.scot/fhir/DhpViewOnlyAppointment <Profiles/DhpAppointment.structuredefinition.xml>`
+
+**Base Fhir Resource:** http://hl7.org/fhir/DSTU2/appointment.html
+
+**Description**: The DhpViewOnlyAppointment resource is used to capture appointment notification records for a patient. The term appointment notification is adopted to differentiate these records from actual appointments which are generated and stored in the core systems. Appointment notifications provide a snapshot in time of a subset of data from an appointment as it was generated in a core system. Citizens *cannot* update their participant status as the appointment is provided for information only. If the patient declines or request an alternative using other channels (e.g. telephone) then the appointment details may be updated, or a new appointment created, by the core system.
+
+.. figure:: ../../img/DhpViewOnlyAppointment_forge.png
+   :scale: 75 %
+   :alt: DhpViewOnlyAppointment Element Tree
+
+Figure2: DhpViewOnlyAppointment Element Tree
+
+The following table is a `differential
+statement <http://hl7.org/fhir/DSTU2/profiling.html#snapshot>`__ which
+describes only the elements which have been modified from the base
+profile. For a full description of all elements see also the FHIR
+`Appointment <http://hl7.org/fhir/DSTU2/appointment.html>`__ structure
+definition.
+
++-----------------------------------+-----------------------------------+
+| **Attribute**                     | **Notes**                         |
++===================================+===================================+
+| CorrelationIdentifier (slice of   | Core system unique appointment    |
+| identifier)                       | identifier                        |
+|                                   |                                   |
+|                                   | A system+value pair uniquely      |
+|                                   | identifiying the appointment in   |
+|                                   | the originating core system.      |
+|                                   | system is in the format           |
+|                                   | https://digitalhealthplatform.sco |
+|                                   | t/fhir/coresystems/{system        |
+|                                   | identifier} e.g.                  |
+|                                   | "https://digitalhealthplatform.sc |
+|                                   | ot/fhir/coresystems/ggctrak"      |
++-----------------------------------+-----------------------------------+
+| status                            | The overall status of the         |
+|                                   | Appointment. Each of the          |
+|                                   | participants has their own        |
+|                                   | participation status which        |
+|                                   | indicates their involvement in    |
+|                                   | the process, however this status  |
+|                                   | indicates the shared status. Any  |
+|                                   | FHIR status is valid, however,    |
+|                                   | only pending, booked and          |
+|                                   | cancelled are currently acted     |
+|                                   | upon. Any other status is not     |
+|                                   | expected and will be ignored in   |
+|                                   | the platform.                     |
++-----------------------------------+-----------------------------------+
+| priority                          | profiled out                      |
++-----------------------------------+-----------------------------------+
+| slot                              | profiled out                      |
++-----------------------------------+-----------------------------------+
+| comment                           | Comments added by the service at  |
+|                                   | the time the appointment is       |
+|                                   | created, updated or cancelled.    |
+|                                   | Comments must always append       |
+|                                   | rather than overwrite previous    |
+|                                   | comments and include a date/time  |
+|                                   | when the comment was appended.    |
+|                                   | Citizen comments are not added    |
+|                                   | here but on the corresponding     |
+|                                   | AppointmentResponse               |
++-----------------------------------+-----------------------------------+
+| Citizen (slice of participant)    | Mandatory. A Patient resource     |
+|                                   | which identifies the citizen for  |
+|                                   | whom the appointment has been     |
+|                                   | scheduled. A DhpAppointment can   |
+|                                   | have any number of participants   |
+|                                   | but one must be a reference to    |
+|                                   | the citizen's own Patient         |
+|                                   | resource.                         |
++-----------------------------------+-----------------------------------+
+| OtherParticipants (slice of       | DhpAppointments must contain one  |
+| participant)                      | participant of type Patient.      |
+|                                   | Other participants are optional   |
+|                                   | but if included must be added as  |
+|                                   | contained resources whether       |
+|                                   | Practitioner, RelatedPerson,      |
+|                                   | Device, HealthCareService or      |
+|                                   | Location.                         |
++-----------------------------------+-----------------------------------+
+
+**FHIR Interactions**
+
++-----------------------+-----------------------+-----------------------+
+| **Scope**             | **Interactions**      | **Constraints**       |
++=======================+=======================+=======================+
+| phfapi.admin          | create, read, update, | none                  |
+|                       | delete                |                       |
++-----------------------+-----------------------+-----------------------+
+| phfapi.appointments   | read, search          | Citizen (i.e. a       |
 |                       |                       | participant of type   |
 |                       |                       | Patient) must         |
 |                       |                       | reference the Patient |
@@ -258,7 +360,7 @@ structure definition.
 +=======================+=======================+=======================+
 | phfapi.admin          | read, search          | none                  |
 +-----------------------+-----------------------+-----------------------+
-| phfapi.appointments   | create, read, search  | Actor must reference  |
+| phfapi.appointments   | read, search          | Actor must reference  |
 |                       |                       | the Patient resource  |
 |                       |                       | of the authorised     |
 |                       |                       | user.                 |
