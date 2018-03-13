@@ -776,8 +776,7 @@ Download Forge from https://simplifier.net/forge/download to view these profiles
 
 Json Examples
 ----------------------
-DhpAppointment with contained DhpCorrespondenceDocument
-
+1. DhpAppointment with contained DhpCorrespondenceDocument
 
 .. code-block:: json
 
@@ -829,6 +828,33 @@ DhpAppointment with contained DhpCorrespondenceDocument
        }
      ]
    }
+
+2. DhpAppointmentResponse
+
+.. code-block:: json
+
+    {
+      "fullUrl": "fhir_base/AppointmentResponse/spark10/_history/spark13",
+      "resource": {
+        "resourceType": "AppointmentResponse",
+        "id": "spark10",
+        "meta": {
+          "versionId": "spark13",
+          "lastUpdated": "2017-12-15T15:21:51.854+00:00",
+          "profile": [
+            "https://digitalhealthplatform.scot/fhir/DhpAppointmentResponse"
+          ]
+        },
+        "appointment": {
+          "reference": "fhir_base/Appointment/spark40"
+        },
+        "actor": {
+          "reference": "fhir_base/Patient/spark45"
+        },
+        "participantStatus": "tentative",
+        "comment": "Must be next week"
+      }
+    }
 
 C# Examples
 -------------------------
