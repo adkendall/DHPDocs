@@ -26,7 +26,7 @@ The structure of the inform-subject tag is:
 
 Json Example
 ~~~~~~~~~~~~
-1. Appointment with inform-subject tag applied
+Appointment with inform-subject tag applied:
 
 .. codeblock:: json
 
@@ -57,3 +57,17 @@ Json Example
        }
      ]
    }
+
+C# Example
+~~~~~~~~~~
+Setting subject-infomred using custom instance operation:
+
+.. codeblock:: json
+
+        private void SetNotificationViewed(string resourceType, string resourceId)
+        {
+            UriBuilder UriBuilderx = new UriBuilder(secureApiUrl);
+            UriBuilderx.Path = string.Format(CultureInfo.CurrentCulture, "{0}/{1}", resourceType, resourceId);
+
+            Client.InstanceOperation(UriBuilderx.Uri, "setSubjectInformed");
+        }
