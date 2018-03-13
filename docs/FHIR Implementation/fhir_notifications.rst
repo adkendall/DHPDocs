@@ -60,9 +60,9 @@ Appointment with inform-subject tag applied:
 
 C# Example
 ~~~~~~~~~~
-Setting subject-infomred using custom instance operation:
+Setting subject-informed using custom instance operation:
 
-.. codeblock:: json
+.. code-block:: json
 
         private void SetNotificationViewed(string resourceType, string resourceId)
         {
