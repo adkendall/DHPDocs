@@ -1,0 +1,151 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<StructureDefinition xmlns="http://hl7.org/fhir">
+  <meta>
+    <lastUpdated value="2018-03-13T13:32:55.532+00:00" />
+  </meta>
+  <url value="https://digitalhealthplatform.scot/fhir/DhpEcsMedicalRecord" />
+  <name value="DhpEcsMedicalRecord" />
+  <status value="draft" />
+  <date value="2018-03-13T09:24:31.1205Z" />
+  <description value="DhpEcsMedicalRecord is a profile based upon the Composition resource and is used to give structure to the contained resources (MedicationStement and AllergyIntolerence) to provide service users with a view of their summarry record as known to their GP." />
+  <fhirVersion value="1.0.2" />
+  <kind value="resource" />
+  <constrainedType value="Composition" />
+  <abstract value="false" />
+  <base value="http://hl7.org/fhir/StructureDefinition/Composition" />
+  <differential>
+    <element>
+      <path value="Composition" />
+    </element>
+    <element>
+      <path value="Composition.type" />
+      <comments value="Fixed value LOINC code 11503-0 (Medical Record)" />
+    </element>
+    <element>
+      <path value="Composition.type.coding" />
+      <fixedCoding>
+        <system value="http://loinc.org" />
+        <code value="11503-0" />
+      </fixedCoding>
+    </element>
+    <element>
+      <path value="Composition.type.coding.system" />
+      <fixedUri value="http://loinc.org" />
+    </element>
+    <element>
+      <path value="Composition.type.coding.code" />
+      <fixedCode value="11503-0" />
+    </element>
+    <element>
+      <path value="Composition.status" />
+      <short value="final" />
+      <definition value="The workflow/clinical status of this composition. Fixed value 'final' must be specified." />
+      <fixedCode value="final" />
+    </element>
+    <element>
+      <path value="Composition.subject" />
+      <short value="Patient reference of the subject of the contained medical record" />
+      <definition value="Only a Patient reference is valid and must point to the Patient resource which relates to the subject of this medical record." />
+      <type>
+        <code value="Reference" />
+        <profile value="http://hl7.org/fhir/StructureDefinition/Patient" />
+      </type>
+    </element>
+    <element>
+      <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-explicit-type-name">
+        <valueString value="Section" />
+      </extension>
+      <path value="Composition.section" />
+      <name value="section" />
+      <slicing>
+        <description value="Two sections are defined and must be specified, even if empty. The sections are 'Prescriptions' and 'Allergies'" />
+        <rules value="open" />
+      </slicing>
+    </element>
+    <element>
+      <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-explicit-type-name">
+        <valueString value="Section" />
+      </extension>
+      <path value="Composition.section" />
+      <name value="Prescriptions" />
+      <min value="1" />
+      <max value="1" />
+    </element>
+    <element>
+      <path value="Composition.section.title" />
+      <definition value="fixed value 'Prescriptions'" />
+      <min value="1" />
+      <fixedString value="Prescriptions" />
+    </element>
+    <element>
+      <path value="Composition.section.code" />
+      <min value="1" />
+      <fixedCodeableConcept>
+        <coding>
+          <system value="http://loinc.org" />
+          <code value="29549-3" />
+          <display value="Medication Administered Narrative" />
+        </coding>
+      </fixedCodeableConcept>
+    </element>
+    <element>
+      <path value="Composition.section.code.coding.system" />
+      <fixedUri value="http://loinc.org" />
+    </element>
+    <element>
+      <path value="Composition.section.code.coding.code" />
+      <fixedCode value="29549-3" />
+    </element>
+    <element>
+      <path value="Composition.section.entry" />
+      <definition value="References must be of type MedicationStatement and be contained within the Composition" />
+      <type>
+        <code value="Reference" />
+        <profile value="http://hl7.org/fhir/StructureDefinition/MedicationStatement" />
+      </type>
+    </element>
+    <element>
+      <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-explicit-type-name">
+        <valueString value="Section" />
+      </extension>
+      <path value="Composition.section" />
+      <name value="Allergies" />
+      <min value="1" />
+      <max value="1" />
+    </element>
+    <element>
+      <path value="Composition.section.title" />
+      <definition value="Fixed value 'Allergies'" />
+      <min value="1" />
+      <fixedString value="Allergies" />
+    </element>
+    <element>
+      <path value="Composition.section.code" />
+      <min value="1" />
+    </element>
+    <element>
+      <path value="Composition.section.code.coding" />
+      <fixedCoding>
+        <system value="http://loinc.org" />
+        <code value="48765-2" />
+        <display value="Allergies and adverse reactions Document" />
+      </fixedCoding>
+    </element>
+    <element>
+      <path value="Composition.section.code.coding.system" />
+      <fixedUri value="http://loinc.org" />
+    </element>
+    <element>
+      <path value="Composition.section.code.coding.code" />
+      <fixedCode value="48765-2" />
+    </element>
+    <element>
+      <path value="Composition.section.entry" />
+      <definition value="References must be of type AllergyIntolerence and be contained within the Composition" />
+      <type>
+        <code value="Reference" />
+        <profile value="http://hl7.org/fhir/StructureDefinition/AllergyIntolerance" />
+      </type>
+    </element>
+  </differential>
+</StructureDefinition>
