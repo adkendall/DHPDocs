@@ -777,7 +777,7 @@ Download Forge from https://simplifier.net/forge/download to view these profiles
 Json Examples
 ----------------------
 DhpAppointment with contained DhpCorrespondenceDocument
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
 
 .. code-block:: json
 {
