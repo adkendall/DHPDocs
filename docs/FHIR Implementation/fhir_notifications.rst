@@ -1,0 +1,25 @@
+Notifications
+=============
+.. figure:: ../../img/NotificationsBusService.png
+   :scale: 50 %
+   :alt: Notification Service
+
+Figure 1: Notification Service
+
+Notifications are the means by which citizens are informed, by the DHP, that a resource relating to them has been updated or added to the PHF. It is also possible that feeding systems send their own notifications (e.g. by email), but that is outside the scope of this service.
+
+FHIR API implementation
+~~~~~~~~~~~~~~~~~~~~~~~
+FHIR meta tags are used to indicate which resources should trigger a notification and to indicate when the subject has been notified. An inform-subject tag is included with resources at the time of creation or update (by the IH) and this is replaced with a subject-informed tag by a CA when the notification has been delivered. It is currently up to the CA to implement the notification delivery mechanism.
+
+A custom operation is defined, **$setSubjectInformed**, which provides a convenient way for a CA to indicate that the notification has been delivered. 
+
+The structure of the inform-subject tag is:
+
+.. codeblock:: json
+
+    "tag": [
+      {
+        "system": "https://digitalhealthplatform.scot/fhir/tags",
+        "code": "inform-subject"
+      }
