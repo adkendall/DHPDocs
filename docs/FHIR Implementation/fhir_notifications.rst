@@ -1,6 +1,6 @@
 Notifications
 =============
-.. figure:: ../../img/NotificationsBusService.png
+.. figure:: ../../img/NotificationBusService.png
    :scale: 50 %
    :alt: Notification Service
 
