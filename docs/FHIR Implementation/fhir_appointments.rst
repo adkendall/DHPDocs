@@ -857,8 +857,39 @@ Json Examples
     }
 
 C# Examples
--------------------------
+-----------
 
-tbc
+.. code-block:: json
+
+        private void CreateResponse(Appointment appointment, AppointmentResponse appointmentResponse)
+        {
+            EntryComponent component;
+
+            Bundle bundle = new Bundle()
+            {
+                Meta = new Meta() { Profile = new List<string>() { "https://digitalhealthplatform.scot/fhir/DhpAppointmentResponseTransaction" } },
+                Type = BundleType.Transaction,
+                Entry = new List<EntryComponent>()
+            };
+
+            bundle.AddResourceEntry(appointment, string.Format(CultureInfo.InvariantCulture, "{0}/Appointment/{1}", secureApiUrl, appointment.Id));
+            bundle.AddResourceEntry(appointmentResponse, string.Format(CultureInfo.InvariantCulture, "{0}/AppointmentResponse/null", secureApiUrl));
+
+            component = bundle.Entry.Where(e => e.Resource.ResourceType == ResourceType.Appointment).FirstOrDefault();
+
+            if (component != null)
+            {
+                component.Request = new RequestComponent() { Method = HTTPVerb.PUT, Url = string.Format(CultureInfo.InvariantCulture, "{0}/Appointment/{1}", secureApiUrl, appointment.Id) };
+            }
+
+            component = bundle.Entry.Where(e => e.Resource.ResourceType == ResourceType.AppointmentResponse).FirstOrDefault();
+
+            if (component != null)
+            {
+                component.Request =  new RequestComponent() { Method = HTTPVerb.POST };
+            }            
+
+            fhirClient.Transaction(bundle);
+        }
 
 
