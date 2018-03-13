@@ -190,8 +190,8 @@ FHIR Profiles
 
 Download Forge from https://simplifier.net/forge/download to view this profile.
 
-Examples
-----------------------
+Json Example
+------------
 
 .. code-block:: json
 
@@ -252,8 +252,8 @@ Examples
      }
    }
 
-C# Examples
--------------------------
+C# Example
+----------
 
 .. code-block:: c#
 
