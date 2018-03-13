@@ -781,54 +781,54 @@ DhpAppointment with contained DhpCorrespondenceDocument
 
 .. code-block:: json
 
-{
-  "resourceType": "Appointment",
-  "meta": {
-    "profile": [
-      "https://digitalhealthplatform.scot/fhir/DhpAppointment"
-    ],
-  },
-  "contained": [
-    {
-      "resourceType": "DocumentReference",
-      "id": "f6136b8b-c96b-4aec-8c82-5903dcd20422",
-      "meta": {
-        "profile": [
-          "https://digitalhealthplatform.scot/fhir/DhpCorrespondenceDocument"
-        ]
-      },
-      "subject": {
-        "reference": "Patient/spark43"
-      },
-      "created": "2018-03-13T19:26:47.157524Z",
-      "indexed": "2018-03-13T19:26:47.157+00:00",
-      "status": "current",
-      "description": "Supplementary leaflet.",
-      "content": [
-        {
-          "attachment": {
-            "contentType": "application/pdf",
-            "data": "<base64-encoded string>",
-            "title": "Supplementary Leaflet"
-          }
-        }
-      ]
-    }
-  ],
-  "status": "pending",
-  "description": "Mr Bryn Jones - Orthopaedics",
-  "start": "2018-03-23T19:26:47.157+00:00",
-  "end": "2018-03-23T20:26:47.157+00:00",
-  "comment": "13/03/2018 19:26:47 Appointment created from SampleCA.",
-  "participant": [
-    {
-      "actor": {
-        "reference": "Patient/spark43"
-      },
-      "status": "needs-action"
-    }
-  ]
-}
+   {
+     "resourceType": "Appointment",
+     "meta": {
+       "profile": [
+         "https://digitalhealthplatform.scot/fhir/DhpAppointment"
+       ],
+     },
+     "contained": [
+       {
+         "resourceType": "DocumentReference",
+         "id": "f6136b8b-c96b-4aec-8c82-5903dcd20422",
+         "meta": {
+           "profile": [
+             "https://digitalhealthplatform.scot/fhir/DhpCorrespondenceDocument"
+           ]
+         },
+         "subject": {
+           "reference": "Patient/spark43"
+         },
+         "created": "2018-03-13T19:26:47.157524Z",
+         "indexed": "2018-03-13T19:26:47.157+00:00",
+         "status": "current",
+         "description": "Supplementary leaflet.",
+         "content": [
+           {
+             "attachment": {
+               "contentType": "application/pdf",
+               "data": "<base64-encoded string>",
+               "title": "Supplementary Leaflet"
+             }
+           }
+         ]
+       }
+     ],
+     "status": "pending",
+     "description": "Mr Bryn Jones - Orthopaedics",
+     "start": "2018-03-23T19:26:47.157+00:00",
+     "end": "2018-03-23T20:26:47.157+00:00",
+     "comment": "13/03/2018 19:26:47 Appointment created from SampleCA.",
+     "participant": [
+       {
+         "actor": {
+           "reference": "Patient/spark43"
+         },
+         "status": "needs-action"
+       }
+     ]
+   }
 
 C# Examples
 -------------------------
