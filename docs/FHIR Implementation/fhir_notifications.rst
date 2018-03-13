@@ -23,3 +23,37 @@ The structure of the inform-subject tag is:
         "system": "https://digitalhealthplatform.scot/fhir/tags",
         "code": "inform-subject"
       }
+
+Json Example
+~~~~~~~~~~~~
+1. Appointment with inform-subject tag applied
+
+.. codeblock:: json
+
+   {
+     "resourceType": "Appointment",
+     "meta": {
+       "profile": [
+         "https://digitalhealthplatform.scot/fhir/DhpAppointment"
+       ],
+       "tag": [
+         {
+           "system": "https://digitalhealthplatform.scot/fhir/tags",
+           "code": "inform-subject"
+         }
+       ]
+     },
+     "status": "pending",
+     "description": "Mr Bryn Jones - Orthopaedics",
+     "start": "2018-03-23T21:21:27.75+00:00",
+     "end": "2018-03-23T22:21:27.75+00:00",
+     "comment": "13/03/2018 21:21:27 Appointment created from SampleCA.",
+     "participant": [
+       {
+         "actor": {
+           "reference": "Patient/spark43"
+         },
+         "status": "needs-action"
+       }
+     ]
+   }
