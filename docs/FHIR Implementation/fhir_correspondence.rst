@@ -58,6 +58,7 @@ definition.
 | securityLabel                     | profiled out                                                        |
 +-----------------------------------+---------------------------------------------------------------------+
 
+*Note:* As per the FHIR specification, the document itself is added as an `Attachment <http://hl7.org/fhir/DSTU2/datatypes.html#Attachment>`__ which can contain either the base64ed data inline or a URI pointing to a location where the document can be found on an external server. When a URI is specified, the CA must make an extra call to the external server to retrieve the document. The external URI will either require no authorisation or can authorise the call using an OAuth2 token issued by the DHP. In the case of the latter, the token issued to the CA for PHF interactions can be used, as the external service will trust the DHP token service. This is the only external authorisation mechansim currently supported.
 
 **FHIR Interactions**
 
@@ -101,6 +102,7 @@ Create Correspondence
 |                                   |    have not been profiled out.                                            |
 +-----------------------------------+---------------------------------------------------------------------------+
 
+
 Read
 ~~~~
 
@@ -134,8 +136,8 @@ Profile List
 
 Download Forge from https://simplifier.net/forge/download to view this profile.
 
-Examples
---------
+Json Example
+------------
 
 .. code-block:: json
 
@@ -174,8 +176,8 @@ Examples
       }
 
 
-C# Examples
--------------------------
+C# Example
+----------
 
 .. code-block:: c#
 
