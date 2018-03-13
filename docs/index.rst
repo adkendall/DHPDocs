@@ -24,6 +24,7 @@ Contents:
    FHIR Implementation/fhir_correspondence.rst
    FHIR Implementation/fhir_forms.rst
    FHIR Implementation/fhir_ecs.rst
+   FHIR Implementation/fhir_notifications.rst
 
 
 
