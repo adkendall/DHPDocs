@@ -780,7 +780,6 @@ DhpAppointment with contained DhpCorrespondenceDocument
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 .. code-block:: json
-
 {
   "resourceType": "Appointment",
   "meta": {
