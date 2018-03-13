@@ -1,7 +1,11 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <StructureDefinition xmlns="http://hl7.org/fhir">
   <meta>
-    <lastUpdated value="2017-10-10T09:47:40.924+01:00" />
+    <lastUpdated value="2018-03-13T18:46:50.609+00:00" />
+    <tag>
+      <code value="1" />
+      <display value="inform-subject" />
+    </tag>
   </meta>
   <url value="https://digitalhealthplatform.scot/fhir/DhpViewOnlyAppointment" />
   <version value="0.1" />
@@ -20,9 +24,17 @@
     </element>
     <element>
       <path value="Appointment.identifier" />
-      <short value="External Id for this item" />
-      <definition value="Identifier is a simple system/value pair set by the core system or intermediary and acts as a correlation id for responses and updates." />
-      <min value="1" />
+      <slicing>
+        <discriminator value="system" />
+        <rules value="open" />
+      </slicing>
+      <max value="1" />
+    </element>
+    <element>
+      <path value="Appointment.identifier" />
+      <name value="CorrelationIdentifier" />
+      <short value="Core system unique appointment identifier" />
+      <definition value="A system+value pair uniquely identifiying the appointment in the originating core system. system is in the format https://digitalhealthplatform.scot/fhir/coresystems/{system identifier}  e.g. &quot;https://digitalhealthplatform.scot/fhir/coresystems/ggctrak&quot;" />
       <max value="1" />
     </element>
     <element>
@@ -42,6 +54,16 @@
       <max value="0" />
     </element>
     <element>
+      <path value="Appointment.identifier" />
+      <name value="OtherIdentifiers" />
+      <min value="1" />
+    </element>
+    <element>
+      <path value="Appointment.status" />
+      <short value="pending | booked | cancelled" />
+      <definition value="The overall status of the Appointment. Each of the participants has their own participation status which indicates their involvement in the process, however this status indicates the shared status. Any FHIR status is valid, however, only pending, booked and cancelled are currently acted upon. Any other status is not expected and will be ignored in the platform." />
+    </element>
+    <element>
       <path value="Appointment.type.coding" />
       <max value="1" />
     </element>
@@ -50,13 +72,25 @@
       <max value="0" />
     </element>
     <element>
+      <path value="Appointment.description" />
+      <min value="1" />
+    </element>
+    <element>
+      <path value="Appointment.start" />
+      <min value="1" />
+    </element>
+    <element>
       <path value="Appointment.slot" />
       <max value="0" />
     </element>
     <element>
+      <path value="Appointment.comment" />
+      <definition value="Comments added by the service at the time the appointment is created, updated or cancelled. Comments must always append rather than overwrite previous comments and include a date/time when the comment was appended. Citizen comments are not added here but on the corresponding AppointmentResponse" />
+    </element>
+    <element>
       <path value="Appointment.participant" />
       <slicing>
-        <discriminator value="actor" />
+        <description value="A DhpAppointment can have any number of participants but one must be a reference to the citizen's own Patient resource." />
         <rules value="open" />
       </slicing>
     </element>
@@ -66,6 +100,7 @@
       <short value="The citizen for whom the appointment has been scheduled" />
       <definition value="A Patient resource which identifies the citizen for whom the appointment has been scheduled. A DhpAppointment can have any number of participants but one must be a reference to the citizen's own Patient resource." />
       <max value="1" />
+      <mustSupport value="false" />
     </element>
     <element>
       <path value="Appointment.participant.type" />
@@ -88,7 +123,8 @@
     </element>
     <element>
       <path value="Appointment.participant" />
-      <name value="sliceParticipant" />
+      <name value="OtherParticipants" />
+      <definition value="DhpAppointments must contain one participant of type Patient. Other participants are optional but if included must be added as contained resources whether Practitioner, RelatedPerson, Device, HealthCareService or Location." />
     </element>
     <element>
       <path value="Appointment.participant.actor" />

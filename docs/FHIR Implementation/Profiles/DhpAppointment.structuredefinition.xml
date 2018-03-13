@@ -1,7 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <StructureDefinition xmlns="http://hl7.org/fhir">
   <meta>
-    <lastUpdated value="2017-12-06T11:19:25.842+00:00" />
+    <lastUpdated value="2018-03-13T18:46:29.529+00:00" />
     <tag>
       <code value="1" />
       <display value="inform-subject" />
@@ -56,7 +56,7 @@
     <element>
       <path value="Appointment.identifier" />
       <name value="OtherIdentifiers" />
-      <max value="1" />
+      <min value="1" />
     </element>
     <element>
       <path value="Appointment.status" />
@@ -90,7 +90,7 @@
     <element>
       <path value="Appointment.participant" />
       <slicing>
-        <discriminator value="actor" />
+        <description value="A DhpAppointment can have any number of participants but one must be a reference to the citizen's own Patient resource." />
         <rules value="open" />
       </slicing>
     </element>
@@ -100,7 +100,7 @@
       <short value="The citizen for whom the appointment has been scheduled" />
       <definition value="A Patient resource which identifies the citizen for whom the appointment has been scheduled. A DhpAppointment can have any number of participants but one must be a reference to the citizen's own Patient resource." />
       <max value="1" />
-      <mustSupport value="true" />
+      <mustSupport value="false" />
     </element>
     <element>
       <path value="Appointment.participant.type" />

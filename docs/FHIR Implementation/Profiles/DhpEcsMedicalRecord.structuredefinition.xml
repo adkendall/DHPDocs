@@ -1,13 +1,13 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <StructureDefinition xmlns="http://hl7.org/fhir">
   <meta>
-    <lastUpdated value="2018-03-13T13:32:55.532+00:00" />
+    <lastUpdated value="2018-03-13T13:46:51.594+00:00" />
   </meta>
   <url value="https://digitalhealthplatform.scot/fhir/DhpEcsMedicalRecord" />
   <name value="DhpEcsMedicalRecord" />
   <status value="draft" />
   <date value="2018-03-13T09:24:31.1205Z" />
-  <description value="DhpEcsMedicalRecord is a profile based upon the Composition resource and is used to give structure to the contained resources (MedicationStement and AllergyIntolerence) to provide service users with a view of their summarry record as known to their GP." />
+  <description value="DhpEcsMedicalRecord is a profile based upon the Composition resource and is used to give structure to the contained resources (MedicationStement and AllergyIntolerence) to provide service users with a view of their summary record as known to their GP." />
   <fhirVersion value="1.0.2" />
   <kind value="resource" />
   <constrainedType value="Composition" />
