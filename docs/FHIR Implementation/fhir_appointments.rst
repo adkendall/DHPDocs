@@ -458,7 +458,6 @@ New Appointment
 |                                   |                                                                                                  |
 |                                   | 3) Additional participants                                                                       |
 |                                   |    (`Practitioner <http://hl7.org/fhir/DSTU2/practitioner.html>`__                               |
-|                                   | /fhir/DSTU2/practitioner.html>`__                                                                |
 |                                   |  | `RelatedPerson <http://hl7.org                                                                |
 |                                   | /fhir/DSTU2/relatedperson.html>`_                                                                |
 |                                   | _ | `Device <http://hl7.org/fhir/                                                                |
