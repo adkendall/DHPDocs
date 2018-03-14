@@ -182,8 +182,8 @@ Search (Poll for updates)
 +-----------------------------------+-----------------------------------------------------------------------+
 
 
-FHIR Profiles
---------------------------
+Profile List
+------------
 
 :download:`https://digitalhealthplatform.scot/fhir/AboutMeResponse <Profiles/AboutMeResponse.structuredefinition.xml>`
 
