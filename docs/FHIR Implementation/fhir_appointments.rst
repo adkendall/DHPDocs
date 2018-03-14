@@ -764,8 +764,8 @@ Summary of business rules for allowed responses
 | deleted                          | N      | N       | N                  |
 +----------------------------------+--------+---------+--------------------+
 
-List of FHIR Profiles
---------------------------
+Profile List
+------------
 
 :download:`https://digitalhealthplatform.scot/fhir/DhpAppointment <Profiles/DhpAppointment.structuredefinition.xml>`
 :download:`https://digitalhealthplatform.scot/fhir/DhpAppointmentResponse <Profiles/DhpAppointmentResponse.structuredefinition.xml>`
