@@ -155,8 +155,8 @@ Search
 +-----------------------------------+-----------------------------------------------------------------------+
 | Interaction                       | GET {fhir base}/QuestionnaireResponse                                 |
 +-----------------------------------+-----------------------------------------------------------------------+
-| Parameters                        | _profile=``https://digitalhealthplatform.scot/fhir/AboutMeResponse``  |
-|                                   | subject={PHF id of subject's Patient resource}                        |
+| Parameters                        | 1) _profile=`https://digitalhealthplatform.scot/fhir/AboutMeResponse` |
+|                                   | 2) subject={PHF id of subject's Patient resource}                     |
 +-----------------------------------+-----------------------------------------------------------------------+
 | Comments                          | Used to determine if a Patient has an AboutMe form associated with    |
 |                                   | their account. A Patient can have only 1 AboutForm. A resultset count |
@@ -172,9 +172,9 @@ Search (Poll for updates)
 +-----------------------------------+-----------------------------------------------------------------------+
 | Interaction                       | GET {fhir base}/QuestionnaireResponse                                 |
 +-----------------------------------+-----------------------------------------------------------------------+
-| Parameters                        | _profile=``https://digitalhealthplatform.scot/fhir/AboutMeResponse``  |
-|                                   | status=completed                                                      |
-|                                   | _lastUpdated=gt{datetime of last poll}                                |
+| Parameters                        | 1) _profile=`https://digitalhealthplatform.scot/fhir/AboutMeResponse` |
+|                                   | 2) status=completed                                                   |
+|                                   | 3) _lastUpdated=gt{datetime of last poll}                             |
 +-----------------------------------+-----------------------------------------------------------------------+
 | Comments                          | Used by the party which issued the form to poll for updates.          |
 |                                   | Forms with status=completed that have been updated since the last poll| 
