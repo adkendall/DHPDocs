@@ -425,7 +425,7 @@ New Appointment
 +===================================+==================================================================================================+
 | Interaction                       | POST {fhir base}/Appointment                                                                     |
 +-----------------------------------+--------------------------------------------------------------------------------------------------+
-| Mandatory Requirements            | 1) `https://digitalhealthplatform.scot/fhir/DhpAppointment` included in meta.profile             |
+| Mandatory Requirements            | 1) `https://digitalhealthplatform.scot/fhir/DhpAppointment` included in             |
 |                                   | `meta.profile <http://hl7.org/fhir/DSTU2/resource-definitions.html#Resource.meta>`__             |
 |                                   |                                                                                                  |
 |                                   | 2) status = pending                                                                              |
@@ -457,7 +457,7 @@ New Appointment
 |                                   |    identifiers                                                                                   |
 |                                   |                                                                                                  |
 |                                   | 3) Additional participants                                                                       |
-|                                   |    (`Practitioner <http://hl7.org                                                                |
+|                                   |    (`Practitioner <http://hl7.org/fhir/DSTU2/practitioner.html>`__                               |
 |                                   | /fhir/DSTU2/practitioner.html>`__                                                                |
 |                                   |  | `RelatedPerson <http://hl7.org                                                                |
 |                                   | /fhir/DSTU2/relatedperson.html>`_                                                                |
