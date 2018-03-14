@@ -425,7 +425,8 @@ New Appointment
 +===================================+==================================================================================================+
 | Interaction                       | POST {fhir base}/Appointment                                                                     |
 +-----------------------------------+--------------------------------------------------------------------------------------------------+
-| Mandatory Requirements            | 1) `https://digitalhealthplatform.scot/fhir/DhpAppointment` included in meta.profile             |
+| Mandatory Requirements            | 1) `https://digitalhealthplatform.scot/fhir/DhpAppointment` included in                          |
+|                                   |    `meta.profile <http://hl7.org/fhir/DSTU2/resource-definitions.html#Resource.meta>`__          |
 |                                   |                                                                                                  |
 |                                   | 2) status = pending                                                                              |
 |                                   |                                                                                                  |
