@@ -138,8 +138,8 @@ Search
 +-----------------------------------+---------------------------------------------------------------------------------+
 | Interaction                       | GET {fhir base}/Composition                                                     |
 +-----------------------------------+---------------------------------------------------------------------------------+
-| Parameters                        | _profile=``https://digitalhealthplatform.scot/fhir/DhpCorrespondenceDocument``  |
-|                                   | subject={PHF id of subject's Patient resource}                                  |
+| Parameters                        | 1) _profile=`https://digitalhealthplatform.scot/fhir/DhpCorrespondenceDocument` |
+|                                   | 2) subject={PHF id of subject's Patient resource}                               |
 +-----------------------------------+---------------------------------------------------------------------------------+
 | Comments                          | Used to return a single DhpEcsMedicalRecord for a patient.                      |
 |                                   | If more than one resource is returned this must be treated as an error condition|
