@@ -457,7 +457,7 @@ New Appointment
 |                                   |    identifiers                                                                                   |
 |                                   |                                                                                                  |
 |                                   | 3) Additional participants (Practitioner, RelatedPerson, Device, HealthcareService or Location)  |
-|                                   | added as contained resources           |
+|                                   | added as contained resources                                                                     |
 |                                   |                                                                                                  |
 |                                   | 4) Any other attributes inherited                                                                |
 |                                   |    from the base resource which                                                                  |
@@ -473,7 +473,7 @@ Update Appointment
 +===================================+===================================+
 | Interaction                       | PUT {fhir base}/Appointment/id    |
 +-----------------------------------+-----------------------------------+
-| Mandatory Requirements            | 1) etails updated (e.g. time,     |
+| Mandatory Requirements            | 1) Details updated (e.g. time,    |
 |                                   | location)                         |
 |                                   |                                   |
 |                                   | 2) Comment appended with human    |
@@ -550,7 +550,7 @@ Accept Appointment
 +-----------------------------------+--------------------------------------------------------------------------------------+
 | Mandatory Requirements            | 1) Bundle specifying                                                                 |
 |                                   |    `https://digitalhealthplatform.scot/fhir/DhpAppointmentResponseTransaction` in    |
-|                                   | `meta.profile <http://hl7.org/fhir/DSTU2/resource-definitions.html#Resource.meta>`__ |
+|                                   | meta.profile                                                                         |
 |                                   |                                                                                      |
 |                                   | 2) Type=transaction                                                                  |
 |                                   |                                                                                      |
@@ -600,7 +600,7 @@ Decline Appointment
 +-----------------------------------+--------------------------------------------------------------------------------------+
 | Mandatory Requirements            | 1) Bundle specifying                                                                 |
 |                                   |    `https://digitalhealthplatform.scot/fhir/DhpAppointmentResponseTransaction` in    |
-|                                   | `meta.profile <http://hl7.org/fhir/DSTU2/resource-definitions.html#Resource.meta>`__ |
+|                                   | meta.profile                                                                         |
 |                                   |                                                                                      |
 |                                   | 2) Type=transaction                                                                  |
 |                                   |                                                                                      |
@@ -653,7 +653,7 @@ Reschedule Appointment
 +-----------------------------------+--------------------------------------------------------------------------------------+
 | Mandatory Requirements            | 1) Bundle specifying                                                                 |
 |                                   |    `https://digitalhealthplatform.scot/fhir/DhpAppointmentResponseTransaction` in    |
-|                                   | `meta.profile <http://hl7.org/fhir/DSTU2/resource-definitions.html#Resource.meta>`__ |
+|                                   | meta.profile                                                                         |
 |                                   |                                                                                      |
 |                                   | 2) Type=transaction                                                                  |
 |                                   |                                                                                      |
