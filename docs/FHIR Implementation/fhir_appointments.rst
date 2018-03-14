@@ -456,12 +456,8 @@ New Appointment
 |                                   | 2) Additional business                                                                           |
 |                                   |    identifiers                                                                                   |
 |                                   |                                                                                                  |
-|                                   | 3) Additional participants                                                                       |
-|                                   |    (`Practitioner <http://hl7.org/fhir/DSTU2/practitioner.html>`__                               |
-|                                   | | `RelatedPerson <http://hl7.org/fhir/DSTU2/relatedperson.html>`__                               |
-|                                   | | `Device <http://hl7.org/fhir/DSTU2/device.html>`__                                             |
-|                                   | | `HealthcareService <http://hl7.org/fhir/DSTU2/healthcareservice.html>`__                       |
-|                                   | | `Location <http://hl7.org/fhir/DSTU2/location.html>`__) added as contained resources           |
+|                                   | 3) Additional participants (Practitioner, RelatedPerson, Device, HealthcareService or Location)  |
+|                                   | added as contained resources           |
 |                                   |                                                                                                  |
 |                                   | 4) Any other attributes inherited                                                                |
 |                                   |    from the base resource which                                                                  |
