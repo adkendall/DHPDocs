@@ -123,8 +123,8 @@ Search
 +-----------------------------------+---------------------------------------------------------------------------------+
 | Interaction                       | GET {fhir base}/DocumentReference                                               |
 +-----------------------------------+---------------------------------------------------------------------------------+
-| Parameters                        | _profile=``https://digitalhealthplatform.scot/fhir/DhpCorrespondenceDocument``  |
-|                                   | subject={PHF id of subject's Patient resource}                                  |
+| Parameters                        | 1) _profile=`https://digitalhealthplatform.scot/fhir/DhpCorrespondenceDocument` |
+|                                   | 2) subject={PHF id of subject's Patient resource}                               |
 +-----------------------------------+---------------------------------------------------------------------------------+
 | Comments                          | Used to return all correspondence for a patient.                                |
 +-----------------------------------+---------------------------------------------------------------------------------+
