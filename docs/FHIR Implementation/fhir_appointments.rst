@@ -536,58 +536,52 @@ Delete Appointment
 Accept Appointment
 ~~~~~~~~~~~~~~~~~~
 
-+-----------------------------------+-----------------------------------+
-| Actor                             | Citizen (via a CA)                |
-+===================================+===================================+
-| Interaction                       | POST {fhir base}/Transaction      |
-|                                   |                                   |
-|                                   | Containing:                       |
-|                                   |                                   |
-|                                   | PUT {fhir base}/Appointment/id    |
-|                                   |                                   |
-|                                   | POST {fhir                        |
-|                                   | base}/AppointmentResponse         |
-+-----------------------------------+-----------------------------------+
-| Mandatory Requirements            | 1) Bundle specifying              |
-|                                   |    `https://digitalhealthplatform.|
-|                                   |scot/fhir/DhpAppointmentResponse   |
-|                                   | Transaction                       |
-|                                   |    in                             |
-|                                   |    meta.profile <https://digitalh |
-|                                   | ealthplatform.scot/fhir/DhpAppoin |
-|                                   | tmentResponseTransaction%20in%20m |
-|                                   | eta.profile>`__                   |
-|                                   |                                   |
-|                                   | 2) Type=transaction               |
-|                                   |                                   |
-|                                   | 3) two entries must be provided;  |
-|                                   |    an Appointment relating to the |
-|                                   |    DhpAppointment being updated   |
-|                                   |    with request.method having     |
-|                                   |    fixed value 'PUT' and a        |
-|                                   |    DhpAppointmentResponse which   |
-|                                   |    is the response being recorded |
-|                                   |    and has request.method fixed   |
-|                                   |    value 'POST'                   |
-|                                   |                                   |
-|                                   | 4) Appointment status is updated  |
-|                                   |    to ‘Booked’                    |
-|                                   |                                   |
-|                                   | 5) Patient participant status     |
-|                                   |    updated to ‘accepted’          |
-|                                   |                                   |
-|                                   | NOTE: As a business rule it is    |
-|                                   | not valid to accept an            |
-|                                   | appointment which has previously  |
-|                                   | been cancelled or deleted or      |
-|                                   | where participant status has      |
-|                                   | previously been set to accepted,  |
-|                                   | declined or tentative. In other   |
-|                                   | words, the appointment status     |
-|                                   | must be ‘pending’ and the         |
-|                                   | participant status must be        |
-|                                   | ‘needs-action’                    |
-+-----------------------------------+-----------------------------------+
++-----------------------------------+--------------------------------------------------------------------------------------+
+| Actor                             | Citizen (via a CA)                                                                   |
++===================================+======================================================================================+
+| Interaction                       | POST {fhir base}/Transaction                                                         |
+|                                   |                                                                                      |
+|                                   | Containing:                                                                          |
+|                                   |                                                                                      |
+|                                   | PUT {fhir base}/Appointment/id                                                       |
+|                                   |                                                                                      |
+|                                   | POST {fhir                                                                           |
+|                                   | base}/AppointmentResponse                                                            |
++-----------------------------------+--------------------------------------------------------------------------------------+
+| Mandatory Requirements            | 1) Bundle specifying                                                                 |
+|                                   |    `https://digitalhealthplatform.scot/fhir/DhpAppointmentResponseTransaction` in    |
+|                                   | `meta.profile <http://hl7.org/fhir/DSTU2/resource-definitions.html#Resource.meta>`__ |
+|                                   |                                                                                      |
+|                                   | 2) Type=transaction                                                                  |
+|                                   |                                                                                      |
+|                                   | 3) two entries must be provided;                                                     |
+|                                   |    an Appointment relating to the                                                    |
+|                                   |    DhpAppointment being updated                                                      |
+|                                   |    with request.method having                                                        |
+|                                   |    fixed value 'PUT' and a                                                           |
+|                                   |    DhpAppointmentResponse which                                                      |
+|                                   |    is the response being recorded                                                    |
+|                                   |    and has request.method fixed                                                      |
+|                                   |    value 'POST'                                                                      |
+|                                   |                                                                                      |
+|                                   | 4) Appointment status is updated                                                     |
+|                                   |    to ‘Booked’                                                                       |
+|                                   |                                                                                      |
+|                                   | 5) Patient participant status                                                        |
+|                                   |    updated to ‘accepted’                                                             |
+|                                   |                                                                                      |
+|                                   | NOTE: As a business rule it is                                                       |
+|                                   | not valid to accept an                                                               |
+|                                   | appointment which has previously                                                     |
+|                                   | been cancelled or deleted or                                                         |
+|                                   | where participant status has                                                         |
+|                                   | previously been set to accepted,                                                     |
+|                                   | declined or tentative. In other                                                      |
+|                                   | words, the appointment status                                                        |
+|                                   | must be ‘pending’ and the                                                            |
+|                                   | participant status must be                                                           |
+|                                   | ‘needs-action’                                                                       |
++-----------------------------------+--------------------------------------------------------------------------------------+
 
 Decline Appointment
 ~~~~~~~~~~~~~~~~~~~
