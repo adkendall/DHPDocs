@@ -130,6 +130,9 @@ html_logo = '../img/300_x_330_Portal_Logo_with_Square.png'
 # so a file named "default.css" will overwrite the builtin "default.css".
 html_static_path = ['_static']
 
+def setup(app):
+      app.add_stylesheet("table_wrap_override.css")
+
 # Add any extra paths that contain custom files (such as robots.txt or
 # .htaccess) here, relative to this directory. These files are copied
 # directly to the root of the documentation.
