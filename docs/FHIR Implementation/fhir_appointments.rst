@@ -425,8 +425,7 @@ New Appointment
 +===================================+==================================================================================================+
 | Interaction                       | POST {fhir base}/Appointment                                                                     |
 +-----------------------------------+--------------------------------------------------------------------------------------------------+
-| Mandatory Requirements            | 1) `https://digitalhealthplatform.scot/fhir/DhpAppointment` included in                          |
-|                                   | `meta.profile <http://hl7.org/fhir/DSTU2/resource-definitions.html#Resource.meta>`__             |
+| Mandatory Requirements            | 1) `https://digitalhealthplatform.scot/fhir/DhpAppointment` included in meta.profile             |
 |                                   |                                                                                                  |
 |                                   | 2) status = pending                                                                              |
 |                                   |                                                                                                  |
@@ -467,31 +466,30 @@ New Appointment
 Update Appointment
 ~~~~~~~~~~~~~~~~~~
 
-+-----------------------------------+-----------------------------------+
-| Actor                             | Core Appointment system (via the  |
-|                                   | IH)                               |
-+===================================+===================================+
-| Interaction                       | PUT {fhir base}/Appointment/id    |
-+-----------------------------------+-----------------------------------+
-| Mandatory Requirements            | 1) Details updated (e.g. time,    |
-|                                   | location)                         |
-|                                   |                                   |
-|                                   | 2) Comment appended with human    |
-|                                   |    readable datestamp and brief   |
-|                                   |    description – e.g.             |
-|                                   |    why/what/who updated the       |
-|                                   |    appointment                    |
-|                                   |                                   |
-|                                   | 3) inform-subject meta tag        |
-|                                   |    re-applied if necessary.       |
-|                                   |                                   |
-|                                   | 4) Patient participant status set |
-|                                   |    to needs-action                |
-|                                   |                                   |
-|                                   | 5) Updates must not be made after |
-|                                   |    the appointment datetime has   |
-|                                   |    passed.                        |
-+-----------------------------------+-----------------------------------+
++-----------------------------------+-----------------------------------------------+
+| Actor                             | Core Appointment system (via the              |
+|                                   | IH)                                           |
++===================================+===============================================+
+| Interaction                       | PUT {fhir base}/Appointment/id                |
++-----------------------------------+-----------------------------------------------+
+| Mandatory Requirements            | 1) Details updated (e.g. time, location)      |
+|                                   |                                               |
+|                                   | 2) Comment appended with human                |
+|                                   |    readable datestamp and brief               |
+|                                   |    description – e.g.                         |
+|                                   |    why/what/who updated the                   |
+|                                   |    appointment                                |
+|                                   |                                               |
+|                                   | 3) inform-subject meta tag                    |
+|                                   |    re-applied if necessary.                   |
+|                                   |                                               |
+|                                   | 4) Patient participant status set             |
+|                                   |    to needs-action                            |
+|                                   |                                               |
+|                                   | 5) Updates must not be made after             |
+|                                   |    the appointment datetime has               |
+|                                   |    passed.                                    |
++-----------------------------------+-----------------------------------------------+
 
 Cancel Appointment
 ~~~~~~~~~~~~~~~~~~
@@ -550,7 +548,7 @@ Accept Appointment
 +-----------------------------------+--------------------------------------------------------------------------------------+
 | Mandatory Requirements            | 1) Bundle specifying                                                                 |
 |                                   |    `https://digitalhealthplatform.scot/fhir/DhpAppointmentResponseTransaction` in    |
-|                                   | meta.profile                                                                         |
+|                                   |     meta.profile                                                                     |
 |                                   |                                                                                      |
 |                                   | 2) Type=transaction                                                                  |
 |                                   |                                                                                      |
