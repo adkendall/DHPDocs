@@ -9,7 +9,7 @@ Figure 1: Correspondence Service
 
 The Correspondence service enables the electronic transmission of data between individuals or organisations which might otherwise be sent as a letter or other form of written communication. It differs from the "*Health and Care Information Business Service*" in that the information communicated is not necessarily structured and can include items such as a request to make an appointment, a notification that test results are available or supplementary information such as directions to a hospital.
 
-For a business level description of the forms service see section "*Correspondence Business Service*" of this documentation.
+For a business level description of the Correspondence service see section "*Correspondence Business Service*" of this documentation.
 
 
 FHIR Profiles
