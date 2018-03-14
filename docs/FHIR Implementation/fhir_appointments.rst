@@ -66,69 +66,66 @@ profile. For a full description of all elements see also the FHIR
 `Appointment <http://hl7.org/fhir/DSTU2/appointment.html>`__ structure
 definition.
 
-+-----------------------------------+-----------------------------------+
-| **Attribute**                     | **Notes**                         |
-+===================================+===================================+
-| CorrelationIdentifier (slice of   | Core system unique appointment    |
-| identifier)                       | identifier                        |
-|                                   |                                   |
-|                                   | A system+value pair uniquely      |
-|                                   | identifiying the appointment in   |
-|                                   | the originating core system.      |
-|                                   | system is in the format           |
-|                                   | https://digitalhealthplatform.sco |
-|                                   | t/fhir/coresystems/{system        |
-|                                   | identifier} e.g.                  |
-|                                   | "https://digitalhealthplatform.sc |
-|                                   | ot/fhir/coresystems/ggctrak"      |
-+-----------------------------------+-----------------------------------+
-| status                            | The overall status of the         |
-|                                   | Appointment. Each of the          |
-|                                   | participants has their own        |
-|                                   | participation status which        |
-|                                   | indicates their involvement in    |
-|                                   | the process, however this status  |
-|                                   | indicates the shared status. Any  |
-|                                   | FHIR status is valid, however,    |
-|                                   | only pending, booked and          |
-|                                   | cancelled are currently acted     |
-|                                   | upon. Any other status is not     |
-|                                   | expected and will be ignored in   |
-|                                   | the platform.                     |
-+-----------------------------------+-----------------------------------+
-| priority                          | profiled out                      |
-+-----------------------------------+-----------------------------------+
-| slot                              | profiled out                      |
-+-----------------------------------+-----------------------------------+
-| comment                           | Comments added by the service at  |
-|                                   | the time the appointment is       |
-|                                   | created, updated or cancelled.    |
-|                                   | Comments must always append       |
-|                                   | rather than overwrite previous    |
-|                                   | comments and include a date/time  |
-|                                   | when the comment was appended.    |
-|                                   | Citizen comments are not added    |
-|                                   | here but on the corresponding     |
-|                                   | AppointmentResponse               |
-+-----------------------------------+-----------------------------------+
-| Citizen (slice of participant)    | Mandatory. A Patient resource     |
-|                                   | which identifies the citizen for  |
-|                                   | whom the appointment has been     |
-|                                   | scheduled. A DhpAppointment can   |
-|                                   | have any number of participants   |
-|                                   | but one must be a reference to    |
-|                                   | the citizen's own Patient         |
-|                                   | resource.                         |
-+-----------------------------------+-----------------------------------+
-| OtherParticipants (slice of       | DhpAppointments must contain one  |
-| participant)                      | participant of type Patient.      |
-|                                   | Other participants are optional   |
-|                                   | but if included must be added as  |
-|                                   | contained resources whether       |
-|                                   | Practitioner, RelatedPerson,      |
-|                                   | Device, HealthCareService or      |
-|                                   | Location.                         |
-+-----------------------------------+-----------------------------------+
++-----------------------------------+----------------------------------------------------------------------------------------+
+| **Attribute**                     | **Notes**                                                                              |
++===================================+========================================================================================+
+| CorrelationIdentifier (slice of   | Core system unique appointment                                                         |
+| identifier)                       | identifier                                                                             |
+|                                   |                                                                                        |
+|                                   | A system+value pair uniquely                                                           |
+|                                   | identifiying the appointment in                                                        |
+|                                   | the originating core system.                                                           |
+|                                   | System is in the format                                                                |
+|                                   | ``https://digitalhealthplatform.scot/fhir/coresystems/{systemidentifier}`` e.g.        |
+|                                   | "https://digitalhealthplatform.scot/fhir/coresystems/ggctrak"                          |
++-----------------------------------+----------------------------------------------------------------------------------------+
+| status                            | The overall status of the                                                              |
+|                                   | Appointment. Each of the                                                               |
+|                                   | participants has their own                                                             |
+|                                   | participation status which                                                             |
+|                                   | indicates their involvement in                                                         |
+|                                   | the process, however this status                                                       |
+|                                   | indicates the shared status. Any                                                       |
+|                                   | FHIR status is valid, however,                                                         |
+|                                   | only pending, booked and                                                               |
+|                                   | cancelled are currently acted                                                          |
+|                                   | upon. Any other status is not                                                          |
+|                                   | expected and will be ignored in                                                        |
+|                                   | the platform.                                                                          |
++-----------------------------------+----------------------------------------------------------------------------------------+
+| priority                          | profiled out                                                                           |
++-----------------------------------+----------------------------------------------------------------------------------------+
+| slot                              | profiled out                                                                           |
++-----------------------------------+----------------------------------------------------------------------------------------+
+| comment                           | Comments added by the service at                                                       |
+|                                   | the time the appointment is                                                            |
+|                                   | created, updated or cancelled.                                                         |
+|                                   | Comments must always append                                                            |
+|                                   | rather than overwrite previous                                                         |
+|                                   | comments and include a date/time                                                       |
+|                                   | when the comment was appended.                                                         |
+|                                   | Citizen comments are not added                                                         |
+|                                   | here but on the corresponding                                                          |
+|                                   | AppointmentResponse                                                                    |
++-----------------------------------+----------------------------------------------------------------------------------------+
+| Citizen (slice of participant)    | Mandatory. A Patient resource                                                          |
+|                                   | which identifies the citizen for                                                       |
+|                                   | whom the appointment has been                                                          |
+|                                   | scheduled. A DhpAppointment can                                                        |
+|                                   | have any number of participants                                                        |
+|                                   | but one must be a reference to                                                         |
+|                                   | the citizen's own Patient                                                              |
+|                                   | resource.                                                                              |
++-----------------------------------+----------------------------------------------------------------------------------------+
+| OtherParticipants (slice of       | DhpAppointments must contain one                                                       |
+| participant)                      | participant of type Patient.                                                           |
+|                                   | Other participants are optional                                                        |
+|                                   | but if included must be added as                                                       |
+|                                   | contained resources whether                                                            |
+|                                   | Practitioner, RelatedPerson,                                                           |
+|                                   | Device, HealthCareService or                                                           |
+|                                   | Location.                                                                              |
++-----------------------------------+----------------------------------------------------------------------------------------+
 
 **FHIR Interactions**
 
