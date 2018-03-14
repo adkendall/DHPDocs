@@ -75,9 +75,9 @@ definition.
 |                                   | A system+value pair uniquely                                                           |
 |                                   | identifiying the appointment in                                                        |
 |                                   | the originating core system.                                                           |
-|                                   | System is in the format                                                                |
+|                                   | System is in the format:                                                               |
 |                                   | ``https://digitalhealthplatform.scot/fhir/coresystems/{systemidentifier}`` e.g.        |
-|                                   | "https://digitalhealthplatform.scot/fhir/coresystems/ggctrak"                          |
+|                                   | `https://digitalhealthplatform.scot/fhir/coresystems/ggctrak`                          |
 +-----------------------------------+----------------------------------------------------------------------------------------+
 | status                            | The overall status of the                                                              |
 |                                   | Appointment. Each of the                                                               |
