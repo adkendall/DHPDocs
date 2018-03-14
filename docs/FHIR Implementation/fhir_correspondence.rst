@@ -28,7 +28,7 @@ DhpCorrespondenceDocument
 
 **Base Fhir Resource:** http://hl7.org/fhir/DSTU2/documentreference.html
 
-**Description**: DhpCorrespondenceDocument is used to record a notification of correspondence between an organisation (e.g the NHS) and the citizen.
+**Description**: DhpCorrespondenceDocument is used to record correspondence relating to the citizen.
 
 .. figure:: ../../img/DhpCorrespondenceDocument_forge.png
    :scale: 75 %
