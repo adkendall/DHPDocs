@@ -30,7 +30,7 @@ DhpEcsMedicalRecord
 
 **Base Fhir Resource:** http://hl7.org/fhir/DSTU2/composition.html
 
-**Description**: DhpEcsMedicalRecord is a profile based upon the Composition resource and is used to give structure to the contained resources (MedicationStement and AllergyIntolerence) to provide service users with a view of their summary record as known to their GP.
+**Description**: DhpEcsMedicalRecord is a profile based upon the Composition resource and is used to give structure to the contained resources (MedicationStatement and AllergyIntolerence) to provide service users with a view of their summary record as known to their GP.
 
 .. figure:: ../../img/DhpEcsMedicalRecord_forge.png
    :scale: 75 %
