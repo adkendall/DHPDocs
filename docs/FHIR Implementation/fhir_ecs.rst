@@ -9,7 +9,7 @@ Figure 1: Health & Care Information Service
 
 The Health and Care Information service enables citizens to view a copy of their data which is held by the health and care services. This is a view-only service and does not provide the ability to push amendments back to the feeding system.
 
-Currently the technical capability exists to provide a copy of Allergy and Medications information from ECS. This uses a FHIR `Composition <http://hl7.org/fhir/DSTU2/composition.html>`__ with contained `AllergyIntolerence <http://hl7.org/fhir/DSTU2/allergyintolerance.html>`__ and `MedictionStatement <http://hl7.org/fhir/DSTU2/medicationstatement.html>`__ resources. 
+Currently the technical capability exists to provide a copy of Allergy and Medications information from ECS. This uses a FHIR `Composition <http://hl7.org/fhir/DSTU2/composition.html>`__ with contained `AllergyIntolerence <http://hl7.org/fhir/DSTU2/allergyintolerance.html>`__ and `MedicationStatement <http://hl7.org/fhir/DSTU2/medicationstatement.html>`__ resources. 
 
 For a business level description of the forms service see section "*Health & Care Information Business Service*" of this documentation.
 
