@@ -548,7 +548,7 @@ Accept Appointment
 +-----------------------------------+--------------------------------------------------------------------------------------+
 | Mandatory Requirements            | 1) Bundle specifying                                                                 |
 |                                   |    `https://digitalhealthplatform.scot/fhir/DhpAppointmentResponseTransaction` in    |
-|                                   |     meta.profile                                                                     |
+|                                   |    meta.profile                                                                      |
 |                                   |                                                                                      |
 |                                   | 2) Type=transaction                                                                  |
 |                                   |                                                                                      |
