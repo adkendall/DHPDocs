@@ -473,12 +473,8 @@ Update Appointment
 +===================================+===================================+
 | Interaction                       | PUT {fhir base}/Appointment/id    |
 +-----------------------------------+-----------------------------------+
-| Mandatory Requirements            | 1) `Change <https://digitalhealth |
-|                                   | platform.scot/fhir/DhpAppointment |
-|                                   | %20included%20in%20meta.profile>` |
-|                                   | __                                |
-|                                   |    details updated (e.g. time,    |
-|                                   |    location)                      |
+| Mandatory Requirements            | 1) etails updated (e.g. time,     |
+|                                   | location)                         |
 |                                   |                                   |
 |                                   | 2) Comment appended with human    |
 |                                   |    readable datestamp and brief   |
@@ -553,8 +549,8 @@ Accept Appointment
 |                                   | base}/AppointmentResponse         |
 +-----------------------------------+-----------------------------------+
 | Mandatory Requirements            | 1) Bundle specifying              |
-|                                   |    `https://digitalhealthplatform |
-|                                   | .scot/fhir/DhpAppointmentResponse |
+|                                   |    `https://digitalhealthplatform.|
+|                                   |scot/fhir/DhpAppointmentResponse   |
 |                                   | Transaction                       |
 |                                   |    in                             |
 |                                   |    meta.profile <https://digitalh |
