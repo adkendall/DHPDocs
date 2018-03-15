@@ -1,22 +1,22 @@
-***************************************
-Emergency Care Summary Business Service
-***************************************
-This chapter contains the specification for the **Emergency Care
-Summary Service** on the Digital Health Platform (DHP) in Scotland.
+******************************************
+Health & Care Information Business Service
+******************************************
+This chapter contains the specification for the **Health & Care Information 
+Service** on the Digital Health Platform (DHP) in Scotland.
 
 What you can do with this service:
 
-1. Provide service users with a view of their prescribed medication and
-   allergies as known to their GP
+1. Provide service users with a summary view of their health and care record 
+   based on information held in public service systems
 
-2. Retrieve this information in plain text
+2. Retrieve this information in a structured form
 
-3. Retrieve substance and drug identification as clinical READ code
+3. Obtain the date when the summary record was last changed
 
-4. Obtain the date when the record was last changed
-
-Please note that this service is currently aimed at TPPs only and
-reflects records held in the Scottish Emergency Care Summary database.
+Please note that the current version of the service supports slots for 
+allergies and medication records that are held in the Scottish Emergency Care 
+Summary database. Further developments would add more sources and types 
+of information.
 
 Content of this chapter 
 
@@ -41,14 +41,14 @@ framework for this service.
 Business level specification
 ============================
 
-The Emergency Care Summary (ECS) Service provides a means to give
-service users online view-only access to a record by the same name that
-is held in a national NHS Scotland database.
+The Health & Care Information Service provides a means to give
+service users online view-only access to a summary record based on 
+information held in Scottish public sectore databases.
 
-The service will only show information held in GP records. It is
-possible that the person has additional prescribed medication (eg
-hospital) and that there is in-flight information that is not yet known
-to the GP.
+The service will only show information from connected systems. It is
+possible that the person has additional records in other systems. 
+It is also possible that there is in-flight information that has not yet 
+been received.
 
 **By using this service as TPP (Third Party Provider) you enter into a
 set of important commitments (the 'service contract').**
@@ -56,11 +56,11 @@ set of important commitments (the 'service contract').**
 **In general, this requires the implementations to be consistent with
 the meanings defined here.**
 
-**The ECS record on the platform will be updated within 48h of a change
-made by the GP in the practice system.**
+**The record on the platform will be updated within 48h of a change
+in the submitting core system.**
 
-**Records will not be transferred if the patient told their GP that he
-or she withdraws consent for their ECS to be shared.**
+**Records will not be transferred if the patient decided that he
+or she withdraws consent for their record to be shared.**
 
 **The record represents a snapshot valid at the time recorded. The
 snapshot will only be updated when an actual change happened.**
@@ -69,14 +69,14 @@ snapshot will only be updated when an actual change happened.**
 manner that is consistent with the definitions here. The TPP is
 responsible for mapping data if necessary.**
 
-Information held in an ECS record
----------------------------------
+Information held in an Health & Care Information summary record
+---------------------------------------------------------------
 
 +-----------------------------------+-----------------------------------+
 | **Information item**              | **Description**                   |
 +===================================+===================================+
 | ServiceUserXRef                   | Reference to the record of the    |
-|                                   | service user where this ECS       |
+|                                   | service user where this summary       |
 |                                   | record applies.                   |
 |                                   |                                   |
 |                                   | The service user record uses the  |
@@ -126,7 +126,7 @@ Information held in an ECS record
 |                                   | record was created                |
 +-----------------------------------+-----------------------------------+
 
-The underlying core system (ECS and its proxy integration engine) will
+The underlying core system or its proxy integration engine will
 create and update records on the platform where they exist and the
 transfer is permitted.
 
@@ -146,8 +146,8 @@ It is assumed that the development team has a general understanding of
 the HL7 FHIR specifications. All provisions of HL7 FHIR DSTU 2 [1]_
 apply unless changes are described in this document.
 
-**The details of the FHIR profile for the ECS Service can be found
-in a dedicated chapter.**
+**The details of the FHIR profile for the Health & Care Information Service 
+can be found in a dedicated chapter.**
 
 The following is additional information to explain key aspects of the
 technical implementation.
@@ -155,23 +155,24 @@ technical implementation.
 Retrieving the correct records
 ------------------------------
 
-The snapshot of the ECS record comes in form of a mostly self-contained
-Composition resource, which refers out to separate resources for
-Patient, Custodian and Author.
+The snapshot of the record comes in form of a Composition resource.
+The Composition refers out to a separate resource for the Patient that
+the summary applies to. 
+The record comes as a list of sections which are like slots holding 
+different parts of the record as *contained* resources. 
+
+The correct summary can be retrieved by searching with the relevant platform profile
+and relevant patient subject reference. 
+Note that it is possible that a given person does not have a record on the platform.
+
+In the current version of the service, there are section slots for:
+
+1. a MedicationStatement resource based on medications recorded in the ECS
+
+2. an AllergyIntolerance resource based on allergies recorded in the ECS
 
 The meta data on the Composition resource provides the information on
 when the record was last updated.
-
-The relevant (for this ECS service) composition will be identified by
-looking at the fields for type, custodian and author. This will show a
-'Medical Record' from National Service Scotland from a device that is
-the ECS system or its proxy integration engine.
-
-The composition will also have a unique business identifier in a coding
-scheme that includes the 'ECS' keyword in a defined position.
-
-The above can be used to determine if a service user has an ECS record
-on the platform and then retrieve it.
 
 .. [1]
    https://www.hl7.org/fhir/DSTU2/index.html
