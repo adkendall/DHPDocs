@@ -14,7 +14,7 @@ What you can do with this service:
 3. Obtain the date when the summary record was last changed
 
 Please note that the current version of the service supports slots for 
-allergies and medication records that are held in the Scottish Emergency Care 
+allergies and medications records that are held in the Scottish Emergency Care 
 Summary database. Further developments would add more sources and types 
 of information.
 
