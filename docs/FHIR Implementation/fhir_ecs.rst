@@ -166,7 +166,9 @@ Json Example
         "id": "spark1",
         "meta": {
           "versionId": "spark8",
-          "lastUpdated": "2018-02-22T12:56:13.701+00:00"
+          "lastUpdated": "2018-02-22T12:56:13.701+00:00",
+          "profile": ["https://digitalhealthplatform.scot/fhir/DhpEcsMedicalRecord"]
+    ]
         },
         "contained": [
           {
