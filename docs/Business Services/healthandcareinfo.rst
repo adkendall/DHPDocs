@@ -43,7 +43,7 @@ Business level specification
 
 The Health & Care Information Service provides a means to give
 service users online view-only access to a summary record based on 
-information held in Scottish public sectore databases.
+information held in Scottish public sector databases.
 
 The service will only show information from connected systems. It is
 possible that the person has additional records in other systems. 
