@@ -150,7 +150,7 @@ DhpViewOnlyAppointment
 
 **Base Fhir Resource:** http://hl7.org/fhir/DSTU2/appointment.html
 
-**Description**: The DhpViewOnlyAppointment resource is used to capture appointment notification records for a patient. The term appointment notification is adopted to differentiate these records from actual appointments which are generated and stored in the core systems. Appointment notifications provide a snapshot in time of a subset of data from an appointment as it was generated in a core system. Citizens *cannot* update their participant status as the appointment is provided for information only. If the patient declines or request an alternative using other channels (e.g. telephone) then the appointment details may be updated, or a new appointment created, by the core system.
+**Description**: The DhpViewOnlyAppointment resource is used to capture appointment notification records for a patient. The term appointment notification is adopted to differentiate these records from actual appointments which are generated and stored in the core systems. Appointment notifications provide a snapshot in time of a subset of data from an appointment as it was generated in a core system. Citizens *cannot* update their participant status as the appointment is provided for information only. If the patient declines or requests an alternative using other channels (e.g. telephone) then the appointment details may be updated, or a new appointment created, by the core system.
 
 .. figure:: ../../img/DhpViewOnlyAppointment_forge.png
    :scale: 75 %
