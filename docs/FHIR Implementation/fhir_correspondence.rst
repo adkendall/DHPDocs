@@ -58,9 +58,7 @@ definition.
 | securityLabel                     | profiled out                                                        |
 +-----------------------------------+---------------------------------------------------------------------+
 
-**Attachments**
-
-As per the FHIR specification, the document itself is added as an `Attachment <http://hl7.org/fhir/DSTU2/datatypes.html#Attachment>`__ which can contain either the base64ed data inline or a URI pointing to a location where the document can be found on an external server. When a URI is specified, the CA must make an extra call to the external server to retrieve the document. The external URI will either require no authorisation or can authorise the call using an OAuth2 token issued by the DHP. In the case of the latter, the token issued to the CA for PHF interactions can be used, as the external service will trust the DHP token service. This is the only external authorisation mechansim currently supported.
+**Attachments:** As per the FHIR specification, the document itself is added as an `Attachment <http://hl7.org/fhir/DSTU2/datatypes.html#Attachment>`__ which can contain either the base64ed data inline or a URI pointing to a location where the document can be found on an external server. When a URI is specified, the CA must make an extra call to the external server to retrieve the document. The external URI will either require no authorisation or can authorise the call using an OAuth2 token issued by the DHP. In the case of the latter, the token issued to the CA for PHF interactions can be used, as the external service will trust the DHP token service. This is the only external authorisation mechansim currently supported.
 
 The first entry in the attachment list is, by convention, treated as the **'main'** document, with subsequent entries treated as **supplementary**. For example, a letter would be a main document, so should come first in the list, with additional information leaflets coming later. CAs can choose to present the main document differently from supplementaries to the user and so it is important that consideration is given to this when creating the resource. 
 
