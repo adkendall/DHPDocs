@@ -409,7 +409,7 @@ profile. For a full description of all elements see also the FHIR
 
 Appointment Attachments
 ~~~~~~~~~~~~~~~~~~~~~~~
-Appointments can have documents attached, for example, the original appointment letter or directions to a hospital. Unfortunately, FHIR DSTU2 does not provide a straight forward way to link appointments with other resources but the need can be met using contained resources. DhpAppointments and DhpViewOnlyAppointments can therfore contain resources of type DhpCorrespondence, which in turn contain documents, either as base64 inline data or as external links.
+Appointments can have documents attached, for example, the original appointment letter or directions to a hospital. Unfortunately, FHIR DSTU2 does not provide a straight forward way to link appointments with other resources but the need can be met using contained resources. DhpAppointments and DhpViewOnlyAppointments can therefore contain resources of type DhpCorrespondence, which in turn contains documents, either as base64 inline data or as external links.
 
 .. _section-1:
 
