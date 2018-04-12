@@ -128,6 +128,7 @@ definition.
 The system responsible for creating a PersonalProfileResponse resource for completion by the patient, must add the patient's GP Practice code which is used when routing the form to the correct practice. The format is:
 
 .. code-block:: json
+
           "tag": [
             {
               "system": "https://digitalhealthplatform.scot/fhir/tags/GpPracticeCode",
@@ -137,6 +138,7 @@ The system responsible for creating a PersonalProfileResponse resource for compl
 
 **Version Extension**
 To assist in document versioning by downstream systems en route to the GP Practice, a version number must be added and incremented everytime the form is shared (i.e. when the forms status is moved to completed - this can happen repeatedly if the patient chooses to edit their answers on a completed form). An extension has been defined for this purpose:
+
 .. code-block:: json
 
         "extension": [
