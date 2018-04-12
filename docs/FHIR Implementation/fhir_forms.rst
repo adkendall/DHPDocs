@@ -83,6 +83,75 @@ definition.
 |                       | delete                |                       |
 +-----------------------+-----------------------+-----------------------+
 
+PersonalProfileResponse
+~~~~~~~~~~~~~~~~~~~~~~~
+
+**FHIR Profile:** :download:`https://digitalhealthplatform.scot/fhir/MyProfileResponse <Profiles/PersonalProfileResponse.structuredefinition.xml>`
+
+**Base Fhir Resource:** http://hl7.org/fhir/DSTU2/questionnaireresponse.html
+
+**Description**: QuestionnaireResponse profile with set questions relating to the 'Personal Profile' form used within the Patient Portal PoV project. Resources conforming to this profile are created when the Patient completes the Personal Profile form page in the Portal. Completed forms can be shared, with Patient consent, with their GP practice.
+
+.. figure:: ../../img/PersonalProfileResponse_forge.png
+   :scale: 75 %
+   :alt: PersonalProfileResponse Element Tree
+
+Figure3: PersonalProfileResponse Element Tree
+
+The following table is a `differential
+statement <http://hl7.org/fhir/DSTU2/profiling.html#snapshot>`__ which
+describes only the elements which have been modified from the base
+profile. For a full description of all elements see also the FHIR
+`QuestionnaireResponse <http://hl7.org/fhir/DSTU2/questionnaireresponse.html>`__ structure
+definition.
+
++-----------------------------------+------------------------------------------------------------------------------------------------+
+| **Attribute**                     | **Notes**                                                                                      |
++===================================+================================================================================================+
+| questionnaire                     | profiled out. Only QuestionnaireResponse                                                       |
+|                                   | is used at present                                                                             |
++-----------------------------------+------------------------------------------------------------------------------------------------+
+| staus                             | The lifecycle status of the questionnaire response as a whole. When the status is set to       |
+|                                   | completed the form will be accessible by, or transferred to, the GP Practice. If the form is   |
+|                                   | subsequently editied then the status moves to amended. The GP practice will not see updates to |
+|                                   | the form until the status is returned to completed.                                            |
++-----------------------------------+------------------------------------------------------------------------------------------------+
+| subject                           | The patient who this profile is about.                                                         |
++-----------------------------------+------------------------------------------------------------------------------------------------+
+| author                            | profiled out                                                                                   |
++-----------------------------------+------------------------------------------------------------------------------------------------+
+| source                            | The person who answered the questions about the subject. If set then the patient who is also   |
+|                                   | the subject must be specified.                                                                 |
++-----------------------------------+------------------------------------------------------------------------------------------------+
+
+**GP Practice Code Meta Tag**
+The system responsible for creating a PersonalProfileResponse resource for completion by the patient, must add the patient's GP Practice code which is used when routing the form to the correct practice. The format is:
+.. code-block:: json
+          "tag": [
+            {
+              "system": "https://digitalhealthplatform.scot/fhir/tags/GpPracticeCode",
+              "code": "123456"
+            }
+          ]
+
+**Version Extension**
+To assist in document versioning by downstream systems en route to the GP Practice, a version number must be added and incremented everytime the form is shared (i.e. when the forms status is moved to completed - this can happen repeatedly if the patient chooses to edit their answers on a completed form). An extension has been defined for this purpose:
+.. code-block:: json
+        "extension": [
+          {
+            "url": "https://digitalhealthplatform.scot/fhir/MyProfileResponseVersionExtension",
+            "valueInteger": 1
+          }
+        ]
+
+**FHIR Interactions**
+
++-----------------------+-----------------------+-----------------------+
+| **Scope**             | **Interactions**      | **Constraints**       |
++=======================+=======================+=======================+
+| phfapi.admin          | create, read, update, | none                  |
+|                       | delete                |                       |
++-----------------------+-----------------------+-----------------------+
 
 Usage Scenarios
 ---------------
