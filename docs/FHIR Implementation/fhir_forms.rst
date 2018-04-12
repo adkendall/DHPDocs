@@ -265,9 +265,9 @@ Profile List
 ------------
 
 :download:`https://digitalhealthplatform.scot/fhir/AboutMeResponse <Profiles/AboutMeResponse.structuredefinition.xml>`
+:download:`https://digitalhealthplatform.scot/fhir/MyProfileResponse <Profiles/PersonalProfileResponse.structuredefinition.xml>`
 
-
-Download Forge from https://simplifier.net/forge/download to view this profile.
+Download Forge from https://simplifier.net/forge/download to view these profiles.
 
 Json Example
 ------------
