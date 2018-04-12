@@ -10,7 +10,7 @@ Figure 1: Forms Service
 
 Forms are organised collections of questions intended to solicit information from citizens. The Forms Business Service enables users to answer set questions electronically and share those answers with relevant parties. 
 
-Currently a single form is implemented called “About Me” which has a corresponding FHIR profile. FHIR profiles will be created on a one-to-one basis as new forms are added to the system - although a more genric profile may be created in future releases.
+Currently two forms are implemented called “About Me” and "Personal Profile" which have corresponding FHIR profiles. FHIR profiles will be created on a one-to-one basis as new forms are added to the system. All forms follow the same general model - i.e. they define a profile on `QuestionnaireResponse <http://hl7.org/fhir/DSTU2/questionnaireresponse.html>`__, although small variations may exist, for example by the use of meta tags and extensions. In future iterations, a more generic mechanism could be introduced which would for example, use `Questionnaire <http://hl7.org/fhir/DSTU2/questionnaire.html>`__ resources rather than FHIR profiles.
 
 For a business level description of the forms service see section "*Forms Business Service*" of this documentation.
 
