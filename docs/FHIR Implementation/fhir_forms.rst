@@ -113,7 +113,7 @@ definition.
 +-----------------------------------+------------------------------------------------------------------------------------------------+
 | status                            | The lifecycle status of the questionnaire response as a whole. When the status is set to       |
 |                                   | completed the form will be accessible by, or transferred to, the GP Practice. If the form is   |
-|                                   | subsequently edited then the status moves to amended. The GP practice will not see updates to |
+|                                   | subsequently edited then the status moves to amended. The GP practice will not see updates to  |
 |                                   | the form until the status is returned to completed.                                            |
 +-----------------------------------+------------------------------------------------------------------------------------------------+
 | subject                           | The patient who this profile is about.                                                         |
