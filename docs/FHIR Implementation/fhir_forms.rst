@@ -126,7 +126,7 @@ definition.
 
 **Questions**
 
-Given the number of questions and complexity of rules around multi part answers, the questions have not been defined within the profile itself.
+Given the number of questions and complexity of rules around multi part answers, the questions have not been defined within the profile itself but instead are described in the Excel file :download:`here. <Profiles/Personal Profile Question Flow.xlsx>`
 
 **GP Practice Code Meta Tag**
 
