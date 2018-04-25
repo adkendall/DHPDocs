@@ -51,7 +51,7 @@ Appointment with inform-subject tag applied:
      "participant": [
        {
          "actor": {
-           "reference": "Patient/spark43"
+           "reference": "Patient/phf43"
          },
          "status": "needs-action"
        }
