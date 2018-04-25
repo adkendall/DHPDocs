@@ -160,12 +160,12 @@ Json Example
 .. code-block:: json
 
    {
-      "fullUrl": "fhir_base/Composition/spark1/_history/spark8",
+      "fullUrl": "fhir_base/Composition/phf1/_history/phf8",
       "resource": {
         "resourceType": "Composition",
-        "id": "spark1",
+        "id": "phf1",
         "meta": {
-          "versionId": "spark8",
+          "versionId": "phf8",
           "lastUpdated": "2018-02-22T12:56:13.701+00:00",
           "profile": ["https://digitalhealthplatform.scot/fhir/DhpEcsMedicalRecord"]
     ]
@@ -175,7 +175,7 @@ Json Example
             "resourceType": "MedicationStatement",
             "id": "urn:uuid:5158f26a-17cf-11e8-9a20-525400fdb384",
             "patient": {
-              "reference": "Patient/spark48"
+              "reference": "Patient/phf48"
             },
             "informationSource": {
               "display": "S99999"
@@ -205,7 +205,7 @@ Json Example
             "resourceType": "MedicationStatement",
             "id": "urn:uuid:515947d8-17cf-11e8-9a20-525400fdb384",
             "patient": {
-              "reference": "Patient/spark48"
+              "reference": "Patient/phf48"
             },
             "informationSource": {
               "display": "S99999"
@@ -239,7 +239,7 @@ Json Example
               "display": "S99999"
             },
             "patient": {
-              "reference": "Patient/spark48"
+              "reference": "Patient/phf48"
             },
             "substance": {
               "coding": [
@@ -271,7 +271,7 @@ Json Example
         "title": "Medical Record",
         "status": "final",
         "subject": {
-          "reference": "fhir_base/Patient/spark48"
+          "reference": "fhir_base/Patient/phf48"
         },
         "author": [
           {
