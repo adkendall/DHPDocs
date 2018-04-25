@@ -145,9 +145,9 @@ Json Example
 
  {
         "resourceType": "DocumentReference",
-        "id": "spark10",
+        "id": "phf10",
         "meta": {
-          "versionId": "spark61",
+          "versionId": "phf61",
           "lastUpdated": "2018-03-02T11:15:16.864+00:00",
           "profile": [
             "https://digitalhealthplatform.scot/fhir/DhpCorrespondenceDocument"
@@ -160,7 +160,7 @@ Json Example
           ]
         },
         "subject": {
-          "reference": "https://phfapi.ppedigitalhealthplatform.net/fhir/Patient/spark10"
+          "reference": "https://phfapi.ppedigitalhealthplatform.net/fhir/Patient/phf10"
         },
         "created": "2018-01-08T10:53:08.6119632Z",
         "indexed": "2018-01-08T10:53:08.611+00:00",
@@ -194,6 +194,6 @@ C# Example
                 {
                     new DocumentReference.ContentComponent { Attachment = new Attachment { Data = GetExampleLetterPDF(), ContentType = "application/pdf", Title = "SampleCA Letter" } }
                 },
-                Subject = new ResourceReference { Reference = string.Format(CultureInfo.CurrentCulture, "Patient/{0}", GetPatientSparkId()) }
+                Subject = new ResourceReference { Reference = string.Format(CultureInfo.CurrentCulture, "Patient/{0}", GetPatientphfId()) }
             };
             
