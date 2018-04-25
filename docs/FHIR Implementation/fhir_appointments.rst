@@ -743,7 +743,7 @@ Json Examples
            ]
          },
          "subject": {
-           "reference": "Patient/spark43"
+           "reference": "Patient/phf43"
          },
          "created": "2018-03-13T19:26:47.157524Z",
          "indexed": "2018-03-13T19:26:47.157+00:00",
@@ -768,7 +768,7 @@ Json Examples
      "participant": [
        {
          "actor": {
-           "reference": "Patient/spark43"
+           "reference": "Patient/phf43"
          },
          "status": "needs-action"
        }
@@ -780,22 +780,22 @@ Json Examples
 .. code-block:: json
 
     {
-      "fullUrl": "fhir_base/AppointmentResponse/spark10/_history/spark13",
+      "fullUrl": "fhir_base/AppointmentResponse/phf10/_history/phf13",
       "resource": {
         "resourceType": "AppointmentResponse",
-        "id": "spark10",
+        "id": "phf10",
         "meta": {
-          "versionId": "spark13",
+          "versionId": "phf13",
           "lastUpdated": "2017-12-15T15:21:51.854+00:00",
           "profile": [
             "https://digitalhealthplatform.scot/fhir/DhpAppointmentResponse"
           ]
         },
         "appointment": {
-          "reference": "fhir_base/Appointment/spark40"
+          "reference": "fhir_base/Appointment/phf40"
         },
         "actor": {
-          "reference": "fhir_base/Patient/spark45"
+          "reference": "fhir_base/Patient/phf45"
         },
         "participantStatus": "tentative",
         "comment": "Must be next week"
