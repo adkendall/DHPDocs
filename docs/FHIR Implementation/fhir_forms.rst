@@ -288,11 +288,11 @@ Json Example
      },
      "status": "completed",
      "subject": {
-       "reference": "Patient/spark43"
+       "reference": "Patient/phf43"
      },
      "authored": "2018-03-06T21:29:36.1009323Z",
      "source": {
-       "reference": "Patient/spark43"
+       "reference": "Patient/phf43"
      },
      "group": {
        "question": [
@@ -339,7 +339,7 @@ C# Example
 
             QuestionnaireResponse questionnaire = new QuestionnaireResponse
             {
-                Subject = new ResourceReference { Reference = string.Format(CultureInfo.CurrentCulture, "Patient/{0}", GetPatientSparkId()) },
+                Subject = new ResourceReference { Reference = string.Format(CultureInfo.CurrentCulture, "Patient/{0}", GetPatientphfId()) },
                 Status = QuestionnaireResponseStatus.Completed,
                 Group = new GroupComponent
                 {
@@ -356,7 +356,7 @@ C# Example
                     }
                 },
                 AuthoredElement = FhirDateTime.Now(),
-                Source = new ResourceReference { Reference = string.Format(CultureInfo.CurrentCulture, "Patient/{0}", GetPatientSparkId()) },
+                Source = new ResourceReference { Reference = string.Format(CultureInfo.CurrentCulture, "Patient/{0}", GetPatientphfId()) },
                 Meta = new Meta() { Profile = new string[] { "https://digitalhealthplatform.scot/fhir/AboutMeResponse" } },
                 Text= new Narrative { Status = Narrative.NarrativeStatus.Generated, Div=getQuestionnaireFragment()}
             };
